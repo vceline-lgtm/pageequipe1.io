@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto de Pesquisa & Inovação Tecnológica</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B0F19',
+                            card: '#111827',
+                            border: '#1F2937',
+                            accent: '#6366F1',
+                            accentHover: '#4F46E5',
+                            cyan: '#06B6D4',
+                            purple: '#A855F7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F19;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Hero Dynamic Gradient Mesh Background */
+        .bg-mesh {
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 90% 10%, rgba(6, 182, 212, 0.12) 0px, transparent 50%),
+                radial-gradient(at 50% 80%, rgba(168, 85, 247, 0.12) 0px, transparent 50%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+
+        /* Card Hover & Glow Effect */
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.25);
+        }
+
+        /* Pulse animation for active badges */
+        .pulse-dot {
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* Modal backdrop transition */
+        .modal-blur {
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-mesh min-h-screen flex flex-col justify-between selection:bg-brand-accent selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 w-full border-b border-gray-800/80 bg-brand-dark/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-brand-accent via-brand-cyan to-brand-purple flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
+                    <i class="fa-solid font-bold text-xl fa-atom"></i>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-lg sm:text-xl text-white tracking-tight">LAB<span class="text-brand-cyan">IA</span>&Data</span>
+                    <span class="hidden sm:inline-block text-xs text-gray-400 border-l border-gray-700 pl-2 ml-2">Projeto de Pesquisa Avançada</span>
+                </div>
+            </div>
+
+            <nav class="flex items-center space-x-4 sm:space-x-6 text-sm font-medium">
+                <a href="#outdoor" class="text-gray-300 hover:text-white transition-colors">Início</a>
+                <a href="#hub" class="text-gray-300 hover:text-white transition-colors">Portais & Links</a>
+                <a href="#metricas" class="hidden md:inline-block text-gray-300 hover:text-white transition-colors">Impacto</a>
+                <a href="#contato" class="px-4 py-2 rounded-lg bg-brand-accent/10 border border-brand-accent/30 text-brand-accent hover:bg-brand-accent hover:text-white transition-all text-xs sm:text-sm font-semibold">
+                    Contato
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Outdoor Digital / Hero Section -->
+    <section id="outdoor" class="relative pt-12 pb-16 md:pt-20 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div class="text-center max-w-4xl mx-auto">
+            
+            <!-- Badges de Status -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs sm:text-sm font-medium mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+                Projeto Ativo 2024-2026 • Pesquisa Aplicada
+            </div>
+
+            <!-- Título Impactante (Outdoor) -->
+            <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                Inteligência Artificial & <br class="hidden sm:inline"/>
+                <span class="bg-gradient-to-r from-brand-accent via-brand-cyan to-brand-purple bg-clip-text text-transparent">
+                    Sistemas Inteligentes do Futuro
+                </span>
+            </h1>
+
+            <!-- Subtítulo com Missão/Visão -->
+            <p class="text-gray-300 text-base sm:text-lg lg:text-xl font-normal leading-relaxed mb-10 max-w-3xl mx-auto">
+                Desenvolvendo novos modelos de aprendizado profundo, processamento de sinais e automação inteligente para resolver desafios complexos com alto impacto científico, acadêmico e regional.
+            </p>
+
+            <!-- Ações rápidas -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#hub" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-accent to-brand-purple text-white font-semibold text-sm sm:text-base hover:opacity-90 transition-all shadow-lg shadow-indigo-500/25 flex items-center gap-2">
+                    <i class="fa-solid fa-compass"></i> Explorar Portais Integrados
+                </a>
+                <button onclick="openModal('sobre-projeto')" class="px-6 py-3.5 rounded-xl glass-card text-gray-200 font-semibold text-sm sm:text-base hover:text-white transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info"></i> Sobre o Projeto
+                </button>
+            </div>
+        </div>
+
+        <!-- Metric Counter Strip -->
+        <div id="metricas" class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-10 border-t border-gray-800/80">
+            <div class="glass-card p-5 rounded-2xl text-center">
+                <div class="text-3xl sm:text-4xl font-extrabold font-display text-brand-cyan mb-1 flex justify-center items-center">
+                    <span class="counter" data-target="18">0</span>+
+                </div>
+                <p class="text-xs sm:text-sm text-gray-400 font-medium">Publicações IEEE / Qualis</p>
+            </div>
+            <div class="glass-card p-5 rounded-2xl text-center">
+                <div class="text-3xl sm:text-4xl font-extrabold font-display text-brand-accent mb-1 flex justify-center items-center">
+                    <span class="counter" data-target="6">0</span>
+                </div>
+                <p class="text-xs sm:text-sm text-gray-400 font-medium">Editais Aprovados (CNPq/FAPERN)</p>
+            </div>
+            <div class="glass-card p-5 rounded-2xl text-center">
+                <div class="text-3xl sm:text-4xl font-extrabold font-display text-brand-purple mb-1 flex justify-center items-center">
+                    <span class="counter" data-target="12">0</span>
+                </div>
+                <p class="text-xs sm:text-sm text-gray-400 font-medium">Modelos de IA Criados</p>
+            </div>
+            <div class="glass-card p-5 rounded-2xl text-center">
+                <div class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-400 mb-1 flex justify-center items-center">
+                    <span class="counter" data-target="100">0</span>%
+                </div>
+                <p class="text-xs sm:text-sm text-gray-400 font-medium">Código Aberto & Transparência</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Hub Interativo de Cards -->
+    <section id="hub" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        
+        <!-- Header da Seção + Filtros + Busca -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mb-2">
+                    Ecossistema & Fontes de Conhecimento
+                </h2>
+                <p class="text-gray-400 text-sm max-w-xl">
+                    Acesso direto às plataformas de fomento, órgãos regionais, publicações internacionais e novidades em IA vinculadas à pesquisa.
+                </p>
+            </div>
+
+            <!-- Busca Rápida -->
+            <div class="relative min-w-[260px] md:w-72">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                <input type="text" id="searchInput" placeholder="Buscar card ou palavra-chave..." 
+                    class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-brand-card border border-gray-800 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-accent transition-all">
+            </div>
+        </div>
+
+        <!-- Filtros por Categoria -->
+        <div class="flex flex-wrap gap-2 mb-8" id="filterContainer">
+            <button class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold border transition-all bg-brand-accent border-brand-accent text-white" data-filter="all">
+                Todos
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold border border-gray-800 bg-brand-card text-gray-400 hover:text-white hover:border-gray-700 transition-all" data-filter="fomento">
+                Fomento Nacional
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold border border-gray-800 bg-brand-card text-gray-400 hover:text-white hover:border-gray-700 transition-all" data-filter="regional">
+                Regional (FAPERN)
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold border border-gray-800 bg-brand-card text-gray-400 hover:text-white hover:border-gray-700 transition-all" data-filter="ieee">
+                IEEE & Standards
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold border border-gray-800 bg-brand-card text-gray-400 hover:text-white hover:border-gray-700 transition-all" data-filter="ai">
+                Novidades em IA
+            </button>
+        </div>
+
+        <!-- Grid de Cards Interativos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="cardsGrid">
+            
+            <!-- Card 1: CNPq -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between card-item" data-category="fomento" data-keywords="cnpq lattes bolsas fomento edital governo federal">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <span class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">Fomento</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white mb-2">CNPq</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                        Conselho Nacional de Desenvolvimento Científico e Tecnológico. Plataforma Lattes, bolsas de produtividade e chamadas públicas para apoio à pesquisa.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-gray-800/60 flex items-center justify-between">
+                    <button onclick="openModal('cnpq')" class="text-xs font-semibold text-brand-cyan hover:underline flex items-center gap-1">
+                        Saiba mais <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <a href="https://www.gov.br/cnpq" target="_blank" rel="noopener" class="text-gray-400 hover:text-white text-sm" title="Abrir link externo">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: FAPERN -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between card-item" data-category="regional" data-keywords="fapern rio grande do norte rn pesquisa regional editais estado">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <span class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">RN Regional</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white mb-2">FAPERN</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                        Fundação de Apoio à Pesquisa do Estado do Rio Grande do Norte. Incentivo e financiamento da ciência, tecnologia e inovação potiguar.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-gray-800/60 flex items-center justify-between">
+                    <button onclick="openModal('fapern')" class="text-xs font-semibold text-emerald-400 hover:underline flex items-center gap-1">
+                        Saiba mais <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <a href="https://fapern.rn.gov.br/" target="_blank" rel="noopener" class="text-gray-400 hover:text-white text-sm" title="Abrir link externo">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: IEEE -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between card-item" data-category="ieee" data-keywords="ieee xplore artigos engenharia normas standards artigos cientificos">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <span class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Global IEEE</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white mb-2">IEEE Xplore</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                        Institute of Electrical and Electronics Engineers. Biblioteca digital de ponta em engenharia, computação e inteligência artificial.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-gray-800/60 flex items-center justify-between">
+                    <button onclick="openModal('ieee')" class="text-xs font-semibold text-brand-accent hover:underline flex items-center gap-1">
+                        Saiba mais <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <a href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener" class="text-gray-400 hover:text-white text-sm" title="Abrir link externo">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: Novidades em IA -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between card-item" data-category="ai" data-keywords="inteligencia artificial llm arxiv openai machine learning deep learning ia novidades">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <span class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">Avanços IA</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white mb-2">Tendências em IA</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                        Acompanhamento dos artigos recentes no arXiv, Hugging Face, avanços em Generative AI, LLMs e novos frameworks computacionais.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-gray-800/60 flex items-center justify-between">
+                    <button onclick="openModal('ai')" class="text-xs font-semibold text-brand-purple hover:underline flex items-center gap-1">
+                        Saiba mais <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <a href="https://arxiv.org/list/cs.AI/recent" target="_blank" rel="noopener" class="text-gray-400 hover:text-white text-sm" title="Abrir link externo">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Estado Vazio (Caso a busca não encontre cards) -->
+        <div id="noResults" class="hidden text-center py-12">
+            <i class="fa-solid fa-folder-open text-4xl text-gray-600 mb-3"></i>
+            <p class="text-gray-400 text-base">Nenhum card encontrado para os termos pesquisados.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Rodapé e Contato -->
+    <footer id="contato" class="border-t border-gray-800/80 bg-brand-dark mt-20 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <div class="flex items-center space-x-2 mb-2">
+                    <i class="fa-solid fa-atom text-brand-cyan"></i>
+                    <span class="font-display font-bold text-lg text-white">Projeto de Pesquisa em IA</span>
+                </div>
+                <p class="text-gray-400 text-xs sm:text-sm">
+                    Apoiado por órgãos de fomento à pesquisa e focado no avanço da inovação tecnológica.
+                </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-6 text-sm text-gray-400">
+                <a href="https://www.gov.br/cnpq" target="_blank" class="hover:text-white transition-colors">CNPq</a>
+                <a href="https://fapern.rn.gov.br/" target="_blank" class="hover:text-white transition-colors">FAPERN</a>
+                <a href="https://www.ieee.org/" target="_blank" class="hover:text-white transition-colors">IEEE</a>
+                <a href="https://arxiv.org/" target="_blank" class="hover:text-white transition-colors">arXiv AI</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-gray-800/50 text-center text-xs text-gray-500">
+            &copy; 2026 Laboratório de Inteligência & Ciência de Dados. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- MODAL DE DETALHES -->
+    <div id="detailModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 modal-blur opacity-0 pointer-events-none transition-all duration-300">
+        <div class="glass-card bg-brand-card/95 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative border border-gray-700 shadow-2xl transform scale-95 transition-all duration-300" id="modalContainer">
+            <!-- Botão Fechar -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white w-8 h-8 rounded-full bg-gray-800/50 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Conteúdo Dinâmico do Modal -->
+            <div id="modalContent">
+                <!-- Inserido via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT DE INTERATIVIDADE -->
+    <script>
+        // Dados dos Modais
+        const modalData = {
+            'sobre-projeto': {
+                title: 'Sobre o Projeto de Pesquisa',
+                badge: 'Visão Geral',
+                color: 'text-brand-accent',
+                description: 'Este projeto investiga arquiteturas emergentes de inteligência artificial aplicada ao processamento de dados em tempo real e automação adaptativa. Nosso objetivo é integrar a pesquisa teórica com soluções de impacto socioeconômico direto.',
+                links: [
+                    { label: 'Acessar Grupo de Pesquisa Lattes', url: 'https://lattes.cnpq.br/' },
+                    { label: 'Repositório de Código / GitHub', url: 'https://github.com' }
+                ]
+            },
+            'cnpq': {
+                title: 'CNPq - Conselho Nacional de Pesquisa',
+                badge: 'Fomento Federal',
+                color: 'text-blue-400',
+                description: 'O CNPq é uma agência do Ministério da Ciência, Tecnologia e Inovação (MCTI) destinada ao fomento da pesquisa científica e tecnológica e à formação de recursos humanos para a pesquisa no país.',
+                links: [
+                    { label: 'Portal Oficial do CNPq', url: 'https://www.gov.br/cnpq' },
+                    { label: 'Plataforma Lattes', url: 'https://lattes.cnpq.br/' },
+                    { label: 'Chamadas Públicas & Editais', url: 'https://www.gov.br/cnpq/pt-br/chamadas-publicas' }
+                ]
+            },
+            'fapern': {
+                title: 'FAPERN - Apoio à Pesquisa no RN',
+                badge: 'Fomento Estadual',
+                color: 'text-emerald-400',
+                description: 'A FAPERN promove o desenvolvimento científico e tecnológico do Estado do Rio Grande do Norte por meio do financiamento de projetos de pesquisa, concessão de bolsas e apoio a eventos científicos.',
+                links: [
+                    { label: 'Portal FAPERN', url: 'https://fapern.rn.gov.br/' },
+                    { label: 'Editais Vigentes', url: 'https://fapern.rn.gov.br/editais/' }
+                ]
+            },
+            'ieee': {
+                title: 'IEEE - Institute of Electrical and Electronics Engineers',
+                badge: 'Publicação Internacional',
+                color: 'text-indigo-400',
+                description: 'Maior organização profissional técnica do mundo dedicada ao avanço da tecnologia. O IEEE Xplore fornece acesso a pesquisas publicadas em periódicos e conferências de alto impacto.',
+                links: [
+                    { label: 'IEEE Xplore Digital Library', url: 'https://ieeexplore.ieee.org/' },
+                    { label: 'IEEE AI & Autonomous Systems', url: 'https://www.ieee.org/' }
+                ]
+            },
+            'ai': {
+                title: 'Avanços e Tendências em IA',
+                badge: 'Fronteira Tecnológica',
+                color: 'text-purple-400',
+                description: 'Mapeamento constante de artigos pré-publicados no arXiv (Computer Science/AI), repositórios de modelos abertos no Hugging Face e diretrizes éticas em inteligência artificial.',
+                links: [
+                    { label: 'arXiv AI Papers Recent', url: 'https://arxiv.org/list/cs.AI/recent' },
+                    { label: 'Hugging Face Open Models', url: 'https://huggingface.co/' }
+                ]
+            }
+        };
+
+        // Função de Abertura do Modal
+        function openModal(key) {
+            const data = modalData[key];
+            if (!data) return;
+
+            const modalContent = document.getElementById('modalContent');
+            const linksHtml = data.links.map(link => `
+                <a href="${link.url}" target="_blank" rel="noopener" class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/80 border border-gray-800 hover:border-brand-accent text-sm text-gray-200 hover:text-white transition-all group">
+                    <span>${link.label}</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-brand-accent"></i>
+                </a>
+            `).join('');
+
+            modalContent.innerHTML = `
+                <span class="text-xs uppercase font-bold tracking-wider ${data.color}">${data.badge}</span>
+                <h3 class="font-display text-2xl font-bold text-white mt-1 mb-4">${data.title}</h3>
+                <p class="text-gray-300 text-sm leading-relaxed mb-6">${data.description}</p>
+                <div class="space-y-2">
+                    <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Links Diretos</h4>
+                    ${linksHtml}
+                </div>
+            `;
+
+            const modal = document.getElementById('detailModal');
+            const container = document.getElementById('modalContainer');
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            container.classList.remove('scale-95');
+            container.classList.add('scale-100');
+        }
+
+        // Função de Fechamento do Modal
+        function closeModal() {
+            const modal = document.getElementById('detailModal');
+            const container = document.getElementById('modalContainer');
+
+            container.classList.remove('scale-100');
+            container.classList.add('scale-95');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Fechar ao clicar no backdrop
+        document.getElementById('detailModal').addEventListener('click', (e) => {
+            if (e.target.id === 'detailModal') closeModal();
+        });
+
+        // Contadores Animados nas Métricas
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 1500; // ms
+                const increment = target / (duration / 16);
+
+                let current = 0;
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.innerText = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // Executar animação de contagem na inicialização
+        window.addEventListener('load', animateCounters);
+
+        // Filtro por Categoria
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const cardItems = document.querySelectorAll('.card-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-brand-accent', 'border-brand-accent', 'text-white');
+                    btn.classList.add('bg-brand-card', 'border-gray-800', 'text-gray-400');
+                });
+
+                button.classList.remove('bg-brand-card', 'border-gray-800', 'text-gray-400');
+                button.classList.add('bg-brand-accent', 'border-brand-accent', 'text-white');
+
+                const filterValue = button.getAttribute('data-filter');
+                filterCards(filterValue, document.getElementById('searchInput').value);
+            });
+        });
+
+        // Pesquisa Rápida de Cards
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const activeFilter = document.querySelector('.filter-btn.bg-brand-accent').getAttribute('data-filter');
+            filterCards(activeFilter, e.target.value);
+        });
+
+        function filterCards(filterCategory, searchTerm) {
+            const term = searchTerm.toLowerCase().trim();
+            let visibleCount = 0;
+
+            cardItems.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const keywords = card.getAttribute('data-keywords').toLowerCase();
+                const text = card.innerText.toLowerCase();
+
+                const matchesCategory = filterCategory === 'all' || category === filterCategory;
+                const matchesSearch = term === '' || keywords.includes(term) || text.includes(term);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const noResults = document.getElementById('noResults');
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
