@@ -5,78 +5,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="artifact-type" content="narrative">
-  <meta name="design-style" content="broadsheet">
-  <title>Estratégias de Acesso ao Mundo do Trabalho no Setor de Turismo e Eventos | IFRN Campus Canguaretama</title>
-
-  <!-- Google Fonts: Bitter, Source Serif 4, Source Sans 3 -->
+  <meta name="design-style" content="handbook">
+  <title>Estratégias de Acesso ao Mundo do Trabalho | Setor de Turismo e Eventos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,500..800;1,400..700&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons (Exact Pinned CDN) -->
-  <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
 
-      /* Paleta Temática: Vinho / Burgundy, Verde Escuro e Elementos IFRN */
-      --burgundy: #6e1029;
-      --burgundy-dark: #4d0a1c;
-      --burgundy-light: #f7e8ec;
-      --burgundy-border: #991b3d;
+      /* Paleta Restrita: Branco, Roxo e Verde (Tonalidades dos Guias IFRN) */
+      --background: #ffffff;
+      --surface-white: #ffffff;
+      --surface-purple-soft: #faf7fc;
+      --surface-purple-subtle: #f3eafb;
+      --surface-green-soft: #f4fbf7;
+      --surface-green-subtle: #e6f6ec;
 
-      --green-dark: #0f4526;
-      --green-forest: #175e35;
-      --green-light: #eaf5ed;
-      --green-border: #1d7342;
+      /* Textos e Tipografia */
+      --on-surface: #1e132b;
+      --on-surface-variant: #534563;
+      --on-surface-muted: #736585;
 
-      --ifrn-red: #c51b24;
-      --ifrn-green: #23783b;
+      /* Espectro Roxo (Jovem Aprendiz, Institucional IFRN, Destaques) */
+      --purple-900: #290e3d;
+      --purple-800: #3e165d;
+      --purple-700: #551e7f;
+      --purple-600: #6b26a1;
+      --purple-500: #8839c9;
+      --purple-200: #e2cffa;
+      --purple-100: #f2e7fc;
+      --purple-border: #d7beee;
 
-      /* Page and surfaces */
-      --background: #fbf9f5;
-      --surface-container-low: #ffffff;
-      --surface-container: #f3efe6;
-      --surface-container-high: #e8e1d2;
+      /* Espectro Verde (Estagiários, ODS 8, Crescimento, Sustentabilidade) */
+      --green-900: #0e381f;
+      --green-800: #14552f;
+      --green-700: #197742;
+      --green-600: #1f9654;
+      --green-500: #27b667;
+      --green-200: #b5e8c7;
+      --green-100: #def4e6;
+      --green-border: #b1e3c3;
 
-      /* Ink */
-      --on-surface: #191615;
-      --on-surface-variant: #4b4642;
-      --on-surface-muted: #6e6761;
-
-      /* Rules */
-      --outline: #2d2624;
-      --outline-variant: #d5cbba;
-
-      /* Accents */
-      --primary: var(--burgundy);
+      /* Mapeamento Semântico Handbook */
+      --primary: #3e165d;
       --on-primary: #ffffff;
-      --primary-container: var(--burgundy-light);
-      --on-primary-container: var(--burgundy-dark);
+      --primary-container: #f3eafb;
+      --on-primary-container: #290e3d;
 
-      --secondary: var(--green-dark);
+      --secondary: #197742;
       --on-secondary: #ffffff;
-      --secondary-container: var(--green-light);
-      --on-secondary-container: #082816;
+      --secondary-container: #def4e6;
+      --on-secondary-container: #0e381f;
 
-      --tertiary: #875c1a;
-      --error: #b3261e;
-      --on-error: #ffffff;
-      --positive: #186638;
-      --warning: #a36509;
+      --tertiary: #551e7f;
+      --positive: #197742;
+      --warning: #551e7f;
+      --error: #3e165d;
+      --outline: #3e165d;
+      --outline-variant: #d7beee;
+      --focus: #197742;
 
-      /* Focus */
-      --focus: var(--burgundy);
+      /* Fontes */
+      --font-headline: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-label: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-      /* Typography Scale (Narrative) */
-      --display-size: clamp(2.2rem, 1.5rem + 3vw, 3.8rem);
-      --headline-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.3rem);
-      --subhead-size: clamp(1.15rem, 1rem + 0.5vw, 1.35rem);
-      --body-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
-      --label-size: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+      /* Escala Tipográfica Fluida */
+      --display-size: clamp(2rem, 1.3rem + 2.8vw, 3.4rem);
+      --headline-size: clamp(1.4rem, 1.1rem + 1.2vw, 2.1rem);
+      --subhead-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+      --body-size: clamp(0.95rem, 0.92rem + 0.15vw, 1.0625rem);
+      --label-size: 0.75rem;
 
-      /* Spacing Scale (4pt base) */
+      /* Escala de Espaçamento */
       --space-xs: 0.25rem;
       --space-sm: 0.5rem;
       --space-md: 1rem;
@@ -85,36 +87,36 @@
       --space-2xl: 4rem;
       --space-3xl: 6rem;
 
-      /* Fonts */
-      --font-headline: 'Bitter', serif;
-      --font-body: 'Source Serif 4', serif;
-      --font-label: 'Source Sans 3', sans-serif;
-
-      /* Shape */
-      --rounded: 0.25rem;
-      --rounded-lg: 0.375rem;
+      /* Formas & Efeitos Handbook */
+      --rounded-sm: 4px;
+      --rounded: 8px;
+      --rounded-lg: 12px;
       --rounded-full: 9999px;
 
-      /* Style effects */
-      --rule-masthead: 3px double var(--on-surface);
-      --rule-ink: 1px solid var(--on-surface);
-      --rule-section: 2px solid var(--burgundy);
-      --rule-column: 1px solid var(--outline-variant);
+      --top-index-rule: 6px solid var(--purple-800);
+      --top-index-rule-green: 6px solid var(--green-700);
+      --inset-rule-purple: 5px solid var(--purple-700);
+      --inset-rule-green: 5px solid var(--green-700);
 
-      /* Motion */
+      --shadow-sm: 0 1px 2px rgba(62, 22, 93, 0.05);
+      --shadow-card: 0 4px 12px rgba(62, 22, 93, 0.06);
+      --shadow-elevated: 0 10px 25px rgba(62, 22, 93, 0.1);
+
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-      --dur-micro: 120ms;
-      --dur-short: 220ms;
-      --dur-long: 420ms;
+      --dur-short: 180ms;
+      --dur-long: 320ms;
     }
 
-    /* Base reset */
-    *, *::before, *::after { box-sizing: border-box; }
+    /* Reset e Estrutura Básica */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     html, body {
-      overflow-x: clip;
       margin: 0;
       padding: 0;
+      overflow-x: clip;
       background-color: var(--background);
       color: var(--on-surface);
       font-family: var(--font-body);
@@ -123,1034 +125,1095 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    header { position: static !important; }
-
-    /* Accessibility focus */
-    :focus-visible {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
+    header {
+      position: static !important;
     }
 
-    /* Page container */
-    .page-wrap {
-      max-width: 1220px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: var(--space-md) var(--space-lg) var(--space-3xl);
+      padding: 0 var(--space-lg);
     }
 
-    /* Masthead and Top Section */
-    .top-meta-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: var(--space-sm);
-      padding-bottom: var(--space-sm);
-      border-bottom: var(--rule-ink);
-      font-family: var(--font-label);
+    /* Barra Superior Institucional */
+    .top-bar {
+      border-top: var(--top-index-rule);
+      border-bottom: 1px solid var(--purple-border);
+      background-color: var(--surface-purple-soft);
+      padding: var(--space-sm) 0;
       font-size: var(--label-size);
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--on-surface-variant);
-    }
-
-    .top-meta-left {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-    }
-
-    .ifrn-symbol {
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      vertical-align: middle;
-    }
-
-    .ifrn-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 1px;
-    }
-    .ifrn-dot.red { background-color: var(--ifrn-red); }
-    .ifrn-dot.green { background-color: var(--ifrn-green); }
-
-    .masthead-line {
-      border-bottom: var(--rule-masthead);
-      padding: var(--space-md) 0 var(--space-sm);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: var(--space-md);
-    }
-
-    .masthead-sub {
-      font-family: var(--font-label);
-      font-size: var(--label-size);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--burgundy);
-    }
-
-    .masthead-date {
-      font-family: var(--font-label);
-      font-size: var(--label-size);
-      color: var(--on-surface-muted);
-    }
-
-    /* Main Title Section */
-    .hero-title-area {
-      padding: var(--space-xl) 0 var(--space-lg);
-      border-bottom: var(--rule-ink);
-    }
-
-    .badge-ods {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-xs);
-      background-color: var(--burgundy-light);
-      color: var(--burgundy-dark);
-      border: 1px solid var(--burgundy-border);
-      padding: var(--space-xs) var(--space-md);
-      font-family: var(--font-label);
-      font-size: var(--label-size);
-      font-weight: 700;
-      text-transform: uppercase;
       letter-spacing: 0.05em;
-      border-radius: var(--rounded);
+      text-transform: uppercase;
+      color: var(--purple-900);
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .inst-badge-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background-color: var(--purple-800);
+      color: var(--on-primary);
+      font-weight: 800;
+      font-size: 0.75rem;
+      border-radius: var(--rounded-sm);
+    }
+
+    .step-badge.green {
+      background-color: var(--green-700);
+    }
+
+    /* Cabeçalho do Projeto */
+    .hero-section {
+      padding: var(--space-2xl) 0 var(--space-xl);
+      border-bottom: 1px solid var(--purple-border);
+      background: linear-gradient(180deg, var(--surface-purple-soft) 0%, var(--surface-white) 100%);
+    }
+
+    .tag-row {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
       margin-bottom: var(--space-md);
     }
 
-    h1.project-title {
-      font-family: var(--font-headline);
-      font-weight: 800;
-      font-size: var(--display-size);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-      color: var(--burgundy-dark);
-      margin: 0 0 var(--space-md) 0;
-      max-width: 26ch;
-    }
-
-    .project-subtitle {
-      font-family: var(--font-body);
-      font-size: var(--subhead-size);
-      line-height: 1.45;
-      color: var(--on-surface-variant);
-      max-width: 68ch;
-      margin: 0 0 var(--space-lg) 0;
-    }
-
-    /* Navigation Bar */
-    .nav-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-xs);
-      padding: var(--space-sm) 0;
-      border-bottom: var(--rule-ink);
-      background: var(--surface-container-low);
-      border-radius: var(--rounded);
-      padding: var(--space-sm) var(--space-md);
-      margin-top: var(--space-md);
-    }
-
-    .nav-item {
-      font-family: var(--font-label);
-      font-size: var(--label-size);
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.65rem;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
+      border-radius: var(--rounded-sm);
+    }
+
+    .tag-purple {
+      background-color: var(--surface-purple-subtle);
+      color: var(--purple-900);
+      border: 1px solid var(--purple-border);
+    }
+
+    .tag-green {
+      background-color: var(--surface-green-subtle);
+      color: var(--green-900);
+      border: 1px solid var(--green-border);
+    }
+
+    .project-title {
+      font-family: var(--font-headline);
+      font-size: var(--display-size);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--purple-900);
+      margin: 0 0 var(--space-md);
+      max-width: 24ch;
+      letter-spacing: -0.02em;
+    }
+
+    .project-lede {
+      font-size: var(--subhead-size);
       color: var(--on-surface-variant);
-      text-decoration: none;
-      padding: var(--space-xs) var(--space-sm);
+      max-width: 68ch;
+      margin: 0 0 var(--space-lg);
+      line-height: 1.55;
+    }
+
+    /* Menu Rápido Âncoras */
+    .quick-nav {
+      display: flex;
+      gap: var(--space-xs);
+      flex-wrap: wrap;
+      padding: var(--space-xs);
+      background-color: var(--surface-white);
+      border: 1px solid var(--purple-border);
       border-radius: var(--rounded);
+      max-width: fit-content;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--purple-800);
+      border-radius: var(--rounded-sm);
       transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
     }
 
-    .nav-item:hover, .nav-item:focus-visible {
-      background-color: var(--burgundy-light);
-      color: var(--burgundy);
+    .nav-link:hover {
+      background-color: var(--surface-purple-subtle);
+      color: var(--purple-900);
     }
 
-    /* Summary Highlights Grid */
-    .metrics-bar {
+    /* Painel de Métricas / Contexto do Projeto */
+    .context-strip {
+      padding: var(--space-lg) 0;
+      border-bottom: 1px solid var(--green-border);
+      background-color: var(--surface-green-soft);
+    }
+
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-      gap: 0;
-      margin: var(--space-lg) 0 var(--space-2xl);
-      border-top: 1px solid var(--outline-variant);
-      border-bottom: 1px solid var(--outline-variant);
-      background-color: var(--surface-container-low);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-md);
     }
 
-    .metric-col {
-      padding: var(--space-md) var(--space-lg);
-      border-right: 1px solid var(--outline-variant);
-    }
-    .metric-col:last-child {
-      border-right: none;
+    .stat-card {
+      background-color: var(--surface-white);
+      border: 1px solid var(--green-border);
+      border-left: var(--inset-rule-green);
+      padding: var(--space-md);
+      border-radius: 0 var(--rounded) var(--rounded) 0;
     }
 
-    .metric-label {
-      font-family: var(--font-label);
-      font-size: var(--label-size);
+    .stat-card.purple {
+      border-color: var(--purple-border);
+      border-left: var(--inset-rule-purple);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--burgundy);
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
+      letter-spacing: 0.05em;
+      color: var(--green-800);
       margin-bottom: var(--space-xs);
     }
 
-    .metric-val {
-      font-family: var(--font-headline);
+    .stat-card.purple .stat-label {
+      color: var(--purple-800);
+    }
+
+    .stat-value {
       font-size: 1.5rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--on-surface);
       line-height: 1.2;
+      margin-bottom: 0.2rem;
     }
 
-    .metric-desc {
-      font-family: var(--font-label);
-      font-size: 0.825rem;
+    .stat-desc {
+      font-size: 0.85rem;
       color: var(--on-surface-variant);
-      margin-top: var(--space-xs);
+      margin: 0;
     }
 
-    /* Section Openings */
+    /* Seções Gerais */
     .section-block {
-      margin-top: var(--space-2xl);
-      padding-top: var(--space-lg);
+      padding: var(--space-2xl) 0;
+      border-bottom: 1px solid var(--purple-border);
     }
 
-    .section-head {
-      border-top: var(--rule-section);
-      padding-top: var(--space-sm);
-      margin-bottom: var(--space-lg);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: var(--space-sm);
+    .section-header {
+      margin-bottom: var(--space-xl);
     }
 
     .section-kicker {
-      font-family: var(--font-label);
-      font-size: var(--label-size);
-      font-weight: 700;
+      font-size: 0.75rem;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--burgundy);
+      letter-spacing: 0.08em;
+      color: var(--purple-700);
+      margin-bottom: var(--space-xs);
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
     }
 
-    h2.section-title {
+    .section-kicker.green {
+      color: var(--green-700);
+    }
+
+    .section-title {
       font-family: var(--font-headline);
       font-size: var(--headline-size);
-      font-weight: 700;
-      line-height: 1.15;
-      color: var(--on-surface);
-      margin: var(--space-xs) 0 0 0;
-      width: 100%;
+      font-weight: 800;
+      color: var(--purple-900);
+      margin: 0 0 var(--space-xs);
+      line-height: 1.2;
     }
 
-    .section-intro {
-      font-size: 1.125rem;
+    .section-subtitle {
+      font-size: 1.05rem;
       color: var(--on-surface-variant);
-      max-width: 72ch;
-      margin: var(--space-sm) 0 0;
+      margin: 0;
+      max-width: 65ch;
     }
 
-    /* Split Content Layout */
-    .prose-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.2fr);
-      gap: var(--space-xl);
-      align-items: start;
-    }
-
-    .prose-text p {
-      margin: 0 0 var(--space-md);
-      text-align: justify;
-      hyphens: auto;
-    }
-
-    .editorial-callout {
-      background: var(--surface-container);
-      border-left: 4px solid var(--burgundy);
-      padding: var(--space-md) var(--space-lg);
-      margin: var(--space-lg) 0;
-      font-style: italic;
-    }
-
-    .aside-dossier {
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
-      border-top: 3px solid var(--green-dark);
-      padding: var(--space-lg);
-      border-radius: var(--rounded);
-    }
-
-    .aside-dossier h3 {
-      font-family: var(--font-headline);
-      font-size: 1.25rem;
-      margin: 0 0 var(--space-sm) 0;
-      color: var(--green-dark);
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-    }
-
-    .tag-list {
+    /* Controles de Abas e Filtros */
+    .filter-pills {
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-xs);
-      margin-top: var(--space-md);
-    }
-
-    .tag-pill {
-      font-family: var(--font-label);
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.2rem 0.55rem;
-      background: var(--green-light);
-      color: var(--green-dark);
-      border: 1px solid var(--green-border);
-      border-radius: var(--rounded);
-    }
-
-    /* Interactive Program Comparator */
-    .interactive-card-frame {
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded-lg);
-      padding: var(--space-lg);
-      margin-top: var(--space-lg);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    }
-
-    .comparator-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-sm);
       margin-bottom: var(--space-lg);
-      padding-bottom: var(--space-md);
-      border-bottom: 1px solid var(--outline-variant);
-      align-items: center;
     }
 
-    .comparator-btn {
-      font-family: var(--font-label);
-      font-size: var(--label-size);
+    .filter-btn {
+      background-color: var(--surface-purple-soft);
+      border: 1px solid var(--purple-border);
+      color: var(--purple-900);
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: var(--space-sm) var(--space-md);
-      border: 1px solid var(--outline-variant);
-      background: var(--surface-container-low);
-      color: var(--on-surface-variant);
-      border-radius: var(--rounded);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-xs);
+      border-radius: var(--rounded-full);
       transition: all var(--dur-short) var(--ease-out);
     }
 
-    .comparator-btn:hover {
-      background: var(--surface-container);
-      color: var(--on-surface);
+    .filter-btn:hover {
+      background-color: var(--surface-purple-subtle);
     }
 
-    .comparator-btn.active {
-      background: var(--burgundy);
+    .filter-btn.active {
+      background-color: var(--purple-800);
       color: var(--on-primary);
-      border-color: var(--burgundy-dark);
+      border-color: var(--purple-800);
     }
 
-    .program-columns {
+    /* Comparativo Side-by-Side */
+    .comparison-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: var(--space-lg);
+      align-items: stretch;
     }
 
-    .program-col {
-      background: var(--background);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded);
-      padding: var(--space-md) var(--space-lg);
+    .program-card {
+      background-color: var(--surface-white);
+      border-radius: var(--rounded-lg);
+      overflow: hidden;
+      border: 2px solid;
       display: flex;
       flex-direction: column;
+      box-shadow: var(--shadow-card);
     }
 
-    .program-col.aprendiz-col {
-      border-top: 4px solid var(--burgundy);
+    .program-card.purple {
+      border-color: var(--purple-700);
     }
 
-    .program-col.estagio-col {
-      border-top: 4px solid var(--green-dark);
+    .program-card.green {
+      border-color: var(--green-700);
     }
 
-    .program-head {
-      margin-bottom: var(--space-md);
-      padding-bottom: var(--space-sm);
-      border-bottom: 1px dashed var(--outline-variant);
+    .program-header {
+      padding: var(--space-lg);
+      color: var(--on-primary);
+    }
+
+    .program-card.purple .program-header {
+      background: linear-gradient(135deg, var(--purple-900) 0%, var(--purple-700) 100%);
+    }
+
+    .program-card.green .program-header {
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 100%);
     }
 
     .program-badge {
       display: inline-block;
-      font-family: var(--font-label);
-      font-size: 0.72rem;
-      font-weight: 700;
+      font-size: 0.7rem;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 0.15rem 0.5rem;
-      border-radius: var(--rounded);
-      margin-bottom: var(--space-xs);
-    }
-    .badge-aprendiz { background: var(--burgundy-light); color: var(--burgundy-dark); border: 1px solid var(--burgundy-border); }
-    .badge-estagio { background: var(--green-light); color: var(--green-dark); border: 1px solid var(--green-border); }
-
-    .program-title {
-      font-family: var(--font-headline);
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin: 0;
-      color: var(--on-surface);
-    }
-
-    .program-legal {
-      font-family: var(--font-label);
-      font-size: 0.8rem;
-      color: var(--on-surface-muted);
-      margin-top: 2px;
-    }
-
-    .attr-group {
-      margin-bottom: var(--space-md);
-    }
-
-    .attr-label {
-      font-family: var(--font-label);
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--on-surface-variant);
-      margin-bottom: 2px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .attr-text {
-      font-size: 0.95rem;
-      margin: 0;
-      line-height: 1.45;
-    }
-
-    .attr-list {
-      margin: 0;
-      padding-left: var(--space-md);
-      font-size: 0.925rem;
-      line-height: 1.45;
-    }
-
-    .attr-list li {
-      margin-bottom: 3px;
-    }
-
-    /* Guide & Eligibility Tool */
-    .tool-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.9fr);
-      gap: var(--space-lg);
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded-lg);
-      padding: var(--space-lg);
-      margin-top: var(--space-lg);
-    }
-
-    .tool-controls-panel {
-      border-right: 1px solid var(--outline-variant);
-      padding-right: var(--space-lg);
-    }
-
-    .field-group {
-      margin-bottom: var(--space-md);
-    }
-
-    .field-label {
-      display: block;
-      font-family: var(--font-label);
-      font-size: var(--label-size);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--on-surface);
-      margin-bottom: var(--space-xs);
-    }
-
-    .select-input, .text-input {
-      width: 100%;
-      padding: var(--space-sm);
-      font-family: var(--font-label);
-      font-size: 0.95rem;
-      border: 1px solid var(--outline);
-      background: var(--background);
-      border-radius: var(--rounded);
-      color: var(--on-surface);
-    }
-
-    .select-input:focus, .text-input:focus {
-      border-color: var(--burgundy);
-      background: var(--surface-container-low);
-    }
-
-    .tool-btn-primary {
-      font-family: var(--font-label);
-      font-size: var(--label-size);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      background: var(--burgundy);
-      color: var(--on-primary);
-      border: 1px solid var(--burgundy-dark);
-      padding: var(--space-sm) var(--space-lg);
-      border-radius: var(--rounded);
-      cursor: pointer;
-      width: 100%;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: var(--space-xs);
-      transition: background var(--dur-short) var(--ease-out);
-    }
-
-    .tool-btn-primary:hover {
-      background: var(--burgundy-dark);
-    }
-
-    .tool-result-panel {
-      padding-left: var(--space-xs);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .result-status-card {
-      background: var(--background);
-      border: 1px solid var(--outline-variant);
-      border-left: 5px solid var(--burgundy);
-      border-radius: var(--rounded);
-      padding: var(--space-md) var(--space-lg);
-    }
-
-    .result-status-title {
-      font-family: var(--font-headline);
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin: 0 0 var(--space-xs);
-      color: var(--on-surface);
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-    }
-
-    .result-badge {
-      display: inline-block;
-      font-family: var(--font-label);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.15rem 0.5rem;
-      border-radius: var(--rounded);
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.5rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: var(--rounded-sm);
       margin-bottom: var(--space-sm);
     }
 
-    /* Methodology and Timeline */
-    .timeline-grid {
+    .program-name {
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 0 0 0.25rem;
+      line-height: 1.2;
+    }
+
+    .program-law {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin: 0;
+    }
+
+    .program-body {
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      flex: 1;
+      background-color: var(--surface-white);
+    }
+
+    .topic-group {
+      padding-bottom: var(--space-md);
+      border-bottom: 1px dashed var(--purple-border);
+    }
+
+    .topic-group:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .topic-heading {
+      font-size: 0.8125rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 var(--space-xs);
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .program-card.purple .topic-heading {
+      color: var(--purple-800);
+    }
+
+    .program-card.green .topic-heading {
+      color: var(--green-800);
+    }
+
+    .detail-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      font-size: 0.925rem;
+      color: var(--on-surface);
+    }
+
+    .detail-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    .detail-list li strong {
+      color: var(--on-surface);
+      font-weight: 700;
+    }
+
+    /* Simulador Interativo */
+    .simulator-box {
+      background-color: var(--surface-purple-soft);
+      border: 1px solid var(--purple-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sim-tabs {
+      display: flex;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+
+    .sim-tab-btn {
+      flex: 1;
+      padding: var(--space-md);
+      border: 2px solid var(--purple-border);
+      background-color: var(--surface-white);
+      color: var(--purple-900);
+      font-weight: 800;
+      font-size: 1rem;
+      border-radius: var(--rounded);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      transition: all var(--dur-short) var(--ease-out);
+    }
+
+    .sim-tab-btn.active {
+      background-color: var(--purple-800);
+      color: var(--on-primary);
+      border-color: var(--purple-800);
+    }
+
+    .sim-form-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .form-label {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--purple-900);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .form-select {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--purple-border);
+      background-color: var(--surface-white);
+      color: var(--on-surface);
+      border-radius: var(--rounded);
+      font-size: 0.925rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color var(--dur-short) var(--ease-out);
+    }
+
+    .form-select:focus {
+      border-color: var(--purple-700);
+      box-shadow: 0 0 0 2px var(--surface-purple-subtle);
+    }
+
+    .sim-result-card {
+      background-color: var(--surface-white);
+      border: 2px solid var(--purple-700);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      margin-top: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .sim-result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      padding-bottom: var(--space-sm);
+      border-bottom: 1px solid var(--purple-border);
+    }
+
+    .sim-result-title {
+      font-family: var(--font-headline);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--purple-900);
+      margin: 0;
+    }
+
+    .sim-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .sim-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      font-size: 0.925rem;
+      padding: 0.35rem 0.5rem;
+      border-radius: var(--rounded-sm);
+      background-color: var(--surface-purple-soft);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .sim-check-item.checked {
+      background-color: var(--surface-green-subtle);
+      color: var(--green-900);
+    }
+
+    .sim-checkbox {
+      margin-top: 0.2rem;
+      accent-color: var(--green-700);
+    }
+
+    /* ODS 8 e Regionalidade */
+    .ods-banner {
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 100%);
+      color: var(--on-secondary);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+
+    .ods-badge-large {
+      background-color: var(--surface-white);
+      color: var(--green-900);
+      padding: var(--space-md) var(--space-lg);
+      border-radius: var(--rounded);
+      text-align: center;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .ods-number {
+      font-size: 2.2rem;
+      display: block;
+      color: var(--green-700);
+    }
+
+    .targets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: var(--space-md);
       margin-top: var(--space-lg);
     }
 
-    .timeline-step {
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
+    .target-card {
+      background-color: var(--surface-white);
+      border: 1px solid var(--green-border);
+      border-top: 4px solid var(--green-700);
+      padding: var(--space-md);
       border-radius: var(--rounded);
-      padding: var(--space-md) var(--space-lg);
-      position: relative;
     }
 
-    .step-num {
-      font-family: var(--font-label);
+    .target-code {
       font-size: 0.75rem;
-      font-weight: 700;
+      font-weight: 800;
+      color: var(--green-800);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--burgundy);
-      margin-bottom: var(--space-xs);
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
     }
 
-    .step-title {
-      font-family: var(--font-headline);
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin: 0 0 var(--space-xs) 0;
-      line-height: 1.2;
-    }
-
-    .step-desc {
-      font-size: 0.925rem;
-      color: var(--on-surface-variant);
+    .target-desc {
+      font-size: 0.9rem;
+      color: var(--on-surface);
       margin: 0;
-      line-height: 1.45;
     }
 
-    /* Associated Entities Section */
-    .entities-grid {
+    /* Fases do Projeto */
+    .methodology-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-      gap: var(--space-lg);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-md);
       margin-top: var(--space-lg);
     }
 
-    .entity-card {
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
+    .method-step {
+      background-color: var(--surface-white);
+      border: 1px solid var(--purple-border);
       border-radius: var(--rounded);
+      padding: var(--space-md);
+      position: relative;
+    }
+
+    .method-num {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--rounded-sm);
+      background-color: var(--purple-800);
+      color: var(--on-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .method-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--purple-900);
+      margin: 0 0 0.35rem;
+    }
+
+    .method-text {
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+    }
+
+    /* Cards Interativos de Órgãos Associados */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .partner-card {
+      background-color: var(--surface-white);
+      border: 1px solid var(--purple-border);
+      border-radius: var(--rounded-lg);
       padding: var(--space-lg);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+      transition: transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+      box-shadow: var(--shadow-sm);
     }
 
-    .entity-card:hover {
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    .partner-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--purple-600);
     }
 
-    .entity-card.inst-card {
-      border-top: 4px solid var(--green-dark);
+    .partner-card.green:hover {
+      border-color: var(--green-600);
     }
 
-    .entity-card.trade-card {
-      border-top: 4px solid var(--burgundy);
-    }
-
-    .entity-type-badge {
-      font-family: var(--font-label);
-      font-size: 0.72rem;
-      font-weight: 700;
+    .partner-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--on-surface-muted);
+      letter-spacing: 0.05em;
+      color: var(--purple-700);
       margin-bottom: var(--space-xs);
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
     }
 
-    .entity-name {
+    .partner-card.green .partner-tag {
+      color: var(--green-700);
+    }
+
+    .partner-name {
       font-family: var(--font-headline);
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin: 0 0 var(--space-xs) 0;
-      color: var(--on-surface);
-      line-height: 1.2;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--purple-900);
+      margin: 0 0 var(--space-xs);
+      line-height: 1.25;
     }
 
-    .entity-role {
-      font-size: 0.92rem;
+    .partner-role {
+      font-size: 0.875rem;
       color: var(--on-surface-variant);
-      margin: 0 0 var(--space-md) 0;
-      line-height: 1.45;
-      flex-grow: 1;
+      margin: 0 0 var(--space-md);
+      flex: 1;
     }
 
-    .entity-digital-box {
-      background: var(--background);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded);
-      padding: var(--space-sm);
+    .partner-domain-box {
+      background-color: var(--surface-purple-soft);
+      border: 1px solid var(--purple-border);
+      border-radius: var(--rounded-sm);
+      padding: 0.4rem 0.6rem;
+      font-size: 0.8rem;
+      font-family: monospace;
+      color: var(--purple-900);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: var(--space-sm);
-    }
-
-    .entity-url {
-      font-family: var(--font-label);
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--burgundy);
+      margin-bottom: var(--space-sm);
       word-break: break-all;
     }
 
-    .btn-copy-url {
-      background: var(--surface-container);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded);
-      padding: var(--space-xs) var(--space-sm);
-      cursor: pointer;
-      font-family: var(--font-label);
-      font-size: 0.75rem;
+    .partner-card.green .partner-domain-box {
+      background-color: var(--surface-green-soft);
+      border-color: var(--green-border);
+      color: var(--green-900);
+    }
+
+    .partner-btn-row {
+      display: flex;
+      gap: var(--space-xs);
+    }
+
+    .btn-action {
+      flex: 1;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8125rem;
       font-weight: 700;
-      text-transform: uppercase;
-      color: var(--on-surface);
+      border-radius: var(--rounded-sm);
+      border: 1px solid var(--purple-800);
+      background-color: var(--purple-800);
+      color: var(--on-primary);
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: all var(--dur-short) var(--ease-out);
+    }
+
+    .btn-action:hover {
+      background-color: var(--purple-900);
+      border-color: var(--purple-900);
+    }
+
+    .btn-action.secondary {
+      background-color: var(--surface-white);
+      color: var(--purple-800);
+      border-color: var(--purple-border);
+    }
+
+    .btn-action.secondary:hover {
+      background-color: var(--surface-purple-subtle);
+    }
+
+    .partner-card.green .btn-action {
+      background-color: var(--green-700);
+      border-color: var(--green-700);
+    }
+
+    .partner-card.green .btn-action:hover {
+      background-color: var(--green-800);
+      border-color: var(--green-800);
+    }
+
+    .partner-card.green .btn-action.secondary {
+      background-color: var(--surface-white);
+      color: var(--green-800);
+      border-color: var(--green-border);
+    }
+
+    .partner-card.green .btn-action.secondary:hover {
+      background-color: var(--surface-green-subtle);
+    }
+
+    /* Referências Bibliográficas */
+    .ref-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
+      align-items: center;
+    }
+
+    .search-input-wrap {
+      flex: 1;
+      min-width: 250px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--purple-border);
+      border-radius: var(--rounded);
+      background-color: var(--surface-white);
+      color: var(--on-surface);
+      font-family: inherit;
+      font-size: 0.925rem;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--purple-700);
+      box-shadow: 0 0 0 2px var(--surface-purple-subtle);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .ref-item {
+      background-color: var(--surface-white);
+      border: 1px solid var(--purple-border);
+      border-left: 4px solid var(--purple-800);
+      padding: var(--space-md);
+      border-radius: 0 var(--rounded) var(--rounded) 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-md);
+      transition: background-color var(--dur-short) var(--ease-out);
+    }
+
+    .ref-item:hover {
+      background-color: var(--surface-purple-soft);
+    }
+
+    .ref-item.green {
+      border-left-color: var(--green-700);
+    }
+
+    .ref-text {
+      font-size: 0.925rem;
+      color: var(--on-surface);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .ref-meta-row {
+      display: flex;
+      gap: var(--space-xs);
+      align-items: center;
+      margin-top: 0.35rem;
+    }
+
+    .ref-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--rounded-sm);
+      background-color: var(--surface-purple-subtle);
+      color: var(--purple-900);
+    }
+
+    .ref-item.green .ref-badge {
+      background-color: var(--surface-green-subtle);
+      color: var(--green-900);
+    }
+
+    .copy-btn {
+      padding: 0.4rem 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background-color: var(--surface-white);
+      border: 1px solid var(--purple-border);
+      color: var(--purple-800);
+      border-radius: var(--rounded-sm);
       white-space: nowrap;
       transition: all var(--dur-short) var(--ease-out);
     }
 
-    .btn-copy-url:hover {
-      background: var(--burgundy);
-      color: var(--on-primary);
-      border-color: var(--burgundy-dark);
+    .copy-btn:hover {
+      background-color: var(--surface-purple-subtle);
+      border-color: var(--purple-700);
     }
 
-    /* Exclusive Bibliographic Reference Card */
-    .biblio-master-card {
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
-      border-top: 4px solid var(--burgundy);
-      border-radius: var(--rounded-lg);
-      padding: var(--space-xl);
-      margin-top: var(--space-lg);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
-    }
-
-    .biblio-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-end;
+    /* Seção de Contatos Rigorosamente Sem Telefones */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: var(--space-md);
-      margin-bottom: var(--space-lg);
-      padding-bottom: var(--space-md);
-      border-bottom: 1px solid var(--outline-variant);
     }
 
-    .biblio-intro-text {
-      max-width: 65ch;
-      font-size: 0.98rem;
-      color: var(--on-surface-variant);
-      margin: var(--space-xs) 0 0;
-    }
-
-    .biblio-filter-bar {
+    .contact-card {
+      background-color: var(--surface-white);
+      border: 1px solid var(--purple-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
       display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-xs);
-      align-items: center;
-      margin-bottom: var(--space-md);
+      flex-direction: column;
+      gap: var(--space-sm);
     }
 
-    .biblio-filter-btn {
-      font-family: var(--font-label);
+    .contact-role {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--purple-700);
+    }
+
+    .contact-name {
+      font-family: var(--font-headline);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--purple-900);
+      margin: 0;
+    }
+
+    .contact-email-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.45rem 0.65rem;
+      background-color: var(--surface-purple-soft);
+      border: 1px solid var(--purple-border);
+      border-radius: var(--rounded-sm);
+      font-size: 0.85rem;
+      color: var(--purple-900);
+      word-break: break-all;
+    }
+
+    .contact-email-text {
+      font-family: monospace;
+      font-weight: 600;
+    }
+
+    .contact-copy-btn {
+      background: none;
+      border: none;
+      color: var(--purple-700);
+      cursor: pointer;
+      padding: 0.2rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .contact-copy-btn:hover {
+      color: var(--purple-900);
+    }
+
+    /* Modal de Detalhes dos Parceiros */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(30, 19, 43, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-md);
+      z-index: 1000;
+      backdrop-filter: blur(2px);
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background-color: var(--surface-white);
+      border-radius: var(--rounded-lg);
+      border: 2px solid var(--purple-800);
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: var(--space-md);
+      right: var(--space-md);
+      background: none;
+      border: 1px solid var(--purple-border);
+      width: 32px;
+      height: 32px;
+      border-radius: var(--rounded-sm);
+      color: var(--purple-900);
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close-btn:hover {
+      background-color: var(--surface-purple-subtle);
+    }
+
+    .modal-title {
+      font-family: var(--font-headline);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--purple-900);
+      margin: 0 0 var(--space-xs);
+      padding-right: var(--space-xl);
+    }
+
+    .modal-badge {
+      display: inline-block;
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: var(--space-xs) var(--space-sm);
-      background: var(--surface-container);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded);
-      color: var(--on-surface-variant);
-      cursor: pointer;
-      transition: all var(--dur-short) var(--ease-out);
+      background-color: var(--surface-purple-subtle);
+      color: var(--purple-900);
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--rounded-sm);
+      margin-bottom: var(--space-md);
     }
 
-    .biblio-filter-btn:hover {
-      background: var(--burgundy-light);
-      color: var(--burgundy);
-    }
-
-    .biblio-filter-btn.active {
-      background: var(--burgundy);
-      color: var(--on-primary);
-      border-color: var(--burgundy-dark);
-    }
-
-    .biblio-search-wrap {
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-      max-width: 320px;
-      width: 100%;
-    }
-
-    .biblio-search-input {
-      width: 100%;
-      padding: var(--space-xs) var(--space-sm);
-      font-family: var(--font-label);
-      font-size: 0.85rem;
-      border: 1px solid var(--outline);
-      background: var(--background);
-      border-radius: var(--rounded);
-    }
-
-    .biblio-grid {
-      display: grid;
-      gap: var(--space-md);
-    }
-
-    .biblio-item {
-      padding: var(--space-md);
-      background: var(--background);
-      border: 1px solid var(--outline-variant);
-      border-left: 3px solid var(--burgundy);
-      border-radius: var(--rounded);
-      transition: border-color var(--dur-short) var(--ease-out);
-    }
-
-    .biblio-item:hover {
-      border-left-color: var(--green-dark);
-      border-color: var(--outline);
-    }
-
-    .biblio-meta-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-xs);
-    }
-
-    .biblio-cat-tag {
-      font-family: var(--font-label);
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 0.1rem 0.4rem;
-      background: var(--surface-container-high);
-      color: var(--on-surface-variant);
-      border-radius: var(--rounded);
-    }
-
-    .biblio-citation {
-      font-family: var(--font-body);
+    .modal-body-text {
       font-size: 0.95rem;
-      line-height: 1.45;
-      margin: 0 0 var(--space-xs);
       color: var(--on-surface);
+      line-height: 1.6;
+      margin: 0 0 var(--space-md);
     }
 
-    .biblio-citation strong {
-      font-weight: 700;
-    }
-
-    .biblio-context {
-      font-family: var(--font-label);
-      font-size: 0.825rem;
-      color: var(--on-surface-variant);
-      margin: 0;
-      line-height: 1.4;
-    }
-
-    .biblio-btn-copy {
-      background: transparent;
-      border: 1px dashed var(--outline-variant);
-      border-radius: var(--rounded);
-      padding: 2px 6px;
-      font-family: var(--font-label);
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      cursor: pointer;
-      color: var(--on-surface-variant);
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      margin-top: var(--space-xs);
-      transition: all var(--dur-short) var(--ease-out);
-    }
-
-    .biblio-btn-copy:hover {
-      background: var(--burgundy-light);
-      color: var(--burgundy);
-      border-style: solid;
-      border-color: var(--burgundy);
-    }
-
-    /* Team and Contact (Strict constraint: NO phones, only emails) */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
-      gap: var(--space-md);
-      margin-top: var(--space-lg);
-    }
-
-    .team-member-card {
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
+    .modal-meta-box {
+      background-color: var(--surface-purple-soft);
+      border: 1px solid var(--purple-border);
       border-radius: var(--rounded);
       padding: var(--space-md);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      margin-bottom: var(--space-md);
     }
 
-    .member-role {
-      font-family: var(--font-label);
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--burgundy);
-      margin-bottom: var(--space-xs);
-    }
-
-    .member-name {
-      font-family: var(--font-headline);
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin: 0 0 var(--space-xs) 0;
-      line-height: 1.25;
-    }
-
-    .member-details {
-      font-size: 0.85rem;
-      color: var(--on-surface-variant);
-      margin: 0 0 var(--space-sm);
-    }
-
-    .email-link {
-      font-family: var(--font-label);
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--burgundy);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      word-break: break-all;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .email-link:hover, .email-link:focus-visible {
-      color: var(--burgundy-dark);
-      background-color: var(--burgundy-light);
-    }
-
-    .contact-box-full {
-      background: var(--surface-container);
-      border: 1px solid var(--outline-variant);
-      border-top: 3px solid var(--burgundy);
-      border-radius: var(--rounded);
-      padding: var(--space-lg);
-      margin-top: var(--space-xl);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-lg);
-    }
-
-    .contact-col h4 {
-      font-family: var(--font-headline);
-      font-size: 1.15rem;
-      margin: 0 0 var(--space-xs);
-      color: var(--on-surface);
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-    }
-
-    /* Footer */
-    footer.colophon {
-      border-top: var(--rule-ink);
-      margin-top: var(--space-3xl);
-      padding-top: var(--space-lg);
-      font-family: var(--font-label);
-      font-size: var(--label-size);
-      color: var(--on-surface-variant);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: var(--space-md);
-    }
-
-    .colophon-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    /* Toast Notification for Copy */
-    #toast-notification {
+    /* Notificação Toast */
+    .toast-notice {
       position: fixed;
       bottom: var(--space-lg);
       right: var(--space-lg);
-      background: var(--burgundy-dark);
+      background-color: var(--purple-900);
       color: var(--on-primary);
-      padding: var(--space-sm) var(--space-md);
+      padding: 0.75rem 1.25rem;
       border-radius: var(--rounded);
-      font-family: var(--font-label);
-      font-size: 0.85rem;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transform: translateY(120%);
-      opacity: 0;
-      transition: transform var(--dur-short) var(--ease-out), opacity var(--dur-short) var(--ease-out);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
+      border-left: 4px solid var(--green-500);
+      box-shadow: var(--shadow-elevated);
+      font-size: 0.875rem;
+      font-weight: 700;
+      z-index: 2000;
+      transform: translateY(150%);
+      transition: transform var(--dur-long) var(--ease-out);
       pointer-events: none;
     }
 
-    #toast-notification.show {
+    .toast-notice.show {
       transform: translateY(0);
-      opacity: 1;
     }
 
-    /* Responsive */
-    @media (max-width: 860px) {
-      .prose-grid, .program-columns, .tool-grid, .contact-box-full {
+    /* Rodapé */
+    .site-footer {
+      border-top: var(--top-index-rule);
+      background-color: var(--surface-purple-soft);
+      padding: var(--space-xl) 0;
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+
+    .footer-inst {
+      max-width: 50ch;
+    }
+
+    .footer-title {
+      font-weight: 800;
+      color: var(--purple-900);
+      margin: 0 0 0.25rem;
+    }
+
+    /* Acessibilidade e Responsividade */
+    @media (max-width: 768px) {
+      .ods-banner {
         grid-template-columns: 1fr;
       }
-      .tool-controls-panel {
-        border-right: none;
-        border-bottom: 1px solid var(--outline-variant);
-        padding-right: 0;
-        padding-bottom: var(--space-lg);
+      .quick-nav {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
       }
-      .timeline-grid {
-        grid-template-columns: 1fr;
+      .top-bar-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
-    @media (max-width: 640px) {
-      .page-wrap {
-        padding: var(--space-sm);
-      }
-      .metrics-bar {
-        grid-template-columns: 1fr;
-      }
-      .metric-col {
-        border-right: none;
-        border-bottom: 1px solid var(--outline-variant);
-      }
-      .metric-col:last-child {
-        border-bottom: none;
-      }
-    }
-
-    /* Reduced Motion */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -1162,1164 +1225,1361 @@
 </head>
 <body>
 
-  <div class="page-wrap">
-
-    <!-- Top Institutional Identifier Bar -->
-    <div class="top-meta-bar">
-      <div class="top-meta-left">
-        <span class="ifrn-symbol" aria-hidden="true">
-          <span class="ifrn-dot red"></span>
-          <span class="ifrn-dot green"></span>
-          <span class="ifrn-dot green"></span>
-          <span class="ifrn-dot green"></span>
-        </span>
-        <span>Instituto Federal do Rio Grande do Norte · Campus Canguaretama</span>
+  <!-- Barra Superior de Identificação Institucional -->
+  <header class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="inst-badge-row">
+        <span class="step-badge">IF</span>
+        <span>IFRN Campus Canguaretama • Pró-Reitoria de Extensão (PROEX)</span>
       </div>
       <div>
-        <span>Pró-Reitoria de Extensão (PROEX) · Edital Nº 07/2026</span>
+        <span>Edital nº 07/2026 - Conexões para o Trabalho • ODS 8</span>
       </div>
     </div>
+  </header>
 
-    <!-- Masthead Rules -->
-    <div class="masthead-line">
-      <span class="masthead-sub">Extensão Universitária &bull; Conexões para o Trabalho &bull; Turismo &amp; Hospitalidade</span>
-      <span class="masthead-date">Região Imediata de Canguaretama (RIC) &bull; Tibau do Sul / RN</span>
-    </div>
-
-    <!-- Hero Title Block -->
-    <header class="hero-title-area">
-      <div class="badge-ods">
-        <i data-lucide="award" style="width:14px; height:14px;"></i>
-        Alinhado ao ODS 8 da ONU: Trabalho Decente e Crescimento Econômico
+  <!-- Cabeçalho Principal (Hero) -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="tag-row">
+        <span class="tag tag-purple">Turismo e Eventos</span>
+        <span class="tag tag-green">Trabalho Decente (ODS 8)</span>
+        <span class="tag tag-purple">Região Imediata de Canguaretama</span>
+        <span class="tag tag-green">Tibau do Sul &amp; Praia da Pipa</span>
       </div>
-
-      <h1 class="project-title">Estratégias de Acesso ao Mundo do Trabalho no Setor de Turismo e Eventos</h1>
-
-      <p class="project-subtitle">
-        Iniciativa extensionista do IFRN Campus Canguaretama dedicada à difusão dos marcos legais de Estágio e Jovem Aprendiz, fortalecimento do diálogo com o trade empresarial de Tibau do Sul e combate à precarização laboral através da qualificação profissional e inclusão cidadã.
+      <h1 class="project-title">Estratégias de Acesso ao Mundo do Trabalho</h1>
+      <p class="project-lede">
+        Guia normativo, ferramenta de diagnóstico e ecossistema de articulação profissional entre os cursos de <strong>Gestão de Turismo</strong> e <strong>Técnico em Eventos</strong> do IFRN e as empresas dos segmentos de hotelaria, gastronomia e receptivo de Tibau do Sul.
       </p>
 
-      <!-- In-Page Anchor Navigation -->
-      <nav class="nav-bar" aria-label="Navegação rápida do projeto">
-        <a href="#contexto" class="nav-item">Visão Geral</a>
-        <a href="#comparador" class="nav-item">Estágio vs. Aprendiz</a>
-        <a href="#simulador" class="nav-item">Guia de Requisitos</a>
-        <a href="#metodologia" class="nav-item">Metodologia &amp; Ações</a>
-        <a href="#entidades" class="nav-item">Entidades Associadas</a>
-        <a href="#referencias" class="nav-item">Referências Bibliográficas</a>
-        <a href="#equipe" class="nav-item">Equipe &amp; Contatos</a>
+      <nav class="quick-nav" aria-label="Navegação rápida pelo guia">
+        <a href="#comparativo" class="nav-link">1. Aprendiz vs. Estágio</a>
+        <a href="#simulador" class="nav-link">2. Simulador de Elegibilidade</a>
+        <a href="#ods8" class="nav-link">3. ODS 8 &amp; Realidade Regional</a>
+        <a href="#orgaos" class="nav-link">4. Órgãos Associados</a>
+        <a href="#referencias" class="nav-link">5. Referências Bibliográficas</a>
+        <a href="#contatos" class="nav-link">6. Contatos Institucionais</a>
       </nav>
-    </header>
+    </div>
+  </section>
 
-    <!-- Key Metrics / Figures Bar -->
-    <div class="metrics-bar" aria-label="Destaques do projeto">
-      <div class="metric-col">
-        <div class="metric-label">
-          <i data-lucide="map-pin" style="width:14px; height:14px;"></i> Território
+  <!-- Faixa de Indicadores de Alcance e Contexto -->
+  <section class="context-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card purple">
+          <div class="stat-label">Marco Normativo 1</div>
+          <div class="stat-value">Lei 10.097/00</div>
+          <p class="stat-desc">Programa Jovem Aprendiz com vínculo em CTPS e formação teórica concomitante.</p>
         </div>
-        <div class="metric-val">Tibau do Sul / RIC</div>
-        <div class="metric-desc">Pólo turístico com forte dinâmica de serviços na Região Imediata de Canguaretama.</div>
-      </div>
-
-      <div class="metric-col">
-        <div class="metric-label">
-          <i data-lucide="graduation-cap" style="width:14px; height:14px;"></i> Formação
+        <div class="stat-card">
+          <div class="stat-label">Marco Normativo 2</div>
+          <div class="stat-value">Lei 11.788/08</div>
+          <p class="stat-desc">Ato educativo supervisionado tripartite (Estudante, Empresa e IFRN).</p>
         </div>
-        <div class="metric-val">Turismo &amp; Eventos</div>
-        <div class="metric-desc">Alunos de CST em Gestão de Turismo (Gestur) e Curso Técnico Integrado em Eventos.</div>
-      </div>
-
-      <div class="metric-col">
-        <div class="metric-label">
-          <i data-lucide="briefcase" style="width:14px; height:14px;"></i> Foco Extensionista
+        <div class="stat-card purple">
+          <div class="stat-label">Polo de Atuação</div>
+          <div class="stat-value">Tibau do Sul</div>
+          <p class="stat-desc">2º polo turístico mais dinâmico do RN, abrangendo a Praia da Pipa e região.</p>
         </div>
-        <div class="metric-val">Estágio &amp; Aprendiz</div>
-        <div class="metric-desc">Orientação legal, direitos trabalhistas, elaboração de currículos e pontes com RHs.</div>
-      </div>
-
-      <div class="metric-col">
-        <div class="metric-label">
-          <i data-lucide="handshake" style="width:14px; height:14px;"></i> Articulação Local
+        <div class="stat-card">
+          <div class="stat-label">Compromisso Global</div>
+          <div class="stat-value">ODS 8 - ONU</div>
+          <p class="stat-desc">Fomento ao trabalho decente, inclusão produtiva e combate à informalidade sazonal.</p>
         </div>
-        <div class="metric-val">Trade Turístico</div>
-        <div class="metric-desc">Parcerias com Preserve Pipa, Pipa Convention &amp; Visitors Bureau, ASHTEP e redes hoteleiras.</div>
       </div>
     </div>
+  </section>
 
-    <!-- Section 1: Contexto e Fundamentação -->
-    <section id="contexto" class="section-block">
-      <div class="section-head">
-        <span class="section-kicker">Fundamentação e Realidade Regional</span>
-        <h2 class="section-title">Enfrentando a Precarização com Trabalho Decente e Educação Profissional</h2>
+  <!-- SEÇÃO 1: COMPARATIVO INTERATIVO APRENDIZ VS. ESTÁGIO -->
+  <section id="comparativo" class="section-block">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">
+          <span class="step-badge">1</span>
+          <span>Diferenciação Legal e Operacional</span>
+        </div>
+        <h2 class="section-title">Jovem Aprendiz vs. Estagiário: Qual a Diferença?</h2>
+        <p class="section-subtitle">
+          Ambos os programas constituem portas de entrada fundamentais ao mercado formal de trabalho, mas possuem naturezas jurídicas, públicos e responsabilidades distintas.
+        </p>
       </div>
 
-      <div class="prose-grid">
-        <div class="prose-text">
-          <p>
-            As transformações contemporâneas no mundo do trabalho, impulsionadas pela reestruturação produtiva global, consolidaram cenários de intensa flexibilização e desregulamentação das relações de trabalho. Nos setores de Turismo, Hospitalidade e Eventos, essa dinâmica se manifesta de forma crônica por meio da informalidade e da vulnerabilidade, frequentemente agravadas pela forte sazonalidade do fluxo turístico.
-          </p>
+      <!-- Filtro de Tópicos Interativo -->
+      <div class="filter-pills" role="tablist" aria-label="Filtro de critérios do comparativo">
+        <button class="filter-btn active" id="btn-filter-todos" onclick="filterComparison('todos')">Visão Completa</button>
+        <button class="filter-btn" id="btn-filter-publico" onclick="filterComparison('publico')">Quem Pode Participar</button>
+        <button class="filter-btn" id="btn-filter-direitos" onclick="filterComparison('direitos')">Direitos Garantidos</button>
+        <button class="filter-btn" id="btn-filter-deveres" onclick="filterComparison('deveres')">Deveres dos Estudantes</button>
+        <button class="filter-btn" id="btn-filter-empresas" onclick="filterComparison('empresas')">Como as Empresas Contratam</button>
+        <button class="filter-btn" id="btn-filter-vantagens" onclick="filterComparison('vantagens')">Vantagens Formativas</button>
+      </div>
 
-          <div class="editorial-callout">
-            "A atividade turística gera oportunidades cruciais no litoral potiguar, mas a sazonalidade não pode justificar a precarização. O estágio e a aprendizagem profissional são instrumentos pedagógicos e jurídicos criados para formar cidadãos e garantir trabalho digno."
+      <!-- Cards Lado a Lado -->
+      <div class="comparison-grid">
+
+        <!-- Card: Jovem Aprendiz -->
+        <article class="program-card purple" id="card-aprendiz">
+          <header class="program-header">
+            <span class="program-badge">Contrato de Aprendizagem</span>
+            <h3 class="program-name">Jovem Aprendiz</h3>
+            <p class="program-law">Regulado pela Lei nº 10.097/2000 e Decreto nº 5.598/2005</p>
+          </header>
+          <div class="program-body">
+
+            <div class="topic-group" data-topic="publico">
+              <h4 class="topic-heading">
+                <span>•</span> Quem pode participar?
+              </h4>
+              <ul class="detail-list">
+                <li>Jovens com idade entre <strong>14 e 24 anos incompletos</strong>.</li>
+                <li><strong>Não há limite máximo de idade</strong> para pessoas com deficiência (PcD).</li>
+                <li>Estar matriculado e frequentando a escola regular (se não concluiu o ensino fundamental ou médio).</li>
+                <li>Matrícula concomitante em curso técnico-profissional em instituição formadora credenciada.</li>
+              </ul>
+            </div>
+
+            <div class="topic-group" data-topic="direitos">
+              <h4 class="topic-heading">
+                <span>•</span> Direitos do Aprendiz
+              </h4>
+              <ul class="detail-list">
+                <li><strong>Carteira de Trabalho assinada</strong> (CTPS sob modalidade especial de aprendizagem).</li>
+                <li>Salário proporcional à jornada cumprida (garantido o valor do salário mínimo-hora).</li>
+                <li>Férias remuneradas, preferencialmente coincidentes com o recesso escolar.</li>
+                <li>13º salário, depósito de FGTS (alíquota especial de 2%) e vale-transporte.</li>
+                <li>Jornada de trabalho estritamente compatível com os estudos (4h a 6h diárias).</li>
+                <li>Formação profissional teórica gratuita assegurada pela instituição formadora.</li>
+              </ul>
+            </div>
+
+            <div class="topic-group" data-topic="deveres">
+              <h4 class="topic-heading">
+                <span>•</span> Deveres do Aprendiz
+              </h4>
+              <ul class="detail-list">
+                <li>Manter assiduidade escolar e frequência integral no curso de aprendizagem.</li>
+                <li>Cumprir a jornada combinada e as tarefas práticas com dedicação e disciplina.</li>
+                <li>Respeitar as normas internas da empresa e o regimento da instituição formadora.</li>
+                <li>Apresentar comprovações periódicas de frequência escolar e bom rendimento.</li>
+              </ul>
+            </div>
+
+            <div class="topic-group" data-topic="empresas">
+              <h4 class="topic-heading">
+                <span>•</span> Obrigações da Empresa Contratante
+              </h4>
+              <ul class="detail-list">
+                <li>Firmar Contrato Especial de Aprendizagem por prazo determinado (até 2 anos).</li>
+                <li>Anotar a Carteira de Trabalho e Previdência Social (CTPS) do aprendiz.</li>
+                <li>Matricular o aprendiz em entidade formadora qualificada (Sistema S, IFRN ou afins).</li>
+                <li>Cumprir a cota legal obrigatória de 5% a 15% das funções que demandam formação profissional.</li>
+                <li>Garantir a alternância entre capacitação teórica em sala e prática orientada na empresa.</li>
+              </ul>
+            </div>
+
+            <div class="topic-group" data-topic="vantagens">
+              <h4 class="topic-heading">
+                <span>•</span> Vantagens Estratégicas
+              </h4>
+              <ul class="detail-list">
+                <li>Inserção segura no mercado formal como primeira experiência profissional.</li>
+                <li>Capacitação teórica articulada às rotinas reais de turismo, hotelaria e recepção.</li>
+                <li>Incentivos fiscais legais para a empresa e renovação contínua do quadro técnico.</li>
+              </ul>
+            </div>
+
           </div>
+        </article>
 
-          <p>
-            O município de Tibau do Sul, sede do internacionalmente reconhecido destino de Pipa, desponta como a segunda economia mais dinâmica do Rio Grande do Norte no setor de comércio e serviços. No entanto, o ingresso dos jovens discentes no mercado local demanda garantias legais claras e acompanhamento formativo contínuo, conectando os Saberes construídos no IFRN às necessidades do trade de hospedagem, gastronomia, agenciamento e cerimonial.
-          </p>
+        <!-- Card: Estagiário -->
+        <article class="program-card green" id="card-estagio">
+          <header class="program-header">
+            <span class="program-badge">Ato Educativo Supervisionado</span>
+            <h3 class="program-name">Estagiário</h3>
+            <p class="program-law">Regulado pela Lei Federal nº 11.788/2008</p>
+          </header>
+          <div class="program-body">
+
+            <div class="topic-group" data-topic="publico">
+              <h4 class="topic-heading">
+                <span>•</span> Quem pode participar?
+              </h4>
+              <ul class="detail-list">
+                <li>Estudantes regularmente matriculados no <strong>ensino superior</strong> (ex.: Gestão de Turismo), <strong>ensino técnico</strong> (ex.: Técnico em Eventos), ensino médio ou EJA profissionalizante.</li>
+                <li>Frequência efetiva em curso reconhecido pela instituição formadora (IFRN).</li>
+                <li>Modalidade <strong>Obrigatória</strong>: requisito curricular indispensável previsto no Projeto Pedagógico do Curso (PPC).</li>
+                <li>Modalidade <strong>Não Obrigatória</strong>: atividade extracurricular optativa de enriquecimento profissional.</li>
+              </ul>
+            </div>
+
+            <div class="topic-group" data-topic="direitos">
+              <h4 class="topic-heading">
+                <span>•</span> Direitos do Estagiário
+              </h4>
+              <ul class="detail-list">
+                <li>Jornada compatível com os horários acadêmicos (máximo de 6h diárias / 30h semanais para técnico e superior).</li>
+                <li><strong>Carga horária reduzida à metade</strong> em períodos de avaliações e exames institucionais.</li>
+                <li>Bolsa-auxílio compulsória e auxílio-transporte no estágio <em>não obrigatório</em>.</li>
+                <li><strong>Seguro obrigatório contra acidentes pessoais</strong> contratado pela parte concedente.</li>
+                <li>Recesso remunerado de 30 dias após 1 ano de estágio concedido (ou proporcional a contratos menores).</li>
+                <li>Não gera vínculo empregatício de qualquer natureza sob a CLT.</li>
+              </ul>
+            </div>
+
+            <div class="topic-group" data-topic="deveres">
+              <h4 class="topic-heading">
+                <span>•</span> Deveres do Estagiário
+              </h4>
+              <ul class="detail-list">
+                <li>Manter matrícula ativa e frequência escolar assídua no IFRN.</li>
+                <li>Executar estritamente as atividades descritas no plano do Termo de Compromisso de Estágio (TCE).</li>
+                <li>Elaborar e submeter relatórios semestrais de atividades ao professor orientador do IFRN.</li>
+                <li>Zelar pelo patrimônio, sigilo profissional e normas de conduta da empresa concedente.</li>
+              </ul>
+            </div>
+
+            <div class="topic-group" data-topic="empresas">
+              <h4 class="topic-heading">
+                <span>•</span> Obrigações da Empresa Concedente
+              </h4>
+              <ul class="detail-list">
+                <li>Celebrar o Termo de Compromisso de Estágio (TCE) tripartite (Estudante, Empresa e IFRN).</li>
+                <li>Designar formalmente um <strong>supervisor interno qualificado</strong> (limite de até 10 estagiários por supervisor).</li>
+                <li>Contratar em favor do estagiário apólice de seguro contra acidentes pessoais.</li>
+                <li>Proporcionar atividades alinhadas ao plano pedagógico e enviar relatórios de acompanhamento.</li>
+                <li>Entregar o Termo de Realização do Estágio com indicação resumida das atividades ao encerramento.</li>
+              </ul>
+            </div>
+
+            <div class="topic-group" data-topic="vantagens">
+              <h4 class="topic-heading">
+                <span>•</span> Vantagens Estratégicas
+              </h4>
+              <ul class="detail-list">
+                <li>Aplicação imediata das competências analíticas e operacionais de turismo e eventos.</li>
+                <li>Aproximação orgânica da empresa com o corpo acadêmico do IFRN Campus Canguaretama.</li>
+                <li>Capacitação de mão de obra local especializada sem custos previdenciários da CLT.</li>
+              </ul>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2: SIMULADOR INTERATIVO DE ELEGIBILIDADE -->
+  <section id="simulador" class="section-block" style="background-color: var(--surface-purple-soft);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">
+          <span class="step-badge">2</span>
+          <span>Orientador Prático</span>
+        </div>
+        <h2 class="section-title">Simulador de Elegibilidade &amp; Percurso Formativo</h2>
+        <p class="section-subtitle">
+          Descubra qual modalidade se enquadra exatamente ao seu perfil individual ou às necessidades operacionais de sua empresa em Tibau do Sul.
+        </p>
+      </div>
+
+      <div class="simulator-box">
+        <!-- Seletor de Perfil -->
+        <div class="sim-tabs" role="tablist">
+          <button class="sim-tab-btn active" id="tab-estudante" onclick="selectSimulatorTab('estudante')">
+            <span>🎓</span> Sou Estudante / Candidato
+          </button>
+          <button class="sim-tab-btn" id="tab-empresa" onclick="selectSimulatorTab('empresa')">
+            <span>🏨</span> Sou Empresa / Empreendimento Turístico
+          </button>
         </div>
 
-        <aside class="aside-dossier">
-          <h3>
-            <i data-lucide="compass" style="width:18px; height:18px;"></i>
-            Diretrizes do Edital PROEX
-          </h3>
-          <p style="font-size: 0.95rem; margin: 0 0 var(--space-sm); color: var(--on-surface-variant);">
-            O projeto <strong>Estratégias de acesso ao mundo do trabalho no setor de turismo e eventos</strong> integra o Programa Conexões para o Trabalho (Edital nº 07/2026 - PROEX/IFRN), articulando ensino, pesquisa aplicada e extensão cidadã.
+        <!-- Formulário: Estudante -->
+        <div id="sim-form-estudante">
+          <div class="sim-form-grid">
+            <div class="form-group">
+              <label class="form-label" for="sim-est-idade">Faixa Etária</label>
+              <select class="form-select" id="sim-est-idade" onchange="runSimulation()">
+                <option value="14-17">14 a 17 anos (Ensino Médio / Menor Aprendiz)</option>
+                <option value="18-24" selected>18 a 24 anos (Jovem / Técnico / Superior)</option>
+                <option value="24+">Mais de 24 anos</option>
+                <option value="pcd">Pessoa com Deficiência (PcD - sem limite etário)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="sim-est-curso">Nível de Escolaridade Atual</label>
+              <select class="form-select" id="sim-est-curso" onchange="runSimulation()">
+                <option value="superior" selected>Ensino Superior (ex.: CST em Gestão de Turismo - IFRN)</option>
+                <option value="tecnico">Ensino Técnico Integrado / Subsequente (ex.: Técnico em Eventos)</option>
+                <option value="medio">Ensino Médio Regular ou EJA</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="sim-est-objetivo">Principal Objetivo Imediato</label>
+              <select class="form-select" id="sim-est-objetivo" onchange="runSimulation()">
+                <option value="primeiro_emprego">Inserção com carteira assinada e direitos trabalhistas</option>
+                <option value="pratica_curso" selected>Prática supervisionada vinculada ao currículo do curso</option>
+                <option value="obrigatorio">Cumprir carga horária obrigatória para colação de grau</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulário: Empresa -->
+        <div id="sim-form-empresa" style="display: none;">
+          <div class="sim-form-grid">
+            <div class="form-group">
+              <label class="form-label" for="sim-emp-segmento">Ramo de Atividade em Tibau do Sul / Pipa</label>
+              <select class="form-select" id="sim-emp-segmento" onchange="runSimulation()">
+                <option value="hotelaria" selected>Meios de Hospedagem (Hotel, Pousada, Resort)</option>
+                <option value="alimentos">Alimentos &amp; Bebidas (Restaurante, Bar, Beach Club)</option>
+                <option value="eventos">Organização de Eventos, Feiras e Cerimoniais</option>
+                <option value="agenciamento">Agenciamento de Viagens, Passeios e Receptivo</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="sim-emp-meta">Finalidade da Contratação</label>
+              <select class="form-select" id="sim-emp-meta" onchange="runSimulation()">
+                <option value="estagio_gestur" selected>Inserir estudante para apoio analítico e de hospitalidade</option>
+                <option value="estagio_eventos">Integrar suporte operacional e coordenação de eventos</option>
+                <option value="cota_aprendiz">Cumprimento da cota compulsória de aprendizagem (5% a 15%)</option>
+                <option value="formacao_talentos">Formação de talentos locais para retenção sustentável</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="sim-emp-porte">Estrutura de Supervisão Técnica</label>
+              <select class="form-select" id="sim-emp-porte" onchange="runSimulation()">
+                <option value="com_supervisor" selected>Possui colaborador com formação ou experiência no setor</option>
+                <option value="sem_supervisor">Ainda não designou supervisor de campo</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Painel de Resultados do Simulador -->
+        <div class="sim-result-card" id="sim-result-box">
+          <div class="sim-result-header">
+            <div>
+              <span class="tag tag-purple" id="sim-res-badge">Recomendação Personalizada</span>
+              <h3 class="sim-result-title" id="sim-res-title">Estágio Supervisionado (Não Obrigatório ou Curricular)</h3>
+            </div>
+            <span class="tag tag-green" id="sim-res-hours">Jornada: Até 6h diárias (30h semanais)</span>
+          </div>
+
+          <p id="sim-res-description" style="margin: 0; font-size: 0.95rem; color: var(--on-surface);">
+            Como estudante de nível superior ou técnico, o estágio proporciona vivência direta nas operações turísticas, hoteleiras e de planejamento, resguardando seus períodos de estudo e prova sem configurar vínculo empregatício.
           </p>
-          <div style="font-family: var(--font-label); font-size: 0.85rem; border-top: 1px solid var(--outline-variant); padding-top: var(--space-sm);">
-            <strong>Metas ODS 8 atendidas:</strong>
-            <ul style="margin: 4px 0 0; padding-left: var(--space-md); color: var(--on-surface-variant);">
-              <li><strong>Meta 8.3:</strong> Fomento à formalização e crescimento de MPMEs no turismo.</li>
-              <li><strong>Meta 8.5:</strong> Emprego pleno, produtivo e trabalho decente para jovens.</li>
-              <li><strong>Meta 8.6:</strong> Redução substancial de jovens sem formação ou trabalho.</li>
-              <li><strong>Meta 8.9:</strong> Promoção do turismo sustentável que valoriza a cultura e os profissionais locais.</li>
+
+          <div>
+            <div style="font-size: 0.8125rem; font-weight: 800; text-transform: uppercase; color: var(--purple-800); margin-bottom: var(--space-xs);">
+              Checklist Interativo de Próximos Passos (Marque para salvar seu progresso):
+            </div>
+            <ul class="sim-checklist" id="sim-checklist-items">
+              <!-- Inserido dinamicamente via JS -->
             </ul>
           </div>
-          <div class="tag-list">
-            <span class="tag-pill">ODS 8</span>
-            <span class="tag-pill">Tibau do Sul</span>
-            <span class="tag-pill">Pipa</span>
-            <span class="tag-pill">CST Gestur</span>
-            <span class="tag-pill">Técnico Eventos</span>
-          </div>
-        </aside>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 2: Interactive Comparator (Jovem Aprendiz vs Estágio) -->
-    <section id="comparador" class="section-block">
-      <div class="section-head">
-        <span class="section-kicker">Guia Comparativo de Modalidades</span>
-        <h2 class="section-title">Jovem Aprendiz vs. Estagiário: Conheça os Direitos, Deveres e Normas</h2>
-        <p class="section-intro">
-          Ambos os programas constituem portas de entrada fundamentais para o desenvolvimento de competências práticas, mas possuem bases jurídicas, naturezas contratuais e exigências distintas que empresas e discentes precisam dominar.
+  <!-- SEÇÃO 3: ODS 8 E A REALIDADE DO TURISMO SUSTENTÁVEL -->
+  <section id="ods8" class="section-block">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker green">
+          <span class="step-badge green">3</span>
+          <span>Compromisso com o Desenvolvimento Sustentável</span>
+        </div>
+        <h2 class="section-title">ODS 8: Trabalho Decente e o Setor Turístico</h2>
+        <p class="section-subtitle">
+          O turismo e os eventos representam motores vitais para a economia de Tibau do Sul e da Região Imediata de Canguaretama, mas impõem o desafio crítico de superar a informalidade gerada pela sazonalidade.
         </p>
       </div>
 
-      <div class="interactive-card-frame">
-        <div class="comparator-controls">
-          <span style="font-family: var(--font-label); font-size: var(--label-size); font-weight:700; text-transform:uppercase; color: var(--on-surface-muted);">Filtrar Visualização:</span>
-          <button type="button" class="comparator-btn active" id="btn-view-both" onclick="setComparatorView('both')">
-            <i data-lucide="columns-2" style="width:14px; height:14px;"></i> Comparar Lado a Lado
-          </button>
-          <button type="button" class="comparator-btn" id="btn-view-aprendiz" onclick="setComparatorView('aprendiz')">
-            <i data-lucide="user-check" style="width:14px; height:14px;"></i> Apenas Jovem Aprendiz
-          </button>
-          <button type="button" class="comparator-btn" id="btn-view-estagio" onclick="setComparatorView('estagio')">
-            <i data-lucide="briefcase" style="width:14px; height:14px;"></i> Apenas Estágio
-          </button>
+      <!-- Banner Destaque ODS 8 -->
+      <div class="ods-banner">
+        <div>
+          <h3 style="font-family: var(--font-headline); font-size: 1.5rem; margin: 0 0 var(--space-xs); font-weight: 800;">
+            Objetivo de Desenvolvimento Sustentável 8 • Nações Unidas
+          </h3>
+          <p style="margin: 0; font-size: 0.95rem; opacity: 0.95; max-width: 65ch;">
+            Promover o crescimento econômico sustentado, inclusivo e sustentável, o emprego pleno e produtivo e o trabalho decente para todos. No setor turístico, este princípio orienta a transição de funções precárias temporárias para relações formativas protegidas e qualificadoras.
+          </p>
         </div>
-
-        <div class="program-columns" id="comparator-columns">
-          <!-- Coluna Jovem Aprendiz -->
-          <div class="program-col aprendiz-col" id="col-aprendiz">
-            <div class="program-head">
-              <span class="program-badge badge-aprendiz">CLT / Contrato Especial</span>
-              <h3 class="program-title">Jovem Aprendiz</h3>
-              <div class="program-legal">Lei Federal nº 10.097/2000 &bull; Decreto nº 5.598/2005</div>
-            </div>
-
-            <div class="attr-group">
-              <div class="attr-label"><i data-lucide="users" style="width:13px; height:13px;"></i> Quem pode participar?</div>
-              <p class="attr-text">
-                Jovens entre <strong>14 e 24 anos incompletos</strong> (sem limite de idade para pessoas com deficiência). É obrigatório estar matriculado e frequentando o ensino regular (caso não tenha concluído a educação básica).
-              </p>
-            </div>
-
-            <div class="attr-group">
-              <div class="attr-label"><i data-lucide="file-check" style="width:13px; height:13px;"></i> Natureza do Vínculo &amp; Contrato</div>
-              <p class="attr-text">
-                Contrato de trabalho especial por prazo determinado (até 2 anos), com <strong>Carteira de Trabalho (CTPS) obrigatoriamente assinada</strong> e recolhimento de FGTS alíquota reduzida de 2%.
-              </p>
-            </div>
-
-            <div class="attr-group">
-              <div class="attr-label"><i data-lucide="shield" style="width:13px; height:13px;"></i> Direitos Garantidos</div>
-              <ul class="attr-list">
-                <li>Salário proporcional à jornada (com base no salário mínimo-hora ou piso regional);</li>
-                <li>Férias remuneradas coincidentes com o recesso escolar;</li>
-                <li>13º salário integral e proporcional;</li>
-                <li>Vale-transporte e recolhimento previdenciário (INSS);</li>
-                <li>Curso de capacitação profissional teórico e gratuito em entidade formadora.</li>
-              </ul>
-            </div>
-
-            <div class="attr-group">
-              <div class="attr-label"><i data-lucide="clock" style="width:13px; height:13px;"></i> Jornada de Trabalho</div>
-              <p class="attr-text">
-                Máximo de <strong>6 horas diárias</strong> para quem ainda não concluiu o ensino fundamental, ou até <strong>8 horas diárias</strong> para quem já concluiu, desde que computadas as horas de aprendizagem teórica.
-              </p>
-            </div>
-
-            <div class="attr-group">
-              <div class="attr-label"><i data-lucide="building" style="width:13px; height:13px;"></i> Como as Empresas Contratam &amp; Deveres</div>
-              <ul class="attr-list">
-                <li>Firmam contrato de aprendizagem formal e assinam a CTPS;</li>
-                <li>Matriculam o jovem em instituição formadora credenciada;</li>
-                <li>Garantem a frequência alternada entre formação prática e teórica;</li>
-                <li>Cumprem a cota legal obrigatória de 5% a 15% das funções que demandam formação profissional.</li>
-              </ul>
-            </div>
-
-            <div class="attr-group" style="margin-top:auto;">
-              <div class="attr-label"><i data-lucide="star" style="width:13px; height:13px;"></i> Vantagens para o Estudante</div>
-              <p class="attr-text" style="font-weight:600; color: var(--burgundy-dark);">
-                Primeira experiência profissional formalizada, capacitação técnica de excelência e inserção estruturada no trade de turismo e eventos.
-              </p>
-            </div>
-          </div>
-
-          <!-- Coluna Estagiários -->
-          <div class="program-col estagio-col" id="col-estagio">
-            <div class="program-head">
-              <span class="program-badge badge-estagio">Ato Educativo Supervisionado</span>
-              <h3 class="program-title">Estágio</h3>
-              <div class="program-legal">Lei Federal nº 11.788/2008 &bull; Normativas do IFRN</div>
-            </div>
-
-            <div class="attr-group">
-              <div class="attr-label"><i data-lucide="users" style="width:13px; height:13px;"></i> Quem pode participar?</div>
-              <p class="attr-text">
-                Estudantes <strong>regularmente matriculados e com frequência ativa</strong> em cursos de ensino médio, técnico (como Eventos), tecnológico/superior (como Gestur), educação especial ou EJA profissionalizante.
-              </p>
-            </div>
-
-            <div class="attr-group">
-              <div class="attr-label"><i data-lucide="file-check" style="width:13px; height:13px;"></i> Natureza do Vínculo &amp; Contrato</div>
-              <p class="attr-text">
-                <strong>Não cria vínculo empregatício de qualquer natureza</strong>. É formalizado exclusivamente pelo <strong>Termo de Compromisso de Estágio (TCE)</strong> celebrado entre discente, concedente e a instituição de ensino (IFRN).
-              </p>
-            </div>
-
-            <div class="attr-group">
-              <div class="attr-label"><i data-lucide="shield" style="width:13px; height:13px;"></i> Direitos Garantidos</div>
-              <ul class="attr-list">
-                <li>Bolsa-auxílio compulsória no estágio não obrigatório (opcional no obrigatório);</li>
-                <li>Auxílio-transporte no estágio não obrigatório;</li>
-                <li>Seguro contra acidentes pessoais custeado obrigatoriamente pela empresa concedente;</li>
-                <li>Recesso remunerado de 30 dias a cada 1 ano estagiado (ou proporcional);</li>
-                <li>Redução da carga horária pelo menos à metade em dias de avaliações acadêmicas.</li>
-              </ul>
-            </div>
-
-            <div class="attr-group">
-              <div class="attr-label"><i data-lucide="clock" style="width:13px; height:13px;"></i> Jornada de Trabalho</div>
-              <p class="attr-text">
-                Jornada compatível com as aulas: até <strong>6 horas diárias e 30 horas semanais</strong> para educação profissional de nível médio e ensino superior; duração máxima de até 2 anos na mesma concedente.
-              </p>
-            </div>
-
-            <div class="attr-group">
-              <div class="attr-label"><i data-lucide="building" style="width:13px; height:13px;"></i> Como as Empresas Contratam &amp; Deveres</div>
-              <ul class="attr-list">
-                <li>Firmam o TCE com plano de atividades correlacionado ao PPC do curso;</li>
-                <li>Designam funcionário supervisor com formação ou experiência na área (até 10 estagiários por supervisor);</li>
-                <li>Contratam apólice de seguro contra acidentes pessoais em favor do estudante;</li>
-                <li>Enviam relatórios semestrais de acompanhamento e entregam termo de realização ao final.</li>
-              </ul>
-            </div>
-
-            <div class="attr-group" style="margin-top:auto;">
-              <div class="attr-label"><i data-lucide="star" style="width:13px; height:13px;"></i> Vantagens para o Estudante</div>
-              <p class="attr-text" style="font-weight:600; color: var(--green-dark);">
-                Aplicação direta da teoria na rotina hoteleira e de eventos, desenvolvimento de competências comportamentais e sólida ampliação de networking.
-              </p>
-            </div>
-          </div>
+        <div class="ods-badge-large">
+          <span class="ods-number">8</span>
+          <span>Trabalho Decente &amp; Crescimento</span>
         </div>
       </div>
-    </section>
 
-    <!-- Section 3: Interactive Guide & Requirements Simulator -->
-    <section id="simulador" class="section-block">
-      <div class="section-head">
-        <span class="section-kicker">Ferramenta Interativa de Orientação</span>
-        <h2 class="section-title">Simulador de Enquadramento: Encontre o Caminho Adequado</h2>
-        <p class="section-intro">
-          Seja você estudante em busca de formação prática ou gestor de hospedagem, gastronomia ou eventos em Tibau do Sul, verifique imediatamente os requisitos legais aplicáveis à sua situação.
-        </p>
-      </div>
-
-      <div class="tool-grid">
-        <div class="tool-controls-panel">
-          <div class="field-group">
-            <label for="sim-profile" class="field-label">1. Selecione o seu Perfil</label>
-            <select id="sim-profile" class="select-input" onchange="runSimulation()">
-              <option value="estudante_tecnico">Estudante de Nível Técnico (Eventos)</option>
-              <option value="estudante_superior">Estudante de Ensino Superior (Gestur / Outros)</option>
-              <option value="empresa_hotel">Empresa de Hospedagem / Meio de Hospedagem</option>
-              <option value="empresa_eventos">Empresa de Organização de Eventos / Receptivo</option>
-            </select>
-          </div>
-
-          <div class="field-group">
-            <label for="sim-goal" class="field-label">2. Objetivo Principal</label>
-            <select id="sim-goal" class="select-input" onchange="runSimulation()">
-              <option value="primeiro_trabalho">Inserção no mercado / Primeiro Emprego</option>
-              <option value="pratica_curricular">Cumprir horas de prática pedagógica curricular</option>
-              <option value="captar_talento">Captação e retenção de jovens talentos no setor</option>
-            </select>
-          </div>
-
-          <div class="field-group">
-            <label for="sim-modality" class="field-label">3. Modalidade Desejada</label>
-            <select id="sim-modality" class="select-input" onchange="runSimulation()">
-              <option value="estagio">Estágio (Obrigatório ou Não Obrigatório)</option>
-              <option value="aprendiz">Jovem Aprendiz (Contrato de Aprendizagem)</option>
-              <option value="qualquer">Recomendar a melhor opção jurídica</option>
-            </select>
-          </div>
-
-          <button type="button" class="tool-btn-primary" onclick="runSimulation()">
-            <i data-lucide="check-circle" style="width:16px; height:16px;"></i>
-            Atualizar Diagnóstico
-          </button>
-        </div>
-
-        <div class="tool-result-panel">
-          <div class="result-status-card" id="sim-result-card">
-            <span class="result-badge badge-aprendiz" id="sim-badge">Diagnóstico Personalizado</span>
-            <h3 class="result-status-title" id="sim-title">
-              <i data-lucide="info" style="width:20px; height:20px;"></i>
-              Resultado da Avaliação de Enquadramento
-            </h3>
-            <p id="sim-summary" style="margin: 0 0 var(--space-md); font-size: 0.98rem; line-height: 1.5; color: var(--on-surface);">
-              Carregando parâmetros...
-            </p>
-            <div id="sim-checklist" style="font-family: var(--font-label); font-size: 0.875rem; border-top: 1px solid var(--outline-variant); padding-top: var(--space-sm);">
-              <!-- Recomendações dinâmicas injetadas via JS -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 4: Metodologia e Cronograma das Fases -->
-    <section id="metodologia" class="section-block">
-      <div class="section-head">
-        <span class="section-kicker">Metodologia e Fases de Execução</span>
-        <h2 class="section-title">Construção Sequenciada de Resultados e Parcerias</h2>
-        <p class="section-intro">
-          A extensão do IFRN foi estruturada em três fases lógicas para assegurar a apropriação teórica dos direitos, a capacitação comportamental e o fortalecimento de canais de diálogo com o mercado.
-        </p>
-      </div>
-
-      <div class="timeline-grid">
-        <div class="timeline-step">
-          <div class="step-num">
-            <i data-lucide="book-open" style="width:14px; height:14px;"></i> Fase 1
-          </div>
-          <h3 class="step-title">Pesquisa Bibliográfica &amp; Normativa</h3>
-          <p class="step-desc">
-            Sistematização de aportes teóricos sobre o mundo do trabalho, precarização e sazonalidade nos setores de turismo e eventos, além do levantamento rigoroso das normas regulamentadoras (Leis nº 11.788/2008 e nº 10.097/2000; Decreto nº 5.598/2005).
+      <!-- Metas do ODS 8 Atendidas pelo Projeto -->
+      <div class="targets-grid">
+        <div class="target-card">
+          <div class="target-code">Meta 8.3 • Formalização &amp; PMEs</div>
+          <p class="target-desc">
+            Estimular políticas que apoiem a geração de emprego decente, a criatividade, o empreendedorismo e a formalização das micro, pequenas e médias empresas do setor hoteleiro e de lazer.
           </p>
         </div>
 
-        <div class="timeline-step">
-          <div class="step-num">
-            <i data-lucide="file-text" style="width:14px; height:14px;"></i> Fase 2
-          </div>
-          <h3 class="step-title">Produção Informativa &amp; Oficinas</h3>
-          <p class="step-desc">
-            Elaboração de guias práticos, folders e apresentações voltados às entidades e discentes. Realização de oficinas de capacitação sobre elaboração de currículos, postura profissional e preparação para processos seletivos com debatedores da área de Recursos Humanos.
+        <div class="target-card">
+          <div class="target-code">Meta 8.5 • Trabalho Digno para Jovens</div>
+          <p class="target-desc">
+            Garantir até 2030 o emprego pleno, produtivo e trabalho digno para todas as pessoas, incluindo jovens em formação profissional e pessoas com deficiência, com igualdade de oportunidades.
           </p>
         </div>
 
-        <div class="timeline-step">
-          <div class="step-num">
-            <i data-lucide="share-2" style="width:14px; height:14px;"></i> Fase 3
-          </div>
-          <h3 class="step-title">Articulação &amp; Repositório de Talentos</h3>
-          <p class="step-desc">
-            Visitas técnicas e diálogo institucional direto com entidades patronais e associações de Tibau do Sul e Pipa. Estruturação de repositório digital compartilhado com currículos dos estudantes capacitados para suprir demandas de estágio e aprendizagem.
+        <div class="target-card">
+          <div class="target-code">Meta 8.6 • Qualificação Juvenil</div>
+          <p class="target-desc">
+            Reduzir substantivamente a proporção de jovens sem emprego, educação ou formação profissional, articulando a escola pública técnica e tecnológica às vagas geradas pelo mercado.
+          </p>
+        </div>
+
+        <div class="target-card">
+          <div class="target-code">Meta 8.9 • Turismo Sustentável</div>
+          <p class="target-desc">
+            Conceber e implementar estratégias que fomentem o turismo sustentável gerador de postos de trabalho dignos, valorizando a identidade, as comunidades e a produção cultural local.
           </p>
         </div>
       </div>
-    </section>
 
-    <!-- Section 5: Associated Entities with Interactive URL Copy -->
-    <section id="entidades" class="section-block">
-      <div class="section-head">
-        <span class="section-kicker">Rede de Cooperação e Governança</span>
-        <h2 class="section-title">Órgãos e Entidades Digitais Associadas</h2>
-        <p class="section-intro">
-          O sucesso do projeto ancora-se na articulação cooperativa entre a instituição pública formadora e os pilares de desenvolvimento econômico e sustentável de Tibau do Sul e do Rio Grande do Norte.
+      <!-- Metodologia em 3 Fases do Projeto -->
+      <div style="margin-top: var(--space-2xl);">
+        <h3 style="font-family: var(--font-headline); font-size: 1.25rem; font-weight: 800; color: var(--purple-900); margin: 0 0 var(--space-sm);">
+          Metodologia de Execução do Projeto no IFRN
+        </h3>
+        <p style="font-size: 0.95rem; color: var(--on-surface-variant); margin: 0 0 var(--space-md); max-width: 70ch;">
+          Para transformar reflexão crítica em inclusão real, o projeto estrutura suas ações de extensão em três momentos lógicos articulados:
+        </p>
+
+        <div class="methodology-row">
+          <div class="method-step">
+            <div class="method-num">1</div>
+            <h4 class="method-title">Pesquisa Bibliográfica &amp; Normativa</h4>
+            <p class="method-text">
+              Revisão teórica das dinâmicas do mundo do trabalho contemporâneo e sistematização minuciosa dos diplomas legais (Leis 10.097/00 e 11.788/08) aplicados ao setor turístico regional.
+            </p>
+          </div>
+
+          <div class="method-step">
+            <div class="method-num">2</div>
+            <h4 class="method-title">Produção de Guias &amp; Oficinas</h4>
+            <p class="method-text">
+              Elaboração de materiais informativos físicos e virtuais, realização de oficinas de preparação de currículos e simulação de entrevistas conduzidas com debatedores convidados de Recursos Humanos.
+            </p>
+          </div>
+
+          <div class="method-step">
+            <div class="method-num">3</div>
+            <h4 class="method-title">Parcerias &amp; Repositório de Currículos</h4>
+            <p class="method-text">
+              Visitas de sensibilização às associações patronais e de classe de Tibau do Sul, com disponibilização de um banco em nuvem de currículos de discentes de Gestur e Eventos prontos para contratação.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: CARDS INTERATIVOS DOS ÓRGÃOS ASSOCIADOS -->
+  <section id="orgaos" class="section-block" style="background-color: var(--surface-purple-soft);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">
+          <span class="step-badge">4</span>
+          <span>Rede Institucional Integrada</span>
+        </div>
+        <h2 class="section-title">Órgãos Associados &amp; Parceiros Estratégicos</h2>
+        <p class="section-subtitle">
+          A articulação de oportunidades em Tibau do Sul apoia-se em instituições públicas e entidades de classe comprometidas com o desenvolvimento socioeconômico e o trabalho formal.
         </p>
       </div>
 
-      <div class="entities-grid">
-        <!-- 1. IFRN Campus Canguaretama -->
-        <div class="entity-card inst-card">
+      <div class="partners-grid">
+
+        <!-- Card: IFRN -->
+        <article class="partner-card">
           <div>
-            <div class="entity-type-badge">
-              <i data-lucide="school" style="width:13px; height:13px;"></i> Instituição de Ensino Proponente
-            </div>
-            <h3 class="entity-name">IFRN Campus Canguaretama</h3>
-            <p class="entity-role">
-              Unidade proponente responsável pela coordenação pedagógica, oferta dos cursos de CST em Gestão de Turismo e Técnico em Eventos, e articulação com as comunidades da Região Imediata de Canguaretama.
+            <span class="partner-tag">Instituição Formadora &amp; Proponente</span>
+            <h3 class="partner-name">IFRN • Campus Canguaretama</h3>
+            <p class="partner-role">
+              Responsável pela formação acadêmica nos cursos de Gestão de Turismo e Técnico em Eventos, pela concessão pedagógica dos estágios e coordenação das oficinas do projeto.
             </p>
           </div>
-          <div class="entity-digital-box">
-            <div>
-              <span style="display:block; font-family:var(--font-label); font-size:0.7rem; text-transform:uppercase; color:var(--on-surface-muted);">Endereço Web Oficial:</span>
-              <span class="entity-url" id="url-cang">portal.ifrn.edu.br/campus/canguaretama</span>
+          <div>
+            <div class="partner-domain-box">
+              <span>portal.ifrn.edu.br/campus/canguaretama</span>
             </div>
-            <button type="button" class="btn-copy-url" onclick="copyUrl('https://portal.ifrn.edu.br/campus/canguaretama', this)" aria-label="Copiar link do IFRN Campus Canguaretama">
-              <i data-lucide="copy" style="width:13px; height:13px;"></i> Copiar
-            </button>
+            <div class="partner-btn-row">
+              <button class="btn-action" onclick="openPartnerModal('ifrn')">Ver Detalhes</button>
+              <button class="btn-action secondary" onclick="copyDomain('portal.ifrn.edu.br/campus/canguaretama')">Copiar Portal</button>
+            </div>
           </div>
+        </article>
+
+        <!-- Card: Preserve Pipa -->
+        <article class="partner-card green">
+          <div>
+            <span class="partner-tag">Movimento Socioambiental e Turístico</span>
+            <h3 class="partner-name">Preserve Pipa</h3>
+            <p class="partner-role">
+              Iniciativa de sustentabilidade e promoção de Tibau do Sul/Pipa, congregando empresários dos setores de hospitalidade para valorização das riquezas naturais e do capital humano local.
+            </p>
+          </div>
+          <div>
+            <div class="partner-domain-box">
+              <span>preservepipa.com.br</span>
+            </div>
+            <div class="partner-btn-row">
+              <button class="btn-action" onclick="openPartnerModal('preservepipa')">Ver Detalhes</button>
+              <button class="btn-action secondary" onclick="copyDomain('preservepipa.com.br')">Copiar Portal</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Pipa CVB -->
+        <article class="partner-card">
+          <div>
+            <span class="partner-tag">Promoção de Eventos &amp; Negócios</span>
+            <h3 class="partner-name">Pipa CVB</h3>
+            <p class="partner-role">
+              Convention &amp; Visitors Bureau atuante na captação de congressos, festivais e turismo MICE, abrindo demandas contínuas de contratação para discentes de Técnico em Eventos.
+            </p>
+          </div>
+          <div>
+            <div class="partner-domain-box">
+              <span>pipacvb.com.br</span>
+            </div>
+            <div class="partner-btn-row">
+              <button class="btn-action" onclick="openPartnerModal('pipacvb')">Ver Detalhes</button>
+              <button class="btn-action secondary" onclick="copyDomain('pipacvb.com.br')">Copiar Portal</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: ASHTEP -->
+        <article class="partner-card green">
+          <div>
+            <span class="partner-tag">Entidade Patronal Hoteleira</span>
+            <h3 class="partner-name">ASHTEP</h3>
+            <p class="partner-role">
+              Associação dos Hoteleiros de Tibau do Sul e Pipa, interlocutora direta na difusão dos programas de estágio e jovem aprendiz entre hotéis, resorts e pousadas associadas.
+            </p>
+          </div>
+          <div>
+            <div class="partner-domain-box">
+              <span>ashtep.com.br</span>
+            </div>
+            <div class="partner-btn-row">
+              <button class="btn-action" onclick="openPartnerModal('ashtep')">Ver Detalhes</button>
+              <button class="btn-action secondary" onclick="copyDomain('ashtep.com.br')">Copiar Portal</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: ODS 8 -->
+        <article class="partner-card">
+          <div>
+            <span class="partner-tag">Marco Global de Desenvolvimento</span>
+            <h3 class="partner-name">ODS 8 • ONU Brasil</h3>
+            <p class="partner-role">
+              Alinhamento institucional com a Agenda 2030 das Nações Unidas, orientando políticas de inclusão laboral, erradicação do trabalho precário e fomento ao turismo sustentável.
+            </p>
+          </div>
+          <div>
+            <div class="partner-domain-box">
+              <span>odsbrasil.gov.br</span>
+            </div>
+            <div class="partner-btn-row">
+              <button class="btn-action" onclick="openPartnerModal('ods8')">Ver Detalhes</button>
+              <button class="btn-action secondary" onclick="copyDomain('odsbrasil.gov.br')">Copiar Portal</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 5: REFERÊNCIAS BIBLIOGRÁFICAS -->
+  <section id="referencias" class="section-block">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">
+          <span class="step-badge">5</span>
+          <span>Aporte Teórico e Normativo</span>
+        </div>
+        <h2 class="section-title">Referências Bibliográficas do Projeto</h2>
+        <p class="section-subtitle">
+          Acervo de obras sociológicas, marcos regulatórios federais, catálogos curriculares do MEC e documentos de políticas públicas norteadores das ações extensionistas.
+        </p>
+      </div>
+
+      <!-- Controles de Busca e Filtro de Categoria -->
+      <div class="ref-controls">
+        <div class="search-input-wrap">
+          <input type="text" class="search-input" id="ref-search-box" placeholder="Filtrar por autor, lei, ano ou tema..." oninput="filterReferences()">
         </div>
 
-        <!-- 2. PROEX / IFRN -->
-        <div class="entity-card inst-card">
-          <div>
-            <div class="entity-type-badge">
-              <i data-lucide="building-2" style="width:13px; height:13px;"></i> Órgão Reitoral de Fomento
-            </div>
-            <h3 class="entity-name">PROEX — Pró-Reitoria de Extensão</h3>
-            <p class="entity-role">
-              Órgão executivo do IFRN responsável por planejar, coordenar e fomentar as ações extensionistas institucionais, articulando programas como o Conexões para o Trabalho voltados à inclusão produtiva e cidadã.
-            </p>
-          </div>
-          <div class="entity-digital-box">
-            <div>
-              <span style="display:block; font-family:var(--font-label); font-size:0.7rem; text-transform:uppercase; color:var(--on-surface-muted);">Endereço Web Oficial:</span>
-              <span class="entity-url" id="url-proex">portal.ifrn.edu.br/extensao</span>
-            </div>
-            <button type="button" class="btn-copy-url" onclick="copyUrl('https://portal.ifrn.edu.br/extensao', this)" aria-label="Copiar link da PROEX IFRN">
-              <i data-lucide="copy" style="width:13px; height:13px;"></i> Copiar
-            </button>
-          </div>
-        </div>
-
-        <!-- 3. Movimento Preserve Pipa -->
-        <div class="entity-card trade-card">
-          <div>
-            <div class="entity-type-badge">
-              <i data-lucide="leaf" style="width:13px; height:13px;"></i> Trade Turístico &amp; Sustentabilidade
-            </div>
-            <h3 class="entity-name">Preserve Pipa</h3>
-            <p class="entity-role">
-              Movimento pioneiro do empresariado de Tibau do Sul que integra turismo responsável, preservação dos ecossistemas locais, valorização cultural e compromisso com o desenvolvimento sustentável de Pipa.
-            </p>
-          </div>
-          <div class="entity-digital-box">
-            <div>
-              <span style="display:block; font-family:var(--font-label); font-size:0.7rem; text-transform:uppercase; color:var(--on-surface-muted);">Endereço Web Oficial:</span>
-              <span class="entity-url" id="url-preserve">preservepipa.com.br</span>
-            </div>
-            <button type="button" class="btn-copy-url" onclick="copyUrl('https://preservepipa.com.br', this)" aria-label="Copiar link do Preserve Pipa">
-              <i data-lucide="copy" style="width:13px; height:13px;"></i> Copiar
-            </button>
-          </div>
-        </div>
-
-        <!-- 4. Pipa Convention & Visitors Bureau -->
-        <div class="entity-card trade-card">
-          <div>
-            <div class="entity-type-badge">
-              <i data-lucide="award" style="width:13px; height:13px;"></i> Promoção &amp; Captação de Eventos
-            </div>
-            <h3 class="entity-name">Pipa Convention &amp; Visitors Bureau</h3>
-            <p class="entity-role">
-              Associação sem fins lucrativos dedicada a promover o destino turístico, captar congressos, festivais e eventos de negócios, e fomentar a qualificação profissional contínua da mão de obra regional.
-            </p>
-          </div>
-          <div class="entity-digital-box">
-            <div>
-              <span style="display:block; font-family:var(--font-label); font-size:0.7rem; text-transform:uppercase; color:var(--on-surface-muted);">Endereço Web Oficial:</span>
-              <span class="entity-url" id="url-cvb">pipaconvention.com.br</span>
-            </div>
-            <button type="button" class="btn-copy-url" onclick="copyUrl('https://pipaconvention.com.br', this)" aria-label="Copiar link do Pipa Convention">
-              <i data-lucide="copy" style="width:13px; height:13px;"></i> Copiar
-            </button>
-          </div>
-        </div>
-
-        <!-- 5. ASHTEP -->
-        <div class="entity-card trade-card">
-          <div>
-            <div class="entity-type-badge">
-              <i data-lucide="hotel" style="width:13px; height:13px;"></i> Associação Hoteleira Regional
-            </div>
-            <h3 class="entity-name">ASHTEP</h3>
-            <p class="entity-role">
-              Associação dos Hoteleiros de Tibau do Sul e Pipa, representação setorial dos meios de hospedagem que atua diretamente na interlocução patronal, aberturas de vagas formativas e qualificação de serviços.
-            </p>
-          </div>
-          <div class="entity-digital-box">
-            <div>
-              <span style="display:block; font-family:var(--font-label); font-size:0.7rem; text-transform:uppercase; color:var(--on-surface-muted);">Endereço Web Oficial:</span>
-              <span class="entity-url" id="url-ashtep">ashtep.com.br</span>
-            </div>
-            <button type="button" class="btn-copy-url" onclick="copyUrl('https://ashtep.com.br', this)" aria-label="Copiar link da ASHTEP">
-              <i data-lucide="copy" style="width:13px; height:13px;"></i> Copiar
-            </button>
-          </div>
+        <div class="filter-pills" style="margin-bottom: 0;">
+          <button class="filter-btn active" id="btn-cat-todas" onclick="filterRefCategory('todas')">Todas (12)</button>
+          <button class="filter-btn" id="btn-cat-legislacao" onclick="filterRefCategory('legislacao')">Legislação Federal</button>
+          <button class="filter-btn" id="btn-cat-trabalho" onclick="filterRefCategory('trabalho')">Mundo do Trabalho</button>
+          <button class="filter-btn" id="btn-cat-turismo" onclick="filterRefCategory('turismo')">Turismo &amp; Hospitalidade</button>
+          <button class="filter-btn" id="btn-cat-institucional" onclick="filterRefCategory('institucional')">Políticas Educacionais</button>
         </div>
       </div>
-    </section>
 
-    <!-- Section 6: Dedicated Bibliographic Reference Card -->
-    <section id="referencias" class="section-block">
-      <div class="section-head">
-        <span class="section-kicker">Fundamentação Acadêmica e Legal</span>
-        <h2 class="section-title">Referências Bibliográficas</h2>
-      </div>
+      <!-- Lista de Referências Formatadas -->
+      <div class="ref-list" id="ref-list-container">
 
-      <div class="biblio-master-card">
-        <div class="biblio-header">
+        <!-- 1 -->
+        <article class="ref-item" data-category="trabalho" data-keywords="antunes adeus ao trabalho reestruturacao produtiva sociologia">
           <div>
-            <h3 style="font-family: var(--font-headline); font-size: 1.45rem; margin: 0; color: var(--burgundy-dark); display: flex; align-items: center; gap: var(--space-xs);">
-              <i data-lucide="library" style="width:22px; height:22px;"></i>
-              Corpus Teórico e Normativo do Projeto
-            </h3>
-            <p class="biblio-intro-text">
-              Todas as obras, relatórios setoriais e legislações federais que embasam a concepção epistemológica e a intervenção social do projeto, formatadas segundo as normas da ABNT (NBR 6023).
+            <p class="ref-text">
+              ANTUNES, Ricardo. <strong>Adeus ao trabalho?</strong> Um ensaio sobre as metamorfoses e a centralidade do mundo do trabalho. 7ª Ed. Campinas, SP: Cortez, 2000.
             </p>
-          </div>
-
-          <div class="biblio-search-wrap">
-            <input type="text" id="biblio-search" class="biblio-search-input" placeholder="Buscar autor, título ou tema..." oninput="filterBiblio()">
-          </div>
-        </div>
-
-        <!-- Filter category tags -->
-        <div class="biblio-filter-bar">
-          <span style="font-family:var(--font-label); font-size:var(--label-size); font-weight:700; text-transform:uppercase; color:var(--on-surface-muted);">Categoria:</span>
-          <button type="button" class="biblio-filter-btn active" onclick="setBiblioCategory('todas', this)">Todas (12)</button>
-          <button type="button" class="biblio-filter-btn" onclick="setBiblioCategory('legislacao', this)">Legislação &amp; Normas</button>
-          <button type="button" class="biblio-filter-btn" onclick="setBiblioCategory('trabalho', this)">Sociologia do Trabalho</button>
-          <button type="button" class="biblio-filter-btn" onclick="setBiblioCategory('turismo', this)">Turismo &amp; Políticas</button>
-          <button type="button" class="biblio-filter-btn" onclick="setBiblioCategory('institucional', this)">Institucional &amp; Diretrizes</button>
-        </div>
-
-        <!-- References List Grid -->
-        <div class="biblio-grid" id="biblio-list">
-          <!-- Ref 1 -->
-          <div class="biblio-item" data-category="trabalho" data-keywords="antunes adeus ao trabalho reestruturação produtiva sociologia">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Sociologia do Trabalho</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Mundo do Trabalho</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Sociologia Crítica do Trabalho</span>
             </div>
-            <p class="biblio-citation">
-              ANTUNES, Ricardo. <strong>Adeus ao trabalho?</strong> Um ensaio sobre as metamorfoses e a centralidade do mundo do trabalho. 7. ed. Campinas: Cortez, 2000.
-            </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Fundamenta a discussão sobre a centralidade do trabalho frente às novas formas de flexibilização e os desafios vivenciados pelos jovens que ingressam na vida produtiva.
-            </p>
           </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'ANTUNES, Ricardo. Adeus ao trabalho? Um ensaio sobre as metamorfoses e a centralidade do mundo do trabalho. 7ª Ed. Campinas, SP: Cortez, 2000.')">Copiar ABNT</button>
+        </article>
 
-          <!-- Ref 2 -->
-          <div class="biblio-item" data-category="trabalho" data-keywords="antunes informalidade precarizacao estrutural servico social sociedade">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Sociologia do Trabalho</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
-            </div>
-            <p class="biblio-citation">
+        <!-- 2 -->
+        <article class="ref-item" data-category="trabalho" data-keywords="antunes precarizacao estrutural informalidade servico social">
+          <div>
+            <p class="ref-text">
               ANTUNES, Ricardo. Os modos de ser da informalidade: rumo a uma nova era da precarização estrutural do trabalho? <strong>Serviço Social &amp; Sociedade</strong>, São Paulo, n. 107, p. 405-419, 2011.
             </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Analisa o avanço dos vínculos instáveis no setor terciário e fornece sustentação teórica para defender a formalização legal de estágios e aprendizagens.
-            </p>
-          </div>
-
-          <!-- Ref 3 -->
-          <div class="biblio-item" data-category="legislacao" data-keywords="brasil decreto 5598 aprendizagem regulamentacao aprendizes">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Legislação &amp; Normas</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Mundo do Trabalho</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Precarização e Terceirização</span>
             </div>
-            <p class="biblio-citation">
-              BRASIL. <strong>Decreto nº 5.598, de 1º de dezembro de 2005</strong>. Regulamenta a contratação de aprendizes e dá outras providências. Brasília, DF: Presidência da República, 2005.
-            </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Estabelece os parâmetros de cumprimento de cota, papel das entidades formadoras credenciadas e direitos dos aprendizes no setor de serviços.
-            </p>
           </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'ANTUNES, Ricardo. Os modos de ser da informalidade: rumo a uma nova era da precarização estrutural do trabalho? Serviço Social &amp; Sociedade, n. 107, p. 405-419, 2011.')">Copiar ABNT</button>
+        </article>
 
-          <!-- Ref 4 -->
-          <div class="biblio-item" data-category="legislacao" data-keywords="brasil lei 11788 estagio estudantes tce termo compromisso">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Legislação &amp; Normas</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
+        <!-- 3 -->
+        <article class="ref-item green" data-category="legislacao" data-keywords="brasil decreto 5598 aprendizagem jovem aprendiz clt">
+          <div>
+            <p class="ref-text">
+              BRASIL. <strong>Decreto nº 5.598, de 1 de dezembro de 2005</strong>. Regulamenta a contratação de aprendizes e dá outras providências. Brasília, DF: Presidência da República, 2005.
+            </p>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Legislação Federal</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Regulamento da Aprendizagem</span>
             </div>
-            <p class="biblio-citation">
-              BRASIL. <strong>Lei nº 11.788, de 25 de setembro de 2008</strong>. Dispõe sobre o estágio de estudantes; altera a redação do art. 428 da CLT e dá outras providências. Brasília, DF: Presidência da República, 2008.
-            </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Marco legal que orienta a formalização do Termo de Compromisso de Estágio, supervisão de campo, carga horária e recesso remunerado.
-            </p>
           </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'BRASIL. Decreto nº 5.598, de 1 de dezembro de 2005. Regulamenta a contratação de aprendizes e dá outras providências. Brasília, DF: Presidência da República, 2005.')">Copiar ABNT</button>
+        </article>
 
-          <!-- Ref 5 -->
-          <div class="biblio-item" data-category="legislacao" data-keywords="brasil lei 10097 jovem aprendiz clt contratacao">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Legislação &amp; Normas</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
+        <!-- 4 -->
+        <article class="ref-item green" data-category="legislacao" data-keywords="brasil lei 10097 lei da aprendizagem clt jovem aprendiz">
+          <div>
+            <p class="ref-text">
+              BRASIL. <strong>Lei nº 10.097, de 19 de dezembro de 2000</strong>. Altera dispositivos da Consolidação das Leis do Trabalho – CLT referentes ao contrato de aprendizagem profissional. Brasília, DF, 2000.
+            </p>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Legislação Federal</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Lei da Aprendizagem</span>
             </div>
-            <p class="biblio-citation">
-              BRASIL. <strong>Lei nº 10.097, de 19 de dezembro de 2000</strong>. Altera dispositivos da Consolidação das Leis do Trabalho – CLT, aprovada pelo Decreto-Lei nº 5.452/1943. Brasília, DF: Presidência da República, 2000.
-            </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Base da Lei de Aprendizagem brasileira, unindo contrato de trabalho especial com capacitação profissional obrigatória.
-            </p>
           </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'BRASIL. Lei nº 10.097, de 19 de dezembro de 2000. Altera dispositivos da CLT referentes ao contrato de aprendizagem. Brasília, DF, 2000.')">Copiar ABNT</button>
+        </article>
 
-          <!-- Ref 6 -->
-          <div class="biblio-item" data-category="turismo" data-keywords="ministerio do turismo plano nacional de turismo pnt trabalho decente">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Turismo &amp; Políticas</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
+        <!-- 5 -->
+        <article class="ref-item green" data-category="legislacao" data-keywords="brasil lei 11788 lei do estagio estudantes estagiario">
+          <div>
+            <p class="ref-text">
+              BRASIL. <strong>Lei nº 11.788, de 25 de setembro de 2008</strong>. Dispõe sobre o estágio de estudantes; altera a redação do art. 428 da CLT; e dá outras providências. Brasília, DF: Diário Oficial da União, 2008.
+            </p>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Legislação Federal</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Marco Legal do Estágio</span>
             </div>
-            <p class="biblio-citation">
-              BRASIL. Ministério do Turismo. <strong>Plano Nacional de Turismo 2024-2027</strong>: mais emprego e renda para o Brasil. Brasília, DF: MTur, 2024.
-            </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Conecta a expansão de postos formais no turismo às metas de qualificação e inclusão social prioritária para jovens e trabalhadores do setor.
-            </p>
           </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'BRASIL. Lei nº 11.788, de 25 de setembro de 2008. Dispõe sobre o estágio de estudantes. Brasília, DF: Diário Oficial da União, 2008.')">Copiar ABNT</button>
+        </article>
 
-          <!-- Ref 7 -->
-          <div class="biblio-item" data-category="trabalho" data-keywords="harvey condicao pos-moderna reestruturacao produtiva acumulacao flexivel">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Sociologia do Trabalho</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
+        <!-- 6 -->
+        <article class="ref-item" data-category="turismo" data-keywords="brasil ministerio do turismo pnt plano nacional de turismo emprego renda">
+          <div>
+            <p class="ref-text">
+              BRASIL. Ministério do Turismo. <strong>Plano Nacional de Turismo 2024-2027</strong>: Mais emprego e renda para o Brasil. Brasília, DF: MTur, 2024.
+            </p>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Turismo &amp; Hospitalidade</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Política Nacional de Turismo</span>
             </div>
-            <p class="biblio-citation">
-              HARVEY, David. <strong>Condição pós-moderna</strong>: uma pesquisa sobre as origens da mudança cultural. São Paulo: Loyola, 2002.
-            </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Subsidia a compreensão econômica do regime de acumulação flexível e da expansão de postos temporários e sazonais no setor de serviços.
-            </p>
           </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'BRASIL. Ministério do Turismo. Plano Nacional de Turismo 2024-2027: Mais emprego e renda para o Brasil. Brasília, DF: MTur, 2024.')">Copiar ABNT</button>
+        </article>
 
-          <!-- Ref 8 -->
-          <div class="biblio-item" data-category="institucional" data-keywords="ifrn projeto politico-pedagogico ppc articulacao extensao">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Institucional &amp; Diretrizes</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
+        <!-- 7 -->
+        <article class="ref-item" data-category="trabalho" data-keywords="harvey condicao pos-moderna reestruturacao capitalismo globalizacao">
+          <div>
+            <p class="ref-text">
+              HARVEY, David. <strong>Condição pós-moderna</strong>: Uma pesquisa sobre as origens da mudança cultural. São Paulo: Edições Loyola, 2002.
+            </p>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Mundo do Trabalho</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Acumulação Flexível</span>
             </div>
-            <p class="biblio-citation">
-              IFRN. <strong>Projeto Político-Pedagógico do IFRN</strong>: uma construção coletiva. Natal: IFRN Editora, 2011.
-            </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Fundamenta a indissociabilidade entre ensino, pesquisa e extensão, e o compromisso da prática profissional na formação humana integral.
-            </p>
           </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'HARVEY, David. Condição pós-moderna: Uma pesquisa sobre as origens da mudança cultural. São Paulo: Edições Loyola, 2002.')">Copiar ABNT</button>
+        </article>
 
-          <!-- Ref 9 -->
-          <div class="biblio-item" data-category="institucional" data-keywords="mec catalogo cursos superiores tecnologia gestao turismo cncst">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Institucional &amp; Diretrizes</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
+        <!-- 8 -->
+        <article class="ref-item" data-category="institucional" data-keywords="ifrn projeto politico-pedagogico educacao profissional integracao">
+          <div>
+            <p class="ref-text">
+              IFRN. Instituto Federal do Rio Grande do Norte. <strong>Projeto político-pedagógico do IFRN</strong>: uma construção coletiva. Natal/RN: Editora IFRN, 2011.
+            </p>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Políticas Educacionais</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Diretrizes Institucionais</span>
             </div>
-            <p class="biblio-citation">
-              MEC. <strong>Catálogo Nacional de Cursos Superiores de Tecnologia</strong>. 3. ed. Brasília, DF: Ministério da Educação, 2016.
-            </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Baliza as competências analíticas, estratégicas e gerenciais esperadas do formando de Gestão de Turismo (Gestur).
-            </p>
           </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'IFRN. Projeto político-pedagógico do IFRN: uma construção coletiva. Natal/RN: Editora IFRN, 2011.')">Copiar ABNT</button>
+        </article>
 
-          <!-- Ref 10 -->
-          <div class="biblio-item" data-category="institucional" data-keywords="mec catalogo nacional cursos tecnicos cnct eventos">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Institucional &amp; Diretrizes</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
+        <!-- 9 -->
+        <article class="ref-item" data-category="institucional" data-keywords="mec setec catalogo tecnologia gestao de turismo cst gestur">
+          <div>
+            <p class="ref-text">
+              MEC. Ministério da Educação. <strong>Catálogo Nacional de Cursos Superiores de Tecnologia</strong>. 3ª Edição. Brasília/DF: Secretaria de Educação Profissional e Tecnológica (SETEC), 2016.
+            </p>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Políticas Educacionais</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Perfil do Egresso em Turismo</span>
             </div>
-            <p class="biblio-citation">
-              MEC. <strong>Catálogo Nacional de Cursos Técnicos</strong>. 3. ed. Brasília, DF: Ministério da Educação, 2016.
-            </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Define o perfil profissional e habilidades operacionais e de coordenação do Curso Técnico em Eventos do Campus Canguaretama.
-            </p>
           </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'MEC. Catálogo Nacional de Cursos Superiores de Tecnologia. 3ª Ed. Brasília/DF: SETEC/MEC, 2016.')">Copiar ABNT</button>
+        </article>
 
-          <!-- Ref 11 -->
-          <div class="biblio-item" data-category="turismo" data-keywords="omt unwto tourism highlights estatisticas mundiais turismo postos trabalho">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Turismo &amp; Políticas</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
+        <!-- 10 -->
+        <article class="ref-item" data-category="institucional" data-keywords="mec setec catalogo cursos tecnicos eventos cnct">
+          <div>
+            <p class="ref-text">
+              MEC. Ministério da Educação. <strong>Catálogo Nacional de Cursos Técnicos</strong>. 3ª Edição. Brasília/DF: Secretaria de Educação Profissional e Tecnológica (SETEC), 2016.
+            </p>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Políticas Educacionais</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Perfil do Técnico em Eventos</span>
             </div>
-            <p class="biblio-citation">
-              OMT (WORLD TOURISM ORGANIZATION). <strong>Tourism Highlights: 2018 Edition</strong>. Madrid: UNWTO, 2018.
-            </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Aponta o peso socioeconômico da atividade turística na geração global de postos e a necessidade de qualificar o emprego gerado.
-            </p>
           </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'MEC. Catálogo Nacional de Cursos Técnicos. 3ª Ed. Brasília/DF: SETEC/MEC, 2016.')">Copiar ABNT</button>
+        </article>
 
-          <!-- Ref 12 -->
-          <div class="biblio-item" data-category="turismo" data-keywords="soares turismo trabalho informal binomio inevitavel sazonalidade precarizacao">
-            <div class="biblio-meta-row">
-              <span class="biblio-cat-tag">Turismo &amp; Políticas</span>
-              <button type="button" class="biblio-btn-copy" onclick="copyCitation(this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar Citação
-              </button>
+        <!-- 11 -->
+        <article class="ref-item" data-category="turismo" data-keywords="omt unwto tourism highlights estatisticas mundiais turismo postos">
+          <div>
+            <p class="ref-text">
+              OMT. Organização Mundial do Turismo. <strong>UNWTO Tourism Highlights</strong>: 2017 Edition. Madrid: World Tourism Organization (UNWTO), 2018.
+            </p>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Turismo &amp; Hospitalidade</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Impactos Globais do Setor</span>
             </div>
-            <p class="biblio-citation">
-              SOARES, Luís Augusto Severo. Turismo e trabalho informal: um binômio inevitável? <strong>Revista Ibero Americana de Estratégia</strong>, São Paulo, v. 4, n. 1, p. 89-98, 2005.
-            </p>
-            <p class="biblio-context">
-              <em>Papel no projeto:</em> Discute como a alta e baixa temporadas forçam a rotatividade de mão de obra e demonstra a urgência de políticas de trabalho digno.
-            </p>
           </div>
-        </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'OMT. UNWTO Tourism Highlights: 2017 Edition. Madrid: World Tourism Organization, 2018.')">Copiar ABNT</button>
+        </article>
+
+        <!-- 12 -->
+        <article class="ref-item" data-category="turismo" data-keywords="soares turismo trabalho informal sazonalidade hotelaria">
+          <div>
+            <p class="ref-text">
+              SOARES, Luís Augusto Severo. Turismo e trabalho informal: um binômio inevitável? <strong>Revista Ibero Americana de Estratégia</strong>, v. 4, n. 1, p. 89-98, 2005.
+            </p>
+            <div class="ref-meta-row">
+              <span class="ref-badge">Turismo &amp; Hospitalidade</span>
+              <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Sazonalidade e Informalidade</span>
+            </div>
+          </div>
+          <button class="copy-btn" onclick="copyCitation(this, 'SOARES, Luís Augusto Severo. Turismo e trabalho informal: um binômio inevitável? Revista Ibero Americana de Estratégia, v. 4, n. 1, p. 89-98, 2005.')">Copiar ABNT</button>
+        </article>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 7: Equipe e Seção de Contatos (STRICT: OMIT ALL PHONES, ONLY EMAILS & SITES) -->
-    <section id="equipe" class="section-block">
-      <div class="section-head">
-        <span class="section-kicker">Corpo Extensionista e Atendimento</span>
-        <h2 class="section-title">Equipe do Projeto &amp; Contatos Institucionais</h2>
-        <p class="section-intro">
-          Canais de contato eletrônico oficial para suporte a estudantes, agendamento de reuniões técnicas com empresas e integração com o trade turístico.
+  <!-- SEÇÃO 6: CONTATOS INSTITUCIONAIS (SEM NÚMEROS TELEFÔNICOS) -->
+  <section id="contatos" class="section-block" style="background-color: var(--surface-purple-soft);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">
+          <span class="step-badge">6</span>
+          <span>Canais Oficiais de Contato</span>
+        </div>
+        <h2 class="section-title">Contatos &amp; Equipe do Projeto</h2>
+        <p class="section-subtitle">
+          Para celebração de novos Termos de Compromisso de Estágio, agendamento de visitas institucionais ou acesso ao banco de currículos de discentes, utilize os canais eletrônicos oficiais abaixo.
         </p>
       </div>
 
-      <div class="team-grid">
-        <!-- Coordenador -->
-        <div class="team-member-card">
-          <div>
-            <div class="member-role">Coordenador do Projeto</div>
-            <h3 class="member-name">Prof. Dr. Wagner Fernandes Costa</h3>
-            <p class="member-details">
-              Docente DIAC / Campus Canguaretama &bull; Titulação: Doutorado &bull; Vínculo: Voluntário
-            </p>
-          </div>
-          <div>
-            <span style="display:block; font-family:var(--font-label); font-size:0.75rem; text-transform:uppercase; color:var(--on-surface-muted);">E-mail Institucional:</span>
-            <a href="mailto:wagner.fernandes@ifrn.edu.br" class="email-link">
-              <i data-lucide="mail" style="width:13px; height:13px;"></i> wagner.fernandes@ifrn.edu.br
-            </a>
-          </div>
-        </div>
+      <div class="contact-grid">
 
-        <!-- Colaboradora Docente -->
-        <div class="team-member-card">
-          <div>
-            <div class="member-role">Docente Colaboradora</div>
-            <h3 class="member-name">Profa. Me. Jacione Borges de Souza</h3>
-            <p class="member-details">
-              Docente DIAC / Campus Canguaretama &bull; Titulação: Mestrado &bull; Vínculo: Colaboradora
-            </p>
-          </div>
-          <div>
-            <span style="display:block; font-family:var(--font-label); font-size:0.75rem; text-transform:uppercase; color:var(--on-surface-muted);">E-mail Institucional:</span>
-            <a href="mailto:jacione.souza@ifrn.edu.br" class="email-link">
-              <i data-lucide="mail" style="width:13px; height:13px;"></i> jacione.souza@ifrn.edu.br
-            </a>
-          </div>
-        </div>
-
-        <!-- Bolsista Estudante -->
-        <div class="team-member-card">
-          <div>
-            <div class="member-role">Bolsista de Extensão</div>
-            <h3 class="member-name">Ana Rosa Andrade da Silva</h3>
-            <p class="member-details">
-              Discente do Curso Técnico em Eventos &bull; Bolsista PROEX/IFRN
-            </p>
-          </div>
-          <div>
-            <span style="display:block; font-family:var(--font-label); font-size:0.75rem; text-transform:uppercase; color:var(--on-surface-muted);">E-mail Acadêmico:</span>
-            <a href="mailto:ana.rosa@academico.ifrn.edu.br" class="email-link">
-              <i data-lucide="mail" style="width:13px; height:13px;"></i> ana.rosa@academico.ifrn.edu.br
-            </a>
-          </div>
-        </div>
-
-        <!-- Discente Voluntária -->
-        <div class="team-member-card">
-          <div>
-            <div class="member-role">Discente Colaboradora</div>
-            <h3 class="member-name">Iris Raniely França da Silva</h3>
-            <p class="member-details">
-              Discente do Curso Técnico em Eventos &bull; Colaboradora Voluntária
-            </p>
-          </div>
-          <div>
-            <span style="display:block; font-family:var(--font-label); font-size:0.75rem; text-transform:uppercase; color:var(--on-surface-muted);">E-mail Acadêmico:</span>
-            <a href="mailto:iris.raniely@academico.ifrn.edu.br" class="email-link">
-              <i data-lucide="mail" style="width:13px; height:13px;"></i> iris.raniely@academico.ifrn.edu.br
-            </a>
-          </div>
-        </div>
-
-        <!-- Discente Voluntário -->
-        <div class="team-member-card">
-          <div>
-            <div class="member-role">Discente Colaborador</div>
-            <h3 class="member-name">João Pedro Sales da Costa</h3>
-            <p class="member-details">
-              Discente do Curso Técnico em Eventos &bull; Colaborador Voluntário
-            </p>
-          </div>
-          <div>
-            <span style="display:block; font-family:var(--font-label); font-size:0.75rem; text-transform:uppercase; color:var(--on-surface-muted);">E-mail Acadêmico:</span>
-            <a href="mailto:costa.sales@academico.ifrn.edu.br" class="email-link">
-              <i data-lucide="mail" style="width:13px; height:13px;"></i> costa.sales@academico.ifrn.edu.br
-            </a>
-          </div>
-        </div>
-
-        <!-- Discente Voluntária -->
-        <div class="team-member-card">
-          <div>
-            <div class="member-role">Discente Colaboradora</div>
-            <h3 class="member-name">Kathima Francielly de Assis</h3>
-            <p class="member-details">
-              Discente do Curso Técnico em Eventos &bull; Colaboradora Voluntária
-            </p>
-          </div>
-          <div>
-            <span style="display:block; font-family:var(--font-label); font-size:0.75rem; text-transform:uppercase; color:var(--on-surface-muted);">E-mail Acadêmico:</span>
-            <a href="mailto:kathima.a@academico.ifrn.edu.br" class="email-link">
-              <i data-lucide="mail" style="width:13px; height:13px;"></i> kathima.a@academico.ifrn.edu.br
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Institutional Contact Box (Strictly Emails and Digital Web Addresses) -->
-      <div class="contact-box-full">
-        <div class="contact-col">
-          <h4>
-            <i data-lucide="mail" style="width:18px; height:18px;"></i>
-            Gabinete &amp; Apoio Institucional
-          </h4>
-          <p style="font-size: 0.95rem; color: var(--on-surface-variant); margin: 0 0 var(--space-sm);">
-            Para demandas formais de convênios de estágio, termos de compromisso e parcerias empresariais com o Campus:
+        <!-- Card Gabinete Canguaretama -->
+        <div class="contact-card">
+          <span class="contact-role">Campus Proponente</span>
+          <h3 class="contact-name">IFRN • Gabinete Campus Canguaretama</h3>
+          <p style="font-size: 0.85rem; color: var(--on-surface-variant); margin: 0;">
+            Diretoria de Administração, Gestão Acadêmica e Coordenação de Extensão.
           </p>
-          <div>
-            <span style="display:block; font-family:var(--font-label); font-size:0.75rem; text-transform:uppercase; color:var(--on-surface-muted);">E-mail Oficial:</span>
-            <a href="mailto:gabin.cang@ifrn.edu.br" class="email-link">
-              gabin.cang@ifrn.edu.br
-            </a>
+          <div class="contact-email-row">
+            <span class="contact-email-text">gabin.cang@ifrn.edu.br</span>
+            <button class="contact-copy-btn" onclick="copyEmail('gabin.cang@ifrn.edu.br')">Copiar</button>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--purple-700); font-weight: 700;">
+            Portal: portal.ifrn.edu.br/campus/canguaretama
           </div>
         </div>
 
-        <div class="contact-col">
-          <h4>
-            <i data-lucide="globe" style="width:18px; height:18px;"></i>
-            Portais Digitais Oficiais
-          </h4>
-          <p style="font-size: 0.95rem; color: var(--on-surface-variant); margin: 0 0 var(--space-sm);">
-            Acesse os editais de extensão, orientações de estágio e notícias acadêmicas:
+        <!-- Card Coordenador do Projeto -->
+        <div class="contact-card">
+          <span class="contact-role">Coordenação Geral do Projeto</span>
+          <h3 class="contact-name">Prof. Dr. Wagner Fernandes Costa</h3>
+          <p style="font-size: 0.85rem; color: var(--on-surface-variant); margin: 0;">
+            Docente da Diretoria Acadêmica (DIAC) • Coordenador de Ações de Extensão.
           </p>
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <div class="entity-digital-box" style="padding:4px 8px;">
-              <span class="entity-url" style="font-size:0.8rem;">portal.ifrn.edu.br/campus/canguaretama</span>
-              <button type="button" class="btn-copy-url" onclick="copyUrl('https://portal.ifrn.edu.br/campus/canguaretama', this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar
-              </button>
+          <div class="contact-email-row">
+            <span class="contact-email-text">wagner.fernandes@ifrn.edu.br</span>
+            <button class="contact-copy-btn" onclick="copyEmail('wagner.fernandes@ifrn.edu.br')">Copiar</button>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--purple-700); font-weight: 700;">
+            Eixo Tecnológico: Turismo, Hospitalidade e Lazer
+          </div>
+        </div>
+
+        <!-- Card Equipe Técnica e Colaboradora -->
+        <div class="contact-card">
+          <span class="contact-role">Docente e Técnica Colaboradora</span>
+          <h3 class="contact-name">Jacione Borges de Souza</h3>
+          <p style="font-size: 0.85rem; color: var(--on-surface-variant); margin: 0;">
+            Articulação de estágios e relacionamento com entidades empresariais da RIC.
+          </p>
+          <div class="contact-email-row">
+            <span class="contact-email-text">jacione.souza@ifrn.edu.br</span>
+            <button class="contact-copy-btn" onclick="copyEmail('jacione.souza@ifrn.edu.br')">Copiar</button>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--purple-700); font-weight: 700;">
+            Titulação: Mestrado • IFRN Campus Canguaretama
+          </div>
+        </div>
+
+        <!-- Card Discentes Extensionistas -->
+        <div class="contact-card" style="grid-column: 1 / -1;">
+          <span class="contact-role">Corpo Discente de Extensão • Técnico em Eventos</span>
+          <h3 class="contact-name" style="margin-bottom: var(--space-xs);">Estudantes Extensionistas e Pesquisadores de Campo</h3>
+          <p style="font-size: 0.875rem; color: var(--on-surface-variant); margin: 0 0 var(--space-sm);">
+            Alunos do IFRN Campus Canguaretama responsáveis pelas oficinas de currículo, elaboração dos materiais informativos e apoio à prospecção com os empresários de Tibau do Sul.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-sm);">
+            <div class="contact-email-row">
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 800;">Ana Rosa Andrade da Silva</div>
+                <span class="contact-email-text" style="font-size: 0.75rem;">ana.rosa@academico.ifrn.edu.br</span>
+              </div>
+              <button class="contact-copy-btn" onclick="copyEmail('ana.rosa@academico.ifrn.edu.br')">Copiar</button>
             </div>
-            <div class="entity-digital-box" style="padding:4px 8px;">
-              <span class="entity-url" style="font-size:0.8rem;">portal.ifrn.edu.br/extensao</span>
-              <button type="button" class="btn-copy-url" onclick="copyUrl('https://portal.ifrn.edu.br/extensao', this)">
-                <i data-lucide="copy" style="width:12px; height:12px;"></i> Copiar
-              </button>
+            <div class="contact-email-row">
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 800;">Iris Raniely França da Silva</div>
+                <span class="contact-email-text" style="font-size: 0.75rem;">iris.raniely@academico.ifrn.edu.br</span>
+              </div>
+              <button class="contact-copy-btn" onclick="copyEmail('iris.raniely@academico.ifrn.edu.br')">Copiar</button>
+            </div>
+            <div class="contact-email-row">
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 800;">João Pedro Sales da Costa</div>
+                <span class="contact-email-text" style="font-size: 0.75rem;">costa.sales@academico.ifrn.edu.br</span>
+              </div>
+              <button class="contact-copy-btn" onclick="copyEmail('costa.sales@academico.ifrn.edu.br')">Copiar</button>
+            </div>
+            <div class="contact-email-row">
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 800;">Kathima Francielly de Assis</div>
+                <span class="contact-email-text" style="font-size: 0.75rem;">kathima.a@academico.ifrn.edu.br</span>
+              </div>
+              <button class="contact-copy-btn" onclick="copyEmail('kathima.a@academico.ifrn.edu.br')">Copiar</button>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Colophon / Footer -->
-    <footer class="colophon">
-      <div class="colophon-meta">
-        <strong>Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte</strong>
-        <span>Campus Canguaretama &bull; DIAC / CANG &bull; Pró-Reitoria de Extensão (PROEX)</span>
-        <span>Projeto de Extensão &bull; Edital nº 07/2026 - Conexões para o Trabalho</span>
       </div>
-      <div style="text-align: right;">
-        <span class="ifrn-symbol" aria-hidden="true" style="margin-bottom:4px;">
-          <span class="ifrn-dot red"></span>
-          <span class="ifrn-dot green"></span>
-          <span class="ifrn-dot green"></span>
-          <span class="ifrn-dot green"></span>
-        </span>
-        <div style="font-size:0.8rem; color:var(--on-surface-muted);">
-          Em defesa da formação profissional com dignidade e trabalho decente.
+    </div>
+  </section>
+
+  <!-- Modal Interativo de Órgãos Associados -->
+  <div class="modal-overlay" id="partner-modal-overlay" onclick="handleModalOverlayClick(event)">
+    <div class="modal-card" id="partner-modal-card">
+      <button class="modal-close-btn" onclick="closePartnerModal()" aria-label="Fechar janela">×</button>
+      <span class="modal-badge" id="modal-partner-badge">Categoria</span>
+      <h3 class="modal-title" id="modal-partner-title">Nome do Órgão</h3>
+      <p class="modal-body-text" id="modal-partner-desc">Descrição e missão institucional.</p>
+      <div class="modal-meta-box">
+        <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--purple-800); margin-bottom: 0.25rem;">
+          Portal Oficial na Web:
+        </div>
+        <div style="font-family: monospace; font-size: 0.9rem; color: var(--purple-900);" id="modal-partner-domain">
+          portal.exemplo.br
         </div>
       </div>
-    </footer>
-
+      <div style="display: flex; gap: var(--space-sm);">
+        <button class="btn-action" id="modal-copy-domain-btn" onclick="copyDomainFromModal()">Copiar Endereço Web</button>
+        <button class="btn-action secondary" onclick="closePartnerModal()">Concluir Leitura</button>
+      </div>
+    </div>
   </div>
 
-  <!-- Toast Element for Interactive Feedback -->
-  <div id="toast-notification" role="status" aria-live="polite">
-    <i data-lucide="check" style="width:16px; height:16px;"></i>
-    <span id="toast-text">Copiado com sucesso!</span>
-  </div>
+  <!-- Toast de Notificação -->
+  <div class="toast-notice" id="toast-message">Notificação</div>
 
+  <!-- Rodapé Institucional -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-inst">
+        <p class="footer-title">Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte</p>
+        <p style="margin: 0;">
+          Campus Canguaretama • Diretoria Acadêmica (DIAC) • Pró-Reitoria de Extensão (PROEX)<br>
+          Programa Conexões para o Trabalho • Fortalecendo a empregabilidade sustentável no Litoral Sul Potiguar.
+        </p>
+      </div>
+      <div>
+        <span class="tag tag-green">Compromisso com o ODS 8</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- API Shim do Gemini Notebook para Persistência hermética -->
   <api-shim></api-shim>
 
+  <!-- JavaScript Seguro, Hermético e Hoistado -->
   <script>
-    // Initialize Lucide Icons safely
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof lucide !== 'undefined' && lucide.createIcons) {
-        lucide.createIcons();
+    // Dados dos Parceiros para o Modal Interativo
+    const PARTNER_DATA = {
+      ifrn: {
+        title: "IFRN • Campus Canguaretama",
+        badge: "Instituição Pública Federal de Ensino",
+        desc: "O Campus Canguaretama do IFRN atende a Região Imediata de Canguaretama (composta por Canguaretama, Tibau do Sul, Baía Formosa, Goianinha, Vila Flor, Espírito Santo, Arês, Pedro Velho e Montanhas). Oferta formação pública de excelência, com destaque para o Curso Superior de Tecnologia em Gestão de Turismo (Gestur) e o Curso Técnico Integrado em Eventos, preparando profissionais éticos, analíticos e comprometidos com o desenvolvimento sustentável.",
+        domain: "portal.ifrn.edu.br/campus/canguaretama"
+      },
+      preservepipa: {
+        title: "Preserve Pipa",
+        badge: "Movimento Sustentável e Destino Turístico",
+        desc: "O movimento Preserve Pipa é uma união voluntária de empresários dos ramos hoteleiro, gastronômico e de lazer da Praia da Pipa e de Tibau do Sul. Seu foco primordial é aliar a atividade turística pujante à preservação dos ecossistemas costeiros, promovendo boas práticas ambientais, responsabilidade social e valorização da formação dos trabalhadores residentes na localidade.",
+        domain: "preservepipa.com.br"
+      },
+      pipacvb: {
+        title: "Pipa Convention & Visitors Bureau",
+        badge: "Fundação de Fomento a Negócios e Eventos",
+        desc: "O Pipa CVB atua estrategicamente na promoção de Tibau do Sul e da Praia da Pipa como polo receptor para eventos corporativos, feiras, congressos técnico-científicos e celebrações culturais. Constitui canal fundamental de inserção para os discentes do Curso Técnico em Eventos do IFRN nas etapas de captação, logística e coordenação de cerimonial.",
+        domain: "pipacvb.com.br"
+      },
+      ashtep: {
+        title: "ASHTEP • Associação dos Hoteleiros de Tibau do Sul e Pipa",
+        badge: "Entidade de Classe Hoteleira",
+        desc: "Fundada para congregar os meios de hospedagem da região, a ASHTEP representa hotéis, pousadas e resorts parceiros do IFRN. É elemento-chave na recepção de estagiários e contratação de jovens aprendizes, promovendo o combate à rotatividade e à precarização laboral através de vínculos formais supervisionados e qualificação contínua.",
+        domain: "ashtep.com.br"
+      },
+      ods8: {
+        title: "ODS 8 • Trabalho Decente e Crescimento Econômico",
+        badge: "Agenda 2030 das Nações Unidas",
+        desc: "O Objetivo de Desenvolvimento Sustentável 8 busca promover o trabalho digno e o crescimento inclusivo. No contexto de Tibau do Sul, a atuação extensionista coaduna especialmente com as metas 8.3 (apoio a PMEs e formalização), 8.5 (trabalho digno para jovens), 8.6 (redução de jovens sem estudo ou ocupação) e 8.9 (turismo sustentável que distribui renda e valoriza a cultura local).",
+        domain: "odsbrasil.gov.br"
       }
-      runSimulation();
-    });
+    };
 
-    // Helper: Show Toast Notification
-    function showToast(message) {
-      const toast = document.getElementById('toast-notification');
-      const toastText = document.getElementById('toast-text');
-      if (!toast || !toastText) return;
-      toastText.textContent = message;
-      toast.classList.add('show');
-      setTimeout(function() {
-        toast.classList.remove('show');
-      }, 2600);
-    }
+    // Estado da Aplicação (Persistido via notebookAppApi)
+    let appState = {
+      activeFilter: 'todos',
+      simTab: 'estudante',
+      checkedItems: {}
+    };
 
-    // Interactive URL Copy Function (Defensive)
-    function copyUrl(urlText, btnElement) {
-      if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(urlText).then(function() {
-          showToast(`Endereço copiado: ${urlText}`);
-          if (btnElement) {
-            const originalHtml = btnElement.innerHTML;
-            btnElement.innerHTML = `<i data-lucide="check" style="width:13px; height:13px;"></i> Copiado!`;
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-            setTimeout(function() {
-              btnElement.innerHTML = originalHtml;
-              if (typeof lucide !== 'undefined') lucide.createIcons();
-            }, 1800);
+    // Inicialização da Aplicação
+    async function initApp() {
+      try {
+        if (window.notebookAppApi && window.notebookAppApi.getAppState) {
+          const savedState = await window.notebookAppApi.getAppState();
+          if (savedState) {
+            if (savedState.activeFilter) {
+              filterComparison(savedState.activeFilter);
+            }
+            if (savedState.simTab) {
+              selectSimulatorTab(savedState.simTab);
+            }
+            if (savedState.checkedItems) {
+              appState.checkedItems = savedState.checkedItems;
+            }
           }
-        }).catch(function() {
-          showToast(`Endereço: ${urlText}`);
-        });
-      } else {
-        showToast(`Endereço: ${urlText}`);
+        }
+      } catch (err) {
+        console.warn('Persistência inicial não carregada:', err);
+      }
+
+      runSimulation();
+
+      if (window.notebookAppApi && window.notebookAppApi.notifyAppReady) {
+        window.notebookAppApi.notifyAppReady();
       }
     }
 
-    // Copy Citation Helper for Bibliographic Cards
-    function copyCitation(btnElement) {
-      if (!btnElement) return;
-      const parentItem = btnElement.closest('.biblio-item');
-      if (!parentItem) return;
-      const citationEl = parentItem.querySelector('.biblio-citation');
-      if (!citationEl) return;
-      const textToCopy = (citationEl.textContent || citationEl.innerText || '').trim();
-
-      if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(textToCopy).then(function() {
-          showToast(`Referência copiada no padrão ABNT!`);
-          const originalText = btnElement.innerHTML;
-          btnElement.innerHTML = `<i data-lucide="check" style="width:12px; height:12px;"></i> Copiada!`;
-          if (typeof lucide !== 'undefined') lucide.createIcons();
-          setTimeout(function() {
-            btnElement.innerHTML = originalText;
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-          }, 1800);
-        }).catch(function() {
-          showToast(`Referência selecionada.`);
-        });
-      } else {
-        showToast(`Referência selecionada.`);
+    // Salvar Estado na API
+    async function persistState() {
+      try {
+        if (window.notebookAppApi && window.notebookAppApi.setAppState) {
+          await window.notebookAppApi.setAppState(appState);
+        }
+      } catch (err) {
+        console.warn('Erro ao salvar estado:', err);
       }
     }
 
-    // Comparator Tab / View Switcher
-    function setComparatorView(viewMode) {
-      const colAprendiz = document.getElementById('col-aprendiz');
-      const colEstagio = document.getElementById('col-estagio');
-      const columnsContainer = document.getElementById('comparator-columns');
-      const btnBoth = document.getElementById('btn-view-both');
-      const btnAprendiz = document.getElementById('btn-view-aprendiz');
-      const btnEstagio = document.getElementById('btn-view-estagio');
+    // Filtro do Comparativo
+    function filterComparison(topic) {
+      appState.activeFilter = topic;
 
-      if (!colAprendiz || !colEstagio || !columnsContainer) return;
+      const buttons = [
+        'btn-filter-todos',
+        'btn-filter-publico',
+        'btn-filter-direitos',
+        'btn-filter-deveres',
+        'btn-filter-empresas',
+        'btn-filter-vantagens'
+      ];
 
-      // Reset buttons active state
-      if (btnBoth) btnBoth.classList.remove('active');
-      if (btnAprendiz) btnAprendiz.classList.remove('active');
-      if (btnEstagio) btnEstagio.classList.remove('active');
+      buttons.forEach(function(btnId) {
+        const btn = document.getElementById(btnId);
+        if (btn) {
+          btn.classList.remove('active');
+        }
+      });
 
-      if (viewMode === 'aprendiz') {
-        colAprendiz.style.display = 'flex';
-        colEstagio.style.display = 'none';
-        columnsContainer.style.gridTemplateColumns = '1fr';
-        if (btnAprendiz) btnAprendiz.classList.add('active');
-      } else if (viewMode === 'estagio') {
-        colAprendiz.style.display = 'none';
-        colEstagio.style.display = 'flex';
-        columnsContainer.style.gridTemplateColumns = '1fr';
-        if (btnEstagio) btnEstagio.classList.add('active');
-      } else {
-        colAprendiz.style.display = 'flex';
-        colEstagio.style.display = 'flex';
-        columnsContainer.style.gridTemplateColumns = window.innerWidth > 860 ? '1fr 1fr' : '1fr';
-        if (btnBoth) btnBoth.classList.add('active');
+      const currentBtn = document.getElementById('btn-filter-' + topic);
+      if (currentBtn) {
+        currentBtn.classList.add('active');
       }
 
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-      }
+      const allGroups = document.querySelectorAll('.topic-group');
+      allGroups.forEach(function(group) {
+        const groupTopic = group.getAttribute('data-topic');
+        if (topic === 'todos' || groupTopic === topic) {
+          group.style.display = 'block';
+        } else {
+          group.style.display = 'none';
+        }
+      });
+
+      persistState();
     }
 
-    // Guide & Eligibility Simulation Logic
+    // Seleção de Aba do Simulador
+    function selectSimulatorTab(tab) {
+      appState.simTab = tab;
+      const tabEst = document.getElementById('tab-estudante');
+      const tabEmp = document.getElementById('tab-empresa');
+      const formEst = document.getElementById('sim-form-estudante');
+      const formEmp = document.getElementById('sim-form-empresa');
+
+      if (tab === 'estudante') {
+        if (tabEst) tabEst.classList.add('active');
+        if (tabEmp) tabEmp.classList.remove('active');
+        if (formEst) formEst.style.display = 'block';
+        if (formEmp) formEmp.style.display = 'none';
+      } else {
+        if (tabEmp) tabEmp.classList.add('active');
+        if (tabEst) tabEst.classList.remove('active');
+        if (formEmp) formEmp.style.display = 'block';
+        if (formEst) formEst.style.display = 'none';
+      }
+
+      runSimulation();
+      persistState();
+    }
+
+    // Lógica do Simulador
     function runSimulation() {
-      const profileEl = document.getElementById('sim-profile');
-      const goalEl = document.getElementById('sim-goal');
-      const modalityEl = document.getElementById('sim-modality');
+      const resBadge = document.getElementById('sim-res-badge');
+      const resTitle = document.getElementById('sim-res-title');
+      const resHours = document.getElementById('sim-res-hours');
+      const resDesc = document.getElementById('sim-res-description');
+      const checklistContainer = document.getElementById('sim-checklist-items');
 
-      const badgeEl = document.getElementById('sim-badge');
-      const titleEl = document.getElementById('sim-title');
-      const summaryEl = document.getElementById('sim-summary');
-      const checklistEl = document.getElementById('sim-checklist');
+      if (!resBadge || !resTitle || !resHours || !resDesc || !checklistContainer) return;
 
-      if (!profileEl || !badgeEl || !titleEl || !summaryEl || !checklistEl) return;
+      let items = [];
 
-      const profile = profileEl.value;
-      const goal = goalEl ? goalEl.value : 'primeiro_trabalho';
-      const modality = modalityEl ? modalityEl.value : 'qualquer';
+      if (appState.simTab === 'estudante') {
+        const idadeEl = document.getElementById('sim-est-idade');
+        const cursoEl = document.getElementById('sim-est-curso');
+        const objEl = document.getElementById('sim-est-objetivo');
 
-      let badgeClass = 'badge-aprendiz';
-      let badgeText = 'Diagnóstico Recomendado';
-      let titleText = 'Plano de Ação para o seu Perfil';
-      let summaryText = '';
-      let checklistHtml = '';
+        const idade = idadeEl ? idadeEl.value : '18-24';
+        const curso = cursoEl ? cursoEl.value : 'superior';
+        const obj = objEl ? objEl.value : 'pratica_curso';
 
-      if (profile === 'estudante_tecnico') {
-        badgeClass = 'badge-estagio';
-        badgeText = 'Estudante Técnico (Eventos)';
-        titleText = 'Oportunidades em Eventos & Hospitalidade';
-        summaryText = `Como discente do Curso Técnico em Eventos do IFRN, você está plenamente apto para estágios supervisionados (obrigatórios ou extracurriculares) e programas de Jovem Aprendiz. Seu foco formativo contempla organização, recepção, logística e coordenação técnica de congressos e cerimoniais.`;
-        checklistHtml = `
-          <strong>Checklist de Prontidão:</strong>
-          <ul style="margin:6px 0 0; padding-left:20px;">
-            <li>Matrícula ativa no IFRN e frequência escolar regular comprovada;</li>
-            <li>Termo de Compromisso de Estágio (TCE) assinado antes do início das atividades;</li>
-            <li>Jornada máxima de 6h diárias (30h semanais), compatível com o horário de aulas;</li>
-            <li>Orientação de currículo e postura profissional realizada nas oficinas da PROEX.</li>
-          </ul>
-        `;
-      } else if (profile === 'estudante_superior') {
-        badgeClass = 'badge-estagio';
-        badgeText = 'Ensino Superior (Gestur)';
-        titleText = 'Inserção Estratégica & Estágio em Gestão Turística';
-        summaryText = `Para os acadêmicos de Gestão de Turismo (Gestur), a legislação de estágio (Lei 11.788/2008) garante a oportunidade de atuar na gestão de meios de hospedagem, agenciamento, roteiros turísticos sustentáveis e alimentos & bebidas.`;
-        checklistHtml = `
-          <strong>Checklist de Prontidão:</strong>
-          <ul style="margin:6px 0 0; padding-left:20px;">
-            <li>Plano de atividades com atribuições compatíveis com o perfil do Catálogo Nacional de Cursos Superiores;</li>
-            <li>Supervisão na concedente por profissional experiente na área de turismo/hospitalidade;</li>
-            <li>Garantia de bolsa-auxílio e auxílio-transporte em estágios não obrigatórios;</li>
-            <li>Recesso de 30 dias após 12 meses de estágio ou proporcional.</li>
-          </ul>
-        `;
-      } else if (profile === 'empresa_hotel') {
-        badgeClass = 'badge-aprendiz';
-        badgeText = 'Setor Hoteleiro / Meios de Hospedagem';
-        titleText = 'Conformidade Legal & Captação de Talentos Locais';
-        summaryText = `Hotéis e pousadas de Tibau do Sul e da Região Imediata podem captar estudantes para estágios técnicos ou aprendizes. É vedado utilizar o estagiário em substituição a postos de trabalho regulares sem supervisor ou com desvio pedagógico.`;
-        checklistHtml = `
-          <strong>Deveres da Concedente Hoteleira:</strong>
-          <ul style="margin:6px 0 0; padding-left:20px;">
-            <li>Celebração formal do Termo de Compromisso tripartite (IFRN, aluno e empresa);</li>
-            <li>Designação expressa de supervisor do próprio quadro técnico (máximo de 10 estagiários);</li>
-            <li>Apólice de seguro contra acidentes pessoais devidamente contratada;</li>
-            <li>Envio semestral de relatórios de avaliação de desempenho pedagógico ao Campus Canguaretama.</li>
-          </ul>
-        `;
+        if (obj === 'primeiro_emprego' && (idade === '14-17' || idade === '18-24' || idade === 'pcd')) {
+          resBadge.textContent = 'Modalidade Recomendada: Jovem Aprendiz';
+          resBadge.className = 'tag tag-purple';
+          resTitle.textContent = 'Programa Jovem Aprendiz (Lei nº 10.097/2000)';
+          resHours.textContent = 'Jornada: 4h a 6h diárias';
+          resDesc.textContent = 'Ideal para quem busca sua primeira oportunidade com carteira profissional assinada em um empreendimento turístico, alternando jornadas práticas na empresa e capacitação teórica gratuita.';
+
+          items = [
+            { id: 'ap_1', text: 'Estar matriculado e com frequência regular na escola ou IFRN' },
+            { id: 'ap_2', text: 'Inscrever-se no banco de talentos de uma entidade formadora credenciada' },
+            { id: 'ap_3', text: 'Obter a Carteira de Trabalho e Previdência Social (CTPS digital)' },
+            { id: 'ap_4', text: 'Firmar contrato de aprendizagem de até 2 anos com o empregador' }
+          ];
+        } else {
+          resBadge.textContent = 'Modalidade Recomendada: Estágio Supervisionado';
+          resBadge.className = 'tag tag-green';
+          resTitle.textContent = curso === 'superior' ? 'Estágio em Gestão de Turismo (Lei nº 11.788/2008)' : 'Estágio Técnico em Eventos (Lei nº 11.788/2008)';
+          resHours.textContent = 'Jornada: Máximo de 6h diárias (30h semanais)';
+          resDesc.textContent = 'Como estudante regularmente matriculado no IFRN, o estágio é a modalidade indicada para colocar em prática os conhecimentos curriculares em hospitalidade, recepção e coordenação.';
+
+          items = [
+            { id: 'est_1', text: 'Solicitar declaração de matrícula ativa e histórico escolar no IFRN' },
+            { id: 'est_2', text: 'Formalizar o Termo de Compromisso de Estágio (TCE) assinado pelas 3 partes' },
+            { id: 'est_3', text: 'Certificar a inclusão de apólice de seguro contra acidentes pela empresa' },
+            { id: 'est_4', text: 'Alinhar o plano de atividades ao Projeto Pedagógico do Curso' }
+          ];
+        }
       } else {
-        badgeClass = 'badge-aprendiz';
-        badgeText = 'Empresas de Eventos & Trade de Pipa';
-        titleText = 'Formalização de Equipes e Projetos Temporários';
-        summaryText = `Empresas de cerimonial, convenções, agências de passeios e operadoras de turismo em Tibau do Sul devem atentar aos limites de carga horária durante eventos de grande porte, respeitando rigorosamente a saúde, os estudos e os direitos dos aprendizes e estagiários.`;
-        checklistHtml = `
-          <strong>Diretrizes Mandatórias:</strong>
-          <ul style="margin:6px 0 0; padding-left:20px;">
-            <li>Respeito absoluto à jornada máxima de 6h diárias (sem banco de horas irregular);</li>
-            <li>Redução de jornada pela metade comprovada em períodos de exames escolares;</li>
-            <li>Acesso a equipamentos de proteção e condições adequadas de alimentação e hidratação;</li>
-            <li>Registro no repositório de currículos do IFRN para seleção contínua de discentes qualificados.</li>
-          </ul>
-        `;
+        const segEl = document.getElementById('sim-emp-segmento');
+        const metaEl = document.getElementById('sim-emp-meta');
+        const porteEl = document.getElementById('sim-emp-porte');
+
+        const seg = segEl ? segEl.value : 'hotelaria';
+        const meta = metaEl ? metaEl.value : 'estagio_gestur';
+        const porte = porteEl ? porteEl.value : 'com_supervisor';
+
+        if (meta === 'cota_aprendiz') {
+          resBadge.textContent = 'Diretriz Patronal: Contratação de Aprendiz';
+          resBadge.className = 'tag tag-purple';
+          resTitle.textContent = 'Cumprimento de Cota Legal de Aprendizagem';
+          resHours.textContent = 'Cota Legal: 5% a 15% das funções formativas';
+          resDesc.textContent = 'A contratação de aprendizes fortalece a responsabilidade social do seu estabelecimento de turismo, assegurando formação teórico-prática sem incidência de aviso prévio ou multa rescisória rescisória padrão.';
+
+          items = [
+            { id: 'emp_ap_1', text: 'Calcular a cota obrigatória com base nas funções da CBO da empresa' },
+            { id: 'emp_ap_2', text: 'Articular parceria com instituição formadora local credenciada' },
+            { id: 'emp_ap_3', text: 'Celebrar Contrato Especial de Aprendizagem e anotar a CTPS' },
+            { id: 'emp_ap_4', text: 'Garantir escala de trabalho compatível com as aulas teóricas' }
+          ];
+        } else {
+          resBadge.textContent = 'Diretriz Patronal: Concessão de Estágio';
+          resBadge.className = 'tag tag-green';
+          resTitle.textContent = 'Concessão de Estágio Supervisionado (Técnico / Superior)';
+          resHours.textContent = 'Supervisão: Máximo 10 estagiários por supervisor';
+          resDesc.textContent = 'Oportunidade ideal para recepcionar estudantes com base técnica sólida de hospitalidade e cerimonial, oxigenando as equipes de operações e atendimento com respaldo pedagógico do IFRN.';
+
+          items = [
+            { id: 'emp_est_1', text: 'Designar colaborador com formação ou experiência para supervisionar' },
+            { id: 'emp_est_2', text: 'Celebrar Termo de Compromisso de Estágio tripartite com o IFRN' },
+            { id: 'emp_est_3', text: 'Contratar apólice de seguro contra acidentes pessoais para o estagiário' },
+            { id: 'emp_est_4', text: 'Respeitar a redução da carga horária pela metade em semanas de prova' }
+          ];
+        }
       }
 
-      badgeEl.className = `result-badge ${badgeClass}`;
-      badgeEl.textContent = badgeText;
-      titleEl.innerHTML = `<i data-lucide="check-circle" style="width:20px; height:20px;"></i> ${titleText}`;
-      summaryEl.textContent = summaryText;
-      checklistEl.innerHTML = checklistHtml;
+      // Render Checklist
+      checklistContainer.innerHTML = '';
+      items.forEach(function(item) {
+        const li = document.createElement('li');
+        const isChecked = Boolean(appState.checkedItems[item.id]);
+        li.className = 'sim-check-item' + (isChecked ? ' checked' : '');
 
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'sim-checkbox';
+        checkbox.checked = isChecked;
+
+        const span = document.createElement('span');
+        span.textContent = item.text;
+
+        li.appendChild(checkbox);
+        li.appendChild(span);
+
+        li.addEventListener('click', function(e) {
+          if (e.target !== checkbox) {
+            checkbox.checked = !checkbox.checked;
+          }
+          toggleCheckItem(item.id, checkbox.checked, li);
+        });
+
+        checkbox.addEventListener('change', function() {
+          toggleCheckItem(item.id, checkbox.checked, li);
+        });
+
+        checklistContainer.appendChild(li);
+      });
+    }
+
+    function toggleCheckItem(id, checked, element) {
+      appState.checkedItems[id] = checked;
+      if (checked) {
+        element.classList.add('checked');
+      } else {
+        element.classList.remove('checked');
+      }
+      persistState();
+    }
+
+    // Modal de Parceiros
+    function openPartnerModal(key) {
+      const data = PARTNER_DATA[key];
+      if (!data) return;
+
+      const modalBadge = document.getElementById('modal-partner-badge');
+      const modalTitle = document.getElementById('modal-partner-title');
+      const modalDesc = document.getElementById('modal-partner-desc');
+      const modalDomain = document.getElementById('modal-partner-domain');
+      const overlay = document.getElementById('partner-modal-overlay');
+
+      if (modalBadge) modalBadge.textContent = data.badge;
+      if (modalTitle) modalTitle.textContent = data.title;
+      if (modalDesc) modalDesc.textContent = data.desc;
+      if (modalDomain) modalDomain.textContent = data.domain;
+
+      if (overlay) {
+        overlay.classList.add('open');
       }
     }
 
-    // Bibliographic References Category Filter & Search
-    let currentCategory = 'todas';
-
-    function setBiblioCategory(cat, btnElement) {
-      currentCategory = cat;
-      const allBtns = document.querySelectorAll('.biblio-filter-btn');
-      allBtns.forEach(function(b) { b.classList.remove('active'); });
-      if (btnElement) btnElement.classList.add('active');
-      filterBiblio();
+    function closePartnerModal() {
+      const overlay = document.getElementById('partner-modal-overlay');
+      if (overlay) {
+        overlay.classList.remove('open');
+      }
     }
 
-    function filterBiblio() {
-      const searchInput = document.getElementById('biblio-search');
-      const query = searchInput ? (searchInput.value || '').toLowerCase().trim() : '';
-      const items = document.querySelectorAll('.biblio-item');
+    function handleModalOverlayClick(e) {
+      if (e.target.id === 'partner-modal-overlay') {
+        closePartnerModal();
+      }
+    }
+
+    function copyDomainFromModal() {
+      const modalDomain = document.getElementById('modal-partner-domain');
+      if (modalDomain) {
+        copyDomain(modalDomain.textContent.trim());
+      }
+    }
+
+    // Filtro e Busca de Referências
+    let currentRefCategory = 'todas';
+
+    function filterRefCategory(cat) {
+      currentRefCategory = cat;
+      const cats = ['todas', 'legislacao', 'trabalho', 'turismo', 'institucional'];
+      cats.forEach(function(c) {
+        const btn = document.getElementById('btn-cat-' + c);
+        if (btn) {
+          btn.classList.remove('active');
+        }
+      });
+      const currentBtn = document.getElementById('btn-cat-' + cat);
+      if (currentBtn) {
+        currentBtn.classList.add('active');
+      }
+      filterReferences();
+    }
+
+    function filterReferences() {
+      const searchBox = document.getElementById('ref-search-box');
+      const query = searchBox ? searchBox.value.toLowerCase().trim() : '';
+      const items = document.querySelectorAll('.ref-item');
 
       items.forEach(function(item) {
-        const itemCat = item.getAttribute('data-category') || '';
-        const itemContent = (item.textContent || item.innerText || '').toLowerCase();
-        const itemKeywords = (item.getAttribute('data-keywords') || '') + ' ' + itemContent;
+        const category = item.getAttribute('data-category');
+        const keywords = (item.getAttribute('data-keywords') || '').toLowerCase();
+        const text = item.textContent.toLowerCase();
 
-        const matchesCat = (currentCategory === 'todas') || (itemCat === currentCategory);
-        const matchesQuery = !query || itemKeywords.includes(query);
+        const matchesCat = (currentRefCategory === 'todas' || category === currentRefCategory);
+        const matchesQuery = query === '' || keywords.includes(query) || text.includes(query);
 
         if (matchesCat && matchesQuery) {
-          item.style.display = 'block';
+          item.style.display = 'flex';
         } else {
           item.style.display = 'none';
         }
       });
     }
+
+    // Utilitários de Cópia e Notificação Toast
+    function showToast(message) {
+      const toast = document.getElementById('toast-message');
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(function() {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    function copyDomain(domain) {
+      copyTextToClipboard(domain, 'Endereço web copiado: ' + domain);
+    }
+
+    function copyEmail(email) {
+      copyTextToClipboard(email, 'E-mail oficial copiado: ' + email);
+    }
+
+    function copyCitation(button, citationText) {
+      copyTextToClipboard(citationText, 'Referência ABNT copiada com sucesso!');
+      const oldText = button.textContent;
+      button.textContent = 'Copiado!';
+      button.style.backgroundColor = 'var(--surface-purple-subtle)';
+      setTimeout(function() {
+        button.textContent = oldText;
+        button.style.backgroundColor = '';
+      }, 2000);
+    }
+
+    function copyTextToClipboard(text, successMsg) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showToast(successMsg);
+        }).catch(function() {
+          fallbackCopyText(text, successMsg);
+        });
+      } else {
+        fallbackCopyText(text, successMsg);
+      }
+    }
+
+    function fallbackCopyText(text, successMsg) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg);
+      } catch (err) {
+        showToast('Não foi possível copiar automaticamente.');
+      }
+      document.body.removeChild(textArea);
+    }
+
+    // Inicialização ao carregar o DOM
+    document.addEventListener('DOMContentLoaded', function() {
+      initApp();
+    });
   </script>
 </body>
 </html>
