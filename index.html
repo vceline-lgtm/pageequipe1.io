@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto de Pesquisa & Inovação Tecnológica</title>
+    <title>Estratégias de acesso ao mundo do trabalho no setor de turismo e eventos</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -54,17 +54,18 @@
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
+        ::-webkit-scrollbar, .custom-scrollbar::-webkit-scrollbar {
             width: 8px;
         }
-        ::-webkit-scrollbar-track {
+        ::-webkit-scrollbar-track, .custom-scrollbar::-webkit-scrollbar-track {
             background: #0B0F19;
+            border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb {
+        ::-webkit-scrollbar-thumb, .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #1F2937;
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover {
+        ::-webkit-scrollbar-thumb:hover, .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #374151;
         }
 
@@ -101,30 +102,6 @@
 </head>
 <body class="bg-mesh min-h-screen flex flex-col justify-between selection:bg-brand-accent selection:text-white">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 w-full border-b border-gray-800/80 bg-brand-dark/80 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-brand-accent via-brand-cyan to-brand-purple flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
-                    <i class="fa-solid font-bold text-xl fa-atom"></i>
-                </div>
-                <div>
-                    <span class="font-display font-bold text-lg sm:text-xl text-white tracking-tight">LAB<span class="text-brand-cyan">IA</span>&Data</span>
-                    <span class="hidden sm:inline-block text-xs text-gray-400 border-l border-gray-700 pl-2 ml-2">Projeto de Pesquisa Avançada</span>
-                </div>
-            </div>
-
-            <nav class="flex items-center space-x-4 sm:space-x-6 text-sm font-medium">
-                <a href="#outdoor" class="text-gray-300 hover:text-white transition-colors">Início</a>
-                <a href="#hub" class="text-gray-300 hover:text-white transition-colors">Portais & Links</a>
-                <a href="#metricas" class="hidden md:inline-block text-gray-300 hover:text-white transition-colors">Impacto</a>
-                <a href="#contato" class="px-4 py-2 rounded-lg bg-brand-accent/10 border border-brand-accent/30 text-brand-accent hover:bg-brand-accent hover:text-white transition-all text-xs sm:text-sm font-semibold">
-                    Contato
-                </a>
-            </nav>
-        </div>
-    </header>
-
     <!-- SECTION 1: Outdoor Digital / Hero Section -->
     <section id="outdoor" class="relative pt-12 pb-16 md:pt-20 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div class="text-center max-w-4xl mx-auto">
@@ -132,20 +109,20 @@
             <!-- Badges de Status -->
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs sm:text-sm font-medium mb-6">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
-                Projeto Ativo 2024-2026 • Pesquisa Aplicada
+                Projeto Ativo desde 18/05/2026 • Projeto de Extensão
             </div>
 
             <!-- Título Impactante (Outdoor) -->
             <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                Inteligência Artificial & <br class="hidden sm:inline"/>
+                Estratégias de acesso ao mundo do trabalho <br class="hidden sm:inline"/>
                 <span class="bg-gradient-to-r from-brand-accent via-brand-cyan to-brand-purple bg-clip-text text-transparent">
-                    Sistemas Inteligentes do Futuro
+                    no setor de turismo e eventos
                 </span>
             </h1>
 
             <!-- Subtítulo com Missão/Visão -->
             <p class="text-gray-300 text-base sm:text-lg lg:text-xl font-normal leading-relaxed mb-10 max-w-3xl mx-auto">
-                Desenvolvendo novos modelos de aprendizado profundo, processamento de sinais e automação inteligente para resolver desafios complexos com alto impacto científico, acadêmico e regional.
+                Projeto de extensão, pautado no diálogo sobre direitos trabalhistas, na valorização dos futuros profissionais e na inclusão social por meio do trabalho.
             </p>
 
             <!-- Ações rápidas -->
@@ -153,40 +130,13 @@
                 <a href="#hub" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-accent to-brand-purple text-white font-semibold text-sm sm:text-base hover:opacity-90 transition-all shadow-lg shadow-indigo-500/25 flex items-center gap-2">
                     <i class="fa-solid fa-compass"></i> Explorar Portais Integrados
                 </a>
-                <button onclick="openModal('sobre-projeto')" class="px-6 py-3.5 rounded-xl glass-card text-gray-200 font-semibold text-sm sm:text-base hover:text-white transition-all flex items-center gap-2">
+                <button onclick="openModal('sobre-projeto')" class="px-4 py-3.5 rounded-xl glass-card text-gray-200 font-semibold text-sm sm:text-base hover:text-white transition-all flex items-center gap-2">
                     <i class="fa-solid fa-circle-info"></i> Sobre o Projeto
                 </button>
             </div>
         </div>
 
-        <!-- Metric Counter Strip -->
-        <div id="metricas" class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-10 border-t border-gray-800/80">
-            <div class="glass-card p-5 rounded-2xl text-center">
-                <div class="text-3xl sm:text-4xl font-extrabold font-display text-brand-cyan mb-1 flex justify-center items-center">
-                    <span class="counter" data-target="18">0</span>+
-                </div>
-                <p class="text-xs sm:text-sm text-gray-400 font-medium">Publicações IEEE / Qualis</p>
-            </div>
-            <div class="glass-card p-5 rounded-2xl text-center">
-                <div class="text-3xl sm:text-4xl font-extrabold font-display text-brand-accent mb-1 flex justify-center items-center">
-                    <span class="counter" data-target="6">0</span>
-                </div>
-                <p class="text-xs sm:text-sm text-gray-400 font-medium">Editais Aprovados (CNPq/FAPERN)</p>
-            </div>
-            <div class="glass-card p-5 rounded-2xl text-center">
-                <div class="text-3xl sm:text-4xl font-extrabold font-display text-brand-purple mb-1 flex justify-center items-center">
-                    <span class="counter" data-target="12">0</span>
-                </div>
-                <p class="text-xs sm:text-sm text-gray-400 font-medium">Modelos de IA Criados</p>
-            </div>
-            <div class="glass-card p-5 rounded-2xl text-center">
-                <div class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-400 mb-1 flex justify-center items-center">
-                    <span class="counter" data-target="100">0</span>%
-                </div>
-                <p class="text-xs sm:text-sm text-gray-400 font-medium">Código Aberto & Transparência</p>
-            </div>
-        </div>
-    </section>
+       
 
     <!-- SECTION 2: Hub Interativo de Cards -->
     <section id="hub" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
@@ -361,16 +311,16 @@
         </div>
     </footer>
 
-    <!-- MODAL DE DETALHES -->
-    <div id="detailModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 modal-blur opacity-0 pointer-events-none transition-all duration-300">
-        <div class="glass-card bg-brand-card/95 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative border border-gray-700 shadow-2xl transform scale-95 transition-all duration-300" id="modalContainer">
+    <!-- MODAL DE DETALHES (AJUSTADO PARA APROVEITAR LARGURA DA TELA E ROLAGEM PRÓPRIA) -->
+    <div id="detailModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 modal-blur opacity-0 pointer-events-none transition-all duration-300">
+        <div class="glass-card bg-brand-card/95 rounded-2xl w-[92vw] max-w-4xl max-h-[85vh] p-6 sm:p-8 relative border border-gray-700 shadow-2xl transform scale-95 transition-all duration-300 flex flex-col" id="modalContainer">
             <!-- Botão Fechar -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white w-8 h-8 rounded-full bg-gray-800/50 flex items-center justify-center">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white w-8 h-8 rounded-full bg-gray-800/50 flex items-center justify-center z-10">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Conteúdo Dinâmico do Modal -->
-            <div id="modalContent">
+            <!-- Conteúdo Dinâmico do Modal (Com rolagem interna) -->
+            <div id="modalContent" class="overflow-y-auto pr-2 custom-scrollbar">
                 <!-- Inserido via JavaScript -->
             </div>
         </div>
@@ -384,9 +334,9 @@
                 title: 'Sobre o Projeto de Pesquisa',
                 badge: 'Visão Geral',
                 color: 'text-brand-accent',
-                description: 'Este projeto investiga arquiteturas emergentes de inteligência artificial aplicada ao processamento de dados em tempo real e automação adaptativa. Nosso objetivo é integrar a pesquisa teórica com soluções de impacto socioeconômico direto.',
+                description: 'As transformações ocorridas nas relações de produção capitalistas, a partir da reestruturação produtiva iniciada em meados da década de 1970, impuseram novos desafios à classe trabalhadora, entre os quais se destaca um intenso e significativo processo de precarização laboral. Surge, assim, um novo contexto marcado por desafios, incertezas e dúvidas relacionadas ao mundo do trabalho, afetando tanto os trabalhadores que já ocupam postos de trabalho quanto aqueles que buscam qualificação e inserção profissional. Nos setores de Turismo e Eventos no Brasil, reproduzem-se as mesmas dinâmicas de precarização típicas do setor de serviços, reforçadas por vínculos de trabalho instáveis e informais. São esses fatos que motivam o projeto de extensão, pautado no diálogo sobre direitos trabalhistas, na valorização dos futuros profissionais e na inclusão social por meio do trabalho. Inicialmente voltado aos estudantes, aprendizes e empresas dos setores de turismo e eventos da Região Imediata de Canguaretama, em geral, e do município de Tibau do Sul, em particular, o objetivo do projeto é desenvolver estratégias de incentivo à captação de estudantes de Turismo e Eventos por meio das oportunidades de estágio e do Programa Jovem Aprendiz oferecidas por empresas desses segmentos no município de Tibau do Sul. Para isso, estão previstos momentos de orientação destinados ao público-alvo (estudantes, aprendizes e empresas) acerca dos requisitos legais e formais para a atuação como estagiários e jovens aprendizes; ações de sensibilização de estudantes da rede pública de ensino quanto aos valores envolvidos em um modelo de desenvolvimento mais equilibrado entre capital e trabalho; bem como a criação de mecanismos de diálogo entre estudantes e empresas. Destaca-se, ainda, o alinhamento do projeto a um dos Objetivos de Desenvolvimento Sustentável — ODS 8 (Trabalho Decente e Crescimento Econômico) —, convergindo para o fomento de uma cultura de valorização mútua das oportunidades de inserção no mundo do trabalho entre os atores atendidos.',
                 links: [
-                    { label: 'Acessar Grupo de Pesquisa Lattes', url: 'https://lattes.cnpq.br/' },
+                    { label: 'Acessar à página do projeto no Portal do IFRN', url: 'https://portal.ifrn.edu.br/projetos-de-extensao/8473/' },
                     { label: 'Repositório de Código / GitHub', url: 'https://github.com' }
                 ]
             },
@@ -449,8 +399,8 @@
             modalContent.innerHTML = `
                 <span class="text-xs uppercase font-bold tracking-wider ${data.color}">${data.badge}</span>
                 <h3 class="font-display text-2xl font-bold text-white mt-1 mb-4">${data.title}</h3>
-                <p class="text-gray-300 text-sm leading-relaxed mb-6">${data.description}</p>
-                <div class="space-y-2">
+                <p class="text-gray-300 text-base leading-relaxed mb-6 text-justify hyphens-auto">${data.description}</p>
+                <div class="space-y-2 mb-2">
                     <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Links Diretos</h4>
                     ${linksHtml}
                 </div>
