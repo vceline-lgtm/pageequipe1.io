@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNP: CCV - Ciclos de Coleta e Validação | IFRN Canguaretama</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        ifrn: {
+                            green: '#00875F',
+                            lightgreen: '#04D361',
+                            darkgreen: '#00583E',
+                            navy: '#0F172A',
+                            slate: '#1E293B',
+                            accent: '#38BDF8',
+                            gold: '#F59E0B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-grid-pattern {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-ifrn-lightgreen selection:text-slate-950">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/60" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-ifrn-green to-ifrn-lightgreen flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-ifrn-green/20 group-hover:scale-105 transition-transform">
+                        CCV
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg leading-tight tracking-tight text-white group-hover:text-ifrn-lightgreen transition-colors">
+                            PNP: CCV
+                        </span>
+                        <span class="text-xs text-slate-400 font-medium">IFRN Campus Canguaretama</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#sobre" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-ifrn-lightgreen hover:bg-slate-900 rounded-lg transition-colors">Sobre</a>
+                    <a href="#objetivos" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-ifrn-lightgreen hover:bg-slate-900 rounded-lg transition-colors">Objetivos</a>
+                    <a href="#pilares" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-ifrn-lightgreen hover:bg-slate-900 rounded-lg transition-colors">Atuação</a>
+                    <a href="#simulador" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-ifrn-lightgreen hover:bg-slate-900 rounded-lg transition-colors">Validação Interativa</a>
+                    <a href="#cronograma" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-ifrn-lightgreen hover:bg-slate-900 rounded-lg transition-colors">Vigência & Datas</a>
+                    <a href="#publicacoes" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-ifrn-lightgreen hover:bg-slate-900 rounded-lg transition-colors">Publicações</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#contato" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-ifrn-green hover:bg-ifrn-darkgreen text-white font-semibold text-sm transition-all shadow-md shadow-ifrn-green/20 border border-ifrn-lightgreen/30">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        <span>Contato</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Abrir Menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-2">
+            <a href="#sobre" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-ifrn-lightgreen rounded-md">Sobre</a>
+            <a href="#objetivos" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-ifrn-lightgreen rounded-md">Objetivos</a>
+            <a href="#pilares" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-ifrn-lightgreen rounded-md">Atuação</a>
+            <a href="#simulador" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-ifrn-lightgreen rounded-md">Validação Interativa</a>
+            <a href="#cronograma" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-ifrn-lightgreen rounded-md">Vigência & Datas</a>
+            <a href="#publicacoes" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-ifrn-lightgreen rounded-md">Publicações</a>
+            <a href="#contato" class="mobile-nav-link block px-3 py-2 text-base font-semibold text-ifrn-lightgreen bg-ifrn-green/10 rounded-md">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <!-- Background Network Grid Canvas -->
+        <canvas id="hero-canvas" class="absolute inset-0 z-0 opacity-40 pointer-events-none"></canvas>
+        <div class="absolute inset-0 bg-grid-pattern z-0 opacity-30 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ifrn-green/10 border border-ifrn-lightgreen/30 text-ifrn-lightgreen text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-ifrn-lightgreen animate-pulse"></span>
+                        Projeto de Extensão Institucional IFRN
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Ciclos de Coleta e Validação da <span class="bg-gradient-to-r from-ifrn-lightgreen via-emerald-300 to-sky-400 bg-clip-text text-transparent">Plataforma Nilo Peçanha</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg lg:text-xl font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Fortalecendo a confiabilidade, integridade e consistência dos dados educacionais e institucionais da Rede Federal de Educação Profissional, Científica e Tecnológica.
+                    </p>
+
+                    <!-- Quick Metrics Badge -->
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs sm:text-sm font-medium text-slate-400">
+                        <div class="flex items-center gap-2 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i data-lucide="user-check" class="w-4 h-4 text-ifrn-lightgreen"></i>
+                            <span>Coord: <strong>Prof. Neilson Ferreira de Lima</strong></span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-ifrn-accent"></i>
+                            <span>IFRN Campus Canguaretama</span>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action Buttons -->
+                    <div class="pt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#simulador" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-ifrn-green to-emerald-600 hover:from-ifrn-darkgreen hover:to-emerald-700 text-white font-bold text-base shadow-xl shadow-ifrn-green/20 border border-ifrn-lightgreen/30 transition-all hover:-translate-y-0.5">
+                            <i data-lucide="cpu" class="w-5 h-5"></i>
+                            <span>Simular Validação de Dados</span>
+                        </a>
+                        <a href="#sobre" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold text-base border border-slate-700/80 transition-all">
+                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                            <span>Conhecer o Projeto</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column: Graphic Dashboard Showcase -->
+                <div class="lg:col-span-5">
+                    <div class="relative glass-card rounded-2xl p-6 shadow-2xl overflow-hidden border border-slate-700/60">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-ifrn-lightgreen/10 rounded-full blur-3xl pointer-events-none"></div>
+                        
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <span class="ml-2 text-xs font-mono text-slate-400">PNP::Audit_Status_v2026.log</span>
+                            </div>
+                            <span class="text-xs px-2 py-0.5 rounded bg-ifrn-green/20 text-ifrn-lightgreen border border-ifrn-green/30 font-mono">ONLINE</span>
+                        </div>
+
+                        <!-- Mini Stats Panel -->
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800">
+                                <span class="text-xs text-slate-400 block mb-1">Taxa de Confiabilidade</span>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-2xl font-bold text-white font-mono" id="hero-stat-1">98.7%</span>
+                                    <span class="text-xs text-ifrn-lightgreen font-medium">+4.2%</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-1.5 rounded-full mt-2 overflow-hidden">
+                                    <div class="bg-ifrn-lightgreen h-full rounded-full" style="width: 98.7%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800">
+                                <span class="text-xs text-slate-400 block mb-1">Inconsistências Tratadas</span>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-2xl font-bold text-white font-mono" id="hero-stat-2">12,480</span>
+                                    <span class="text-xs text-emerald-400 font-medium">Resolvidas</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-1.5 rounded-full mt-2 overflow-hidden">
+                                    <div class="bg-sky-400 h-full rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Console Live Stream simulation -->
+                        <div class="bg-slate-950 p-4 rounded-xl font-mono text-xs space-y-2 border border-slate-800/80 text-slate-300">
+                            <div class="flex items-center justify-between text-slate-500 text-[11px] border-b border-slate-800/60 pb-1">
+                                <span>FLUXO DE VALIDAÇÃO PNP-CCV</span>
+                                <span>CICLO ATIVO</span>
+                            </div>
+                            <p class="text-emerald-400 flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-3.5 h-3.5 shrink-0"></i>
+                                <span>[AUDITOK] Base IFRN Canguaretama auditada</span>
+                            </p>
+                            <p class="text-sky-400 flex items-center gap-2">
+                                <i data-lucide="refresh-cw" class="w-3.5 h-3.5 animate-spin shrink-0"></i>
+                                <span>[PROCESS] Cruzamento de Vínculos Acadêmicos...</span>
+                            </p>
+                            <p class="text-slate-400 flex items-center gap-2">
+                                <i data-lucide="shield-check" class="w-3.5 h-3.5 shrink-0 text-amber-400"></i>
+                                <span>[QUALIFY] Certificação de Qualidade dos Dados</span>
+                            </p>
+                        </div>
+
+                        <div class="mt-4 pt-3 flex items-center justify-between text-xs text-slate-400">
+                            <span>Vigência Global: Até 15/10/2028</span>
+                            <span class="text-ifrn-lightgreen font-medium flex items-center gap-1">
+                                <i data-lucide="activity" class="w-3.5 h-3.5"></i> Rede Federal
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Numbers Counter Banner -->
+    <section class="py-8 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="space-y-1">
+                    <p class="text-2xl sm:text-4xl font-extrabold text-ifrn-lightgreen font-mono">100%</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Foco na Qualidade dos Dados</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-2xl sm:text-4xl font-extrabold text-white font-mono">IFRN</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Campus Canguaretama</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-2xl sm:text-4xl font-extrabold text-sky-400 font-mono">PNP</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Plataforma Nilo Peçanha</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-2xl sm:text-4xl font-extrabold text-amber-400 font-mono">2026-2028</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Acompanhamento e Evolução</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-ifrn-lightgreen mb-2">Sobre a Iniciativa</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                    O Projeto PNP: Ciclos de Coleta e Validação (PNP–CCV)
+                </h3>
+                <div class="w-16 h-1 bg-ifrn-green mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <!-- Text Box 1 -->
+                <div class="bg-slate-900/60 p-8 rounded-2xl border border-slate-800 space-y-4 hover:border-slate-700 transition-colors flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-ifrn-green/20 text-ifrn-lightgreen flex items-center justify-center mb-6">
+                            <i data-lucide="network" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Inserção na Rede Federal</h4>
+                        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                            O <strong>PNP: CCV</strong> é uma ação estruturada de extensão universitária no âmbito da 
+                            <strong>Rede Federal de Educação Profissional, Científica e Tecnológica</strong>. O projeto atua estrategicamente junto à Plataforma Nilo Peçanha (PNP), o ambiente virtual oficial de estatísticas e dados da Rede.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 text-xs text-slate-400 flex items-center gap-2">
+                        <i data-lucide="building-2" class="w-4 h-4 text-ifrn-lightgreen"></i>
+                        <span>Vínculo Institucional: IFRN - Campus Canguaretama</span>
+                    </div>
+                </div>
+
+                <!-- Text Box 2 -->
+                <div class="bg-slate-900/60 p-8 rounded-2xl border border-slate-800 space-y-4 hover:border-slate-700 transition-colors flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-6">
+                            <i data-lucide="database-zap" class="w-4 h-4"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Excelência & Tomada de Decisão</h4>
+                        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                            Através da aplicação sistemática de auditorias e inteligência de dados, o PNP-CCV atua como um hub qualificador, garantindo que os dados que alimentam relatórios governamentais, alocações orçamentárias e políticas públicas reflitam com precisão a realidade acadêmica e administrativa.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 text-xs text-slate-400 flex items-center gap-2">
+                        <i data-lucide="user" class="w-4 h-4 text-sky-400"></i>
+                        <span>Coordenador do Projeto: Prof. Neilson Ferreira de Lima</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Objectives (🎯 Objetivo Principal) -->
+    <section id="objetivos" class="py-20 bg-slate-900 border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <span class="text-xs font-bold uppercase tracking-widest text-ifrn-lightgreen">Diretriz Central</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-6">🎯 Objetivo Principal</h2>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                    Fortalecer os processos de <strong>coleta, validação, organização e qualificação</strong> dos dados da Plataforma Nilo Peçanha (PNP). A iniciativa visa garantir maior confiabilidade e consistência às informações institucionais utilizadas para a análise, planejamento e acompanhamento estratégico da Rede Federal.
+                </p>
+            </div>
+
+            <!-- 4 Step Cards for Objectives -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+                <!-- Step 1 -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-ifrn-green/50 transition-all group">
+                    <div class="w-10 h-10 rounded-lg bg-ifrn-green/10 text-ifrn-lightgreen flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
+                        01
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Coleta Sistemática</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Padronização das rotinas de extração e submissão dos dados acadêmicos e administrativos.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-sky-500/50 transition-all group">
+                    <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
+                        02
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Validação Rigorosa</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Aplicação de algoritmos de consistência para cruzamento de vínculos e matrículas.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-amber-500/50 transition-all group">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
+                        03
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Organização de Base</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Estruturação de bancos de dados otimizados para consulta ágil e elaboração de relatórios.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-emerald-400/50 transition-all group">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-400/10 text-emerald-300 flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
+                        04
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Qualificação Contínua</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Elevando o grau de maturidade dos dados institucionais para transparência pública.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Activities / Pillars (📋 Atividades e Atuação) -->
+    <section id="pilares" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-ifrn-lightgreen mb-2">Estrutura Operacional</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">📋 Atividades e Atuação</h3>
+                <p class="text-slate-400 mt-3 text-base">Frentes de trabalho dedicadas ao aprimoramento da governança de dados.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="bg-gradient-to-b from-slate-900 to-slate-900/40 p-8 rounded-2xl border border-slate-800 hover:border-ifrn-lightgreen/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-ifrn-green/20 text-ifrn-lightgreen flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="shield-alert" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Ciclos Sistemáticos</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Realização periódica de <strong>auditorias de dados</strong> focadas em rastrear e identificar inconsistências, duplicidades e informações defasadas na base de registros institucionais.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-ifrn-lightgreen"></i>
+                            <span>Auditorias programadas periódicas</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-ifrn-lightgreen"></i>
+                            <span>Detecção automatizada de divergências</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-ifrn-lightgreen"></i>
+                            <span>Correção de registros legados</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-gradient-to-b from-slate-900 to-slate-900/40 p-8 rounded-2xl border border-slate-800 hover:border-sky-400/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="bar-chart-3" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Inteligência de Dados</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Produção de <strong>análises estatísticas</strong>, relatórios analíticos estratégicos, indicadores educacionais (KPIs) e ferramentas dinâmicas de monitoramento para subsidiar tomadas de decisão.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-sky-400"></i>
+                            <span>Painéis e dashboards analíticos</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-sky-400"></i>
+                            <span>Relatórios consolidados de desempenho</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-sky-400"></i>
+                            <span>Suporte à gestão e planejamento</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-gradient-to-b from-slate-900 to-slate-900/40 p-8 rounded-2xl border border-slate-800 hover:border-amber-400/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="users-round" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Foco na Extensão</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Integração direta entre a base acadêmica e as demandas reais da gestão pública, envolvendo profissionais, servidores e bolsistas em práticas aplicadas de ciência de dados.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-amber-400"></i>
+                            <span>Capacitação de bolsistas em Data Science</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-amber-400"></i>
+                            <span>Transferência de conhecimentos práticos</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-amber-400"></i>
+                            <span>Impacto direto na gestão da Rede Federal</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Data Validation Simulator / Dashboard Demo -->
+    <section id="simulador" class="py-20 bg-slate-900 border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-ifrn-lightgreen">Ferramenta Interativa</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Simulador de Validação PNP-CCV</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">
+                    Explore como a metodologia de auditoria do projeto atua filtrando, corrigindo e homologando registros de dados da Plataforma Nilo Peçanha.
+                </p>
+            </div>
+
+            <!-- Simulator App Widget Container -->
+            <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 shadow-2xl overflow-hidden">
+                
+                <!-- Top Toolbar Controls -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+                    <div class="flex flex-wrap items-center gap-3">
+                        <label for="campus-filter" class="text-xs font-medium text-slate-400">Filtrar por Unidade/Campus:</label>
+                        <select id="campus-filter" class="bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-lg px-3 py-2 focus:ring-2 focus:ring-ifrn-lightgreen focus:outline-none">
+                            <option value="ALL">Todos os Campi Simulação</option>
+                            <option value="Canguaretama">IFRN - Campus Canguaretama</option>
+                            <option value="Natal-Central">IFRN - Campus Natal-Central</option>
+                            <option value="Parnamirim">IFRN - Campus Parnamirim</option>
+                        </select>
+
+                        <select id="status-filter" class="bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-lg px-3 py-2 focus:ring-2 focus:ring-ifrn-lightgreen focus:outline-none">
+                            <option value="ALL">Todos os Status</option>
+                            <option value="Pending">Pendente de Auditoria</option>
+                            <option value="Validated">Validados / Homologados</option>
+                            <option value="Inconsistent">Inconsistência Identificada</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <button id="run-audit-btn" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-ifrn-green hover:bg-ifrn-darkgreen text-white text-xs font-bold transition-all shadow-md">
+                            <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                            <span>Executar Ciclo de Validação</span>
+                        </button>
+                        <button id="reset-sim-btn" class="px-3 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 text-xs font-medium border border-slate-800 transition-colors">
+                            Restaurar Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Interactive Stats Bar -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                        <span class="text-xs text-slate-400 block">Total de Registros</span>
+                        <span class="text-xl sm:text-2xl font-bold text-white font-mono" id="sim-total-count">0</span>
+                    </div>
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                        <span class="text-xs text-emerald-400 block">Validados / Corretos</span>
+                        <span class="text-xl sm:text-2xl font-bold text-emerald-400 font-mono" id="sim-valid-count">0</span>
+                    </div>
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                        <span class="text-xs text-amber-400 block">Em Auditoria</span>
+                        <span class="text-xl sm:text-2xl font-bold text-amber-400 font-mono" id="sim-pending-count">0</span>
+                    </div>
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                        <span class="text-xs text-red-400 block">Inconsistências</span>
+                        <span class="text-xl sm:text-2xl font-bold text-red-400 font-mono" id="sim-error-count">0</span>
+                    </div>
+                </div>
+
+                <!-- Simulation Data Table -->
+                <div class="overflow-x-auto rounded-xl border border-slate-800">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead class="bg-slate-900 text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-800">
+                            <tr>
+                                <th class="p-3.5">ID Reg.</th>
+                                <th class="p-3.5">Campus</th>
+                                <th class="p-3.5">Vínculo / Curso</th>
+                                <th class="p-3.5">Indicador Avaliado</th>
+                                <th class="p-3.5">Status de Validação</th>
+                                <th class="p-3.5 text-right">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sim-table-body" class="divide-y divide-slate-800/60 bg-slate-950 font-mono">
+                            <!-- JS Injected rows -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Status Feedback Toast Message Box -->
+                <div id="sim-toast" class="hidden mt-4 p-3 rounded-lg bg-ifrn-green/20 border border-ifrn-lightgreen/40 text-ifrn-lightgreen text-xs flex items-center justify-between">
+                    <span id="sim-toast-msg" class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                        <span>Ciclo de validação executado com sucesso nas entradas selecionadas!</span>
+                    </span>
+                    <button id="close-toast" class="text-slate-400 hover:text-white">&times;</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Details & Timeline (🗓️ Detalhes Operacionais) -->
+    <section id="cronograma" class="py-20 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-ifrn-lightgreen">Gestão e Prazos</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">🗓️ Detalhes Operacionais & Linha do Tempo</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Acompanhamento dos ciclos de extensão e marco estratégico de acompanhamento da Plataforma Nilo Peçanha.</p>
+            </div>
+
+            <!-- Details Summary Grid -->
+            <div class="grid md:grid-cols-3 gap-6 mb-16">
+                <!-- Card 1 -->
+                <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-ifrn-green/20 text-ifrn-lightgreen flex items-center justify-center shrink-0">
+                        <i data-lucide="user-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Coordenação Geral</span>
+                        <h4 class="text-base font-bold text-white mt-0.5">Neilson Ferreira de Lima</h4>
+                        <p class="text-xs text-slate-400 mt-1">Liderança de ensino, pesquisa e extensão em inteligência de dados.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Campus de Origem</span>
+                        <h4 class="text-base font-bold text-white mt-0.5">IFRN Canguaretama</h4>
+                        <p class="text-xs text-slate-400 mt-1">Instituto Federal de Educação, Ciência e Tecnologia do RN.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="calendar" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Horizonte de Acompanhamento</span>
+                        <h4 class="text-base font-bold text-white mt-0.5">Até 15/10/2028</h4>
+                        <p class="text-xs text-slate-400 mt-1">Evolução global dos ciclos da Plataforma Nilo Peçanha.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Timeline Track -->
+            <div class="max-w-4xl mx-auto relative pl-6 sm:pl-8 border-l-2 border-slate-800 space-y-12">
+                
+                <!-- Timeline Event 1 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full bg-ifrn-lightgreen ring-4 ring-slate-950 flex items-center justify-center">
+                        <div class="w-2 h-2 rounded-full bg-slate-950"></div>
+                    </div>
+                    <div class="bg-slate-900 p-6 rounded-xl border border-ifrn-lightgreen/30 shadow-lg">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-ifrn-green/20 text-ifrn-lightgreen text-xs font-bold border border-ifrn-green/30">
+                                VIGÊNCIA ATUAL EM ANDAMENTO
+                            </span>
+                            <span class="text-xs font-mono text-slate-400">27/04/2026 a 27/04/2027</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Ciclo de Validação e Qualificação em Execução</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Execução prioritária das auditorias de consistência da base de dados institucionais, engajamento dos bolsistas extensionistas e emissão dos relatórios de auditoria preventiva.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Event 2 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full bg-sky-500 ring-4 ring-slate-950"></div>
+                    <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-400 text-xs font-semibold border border-sky-500/20">
+                                HORIZONTE ESTRATÉGICO DA REDE
+                            </span>
+                            <span class="text-xs font-mono text-slate-400">Previsão até 15/10/2028</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Acompanhamento e Consolidação Global</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Monitoramento contínuo e acompanhamento da evolução histórica dos ciclos da Plataforma Nilo Peçanha em consonância com as diretrizes da Secretaria de Educação Profissional e Tecnológica (SETEC/MEC).
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications & Articles Section -->
+    <section id="publicacoes" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-ifrn-lightgreen">Produção Técnica e Científica</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Publicações e Materiais</h2>
+                    <p class="text-slate-400 mt-2 text-sm sm:text-base">Artigos, relatórios de gestão, notas técnicas e apresentações do projeto.</p>
+                </div>
+
+                <!-- Search Input Filter -->
+                <div class="relative w-full md:w-72">
+                    <input type="text" id="pub-search-input" placeholder="Buscar publicação..." class="w-full bg-slate-950 border border-slate-700 text-slate-200 text-xs rounded-xl pl-9 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-ifrn-lightgreen">
+                    <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3 top-3.5"></i>
+                </div>
+            </div>
+
+            <!-- Filterable Cards Grid -->
+            <div class="grid md:grid-cols-3 gap-6" id="publications-grid">
+                
+                <!-- Card 1 -->
+                <div class="pub-card bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between" data-title="Metodologia de Auditoria de Dados PNP" data-category="Artigo">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-md bg-ifrn-green/20 text-ifrn-lightgreen text-[11px] font-bold">Artigo Técnico</span>
+                            <span class="text-xs text-slate-500 font-mono">2026</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-snug">Metodologia de Auditoria Sistemática de Dados na Plataforma Nilo Peçanha</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Abordagem sobre técnicas de detecção de inconsistências em bancos de dados de grande porte no contexto da Rede Federal.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-900 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium">Autores: Lima, N. F. et al.</span>
+                        <a href="#contato" class="text-ifrn-lightgreen hover:underline flex items-center gap-1 font-semibold">
+                            <span>PDF</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="pub-card bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between" data-title="Indicadores Educacionais e Tomada de Decisao" data-category="Relatório">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-md bg-sky-500/20 text-sky-400 text-[11px] font-bold">Relatório Analítico</span>
+                            <span class="text-xs text-slate-500 font-mono">2026</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-snug">Indicadores Educacionais e Tomada de Decisão na Gestão Pública</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Relatório detalhando a relação entre a consistência cadastral de matrículas e o impacto no planejamento orçamentário institucional.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-900 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium">Equipe PNP-CCV</span>
+                        <a href="#contato" class="text-sky-400 hover:underline flex items-center gap-1 font-semibold">
+                            <span>Visualizar</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="pub-card bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between" data-title="Guia Pratico de Qualificacao de Dados Canguaretama" data-category="Guia">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-400 text-[11px] font-bold">Guia Operacional</span>
+                            <span class="text-xs text-slate-500 font-mono">2026</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-snug">Guia Prático de Qualificação de Dados Institucionais do IFRN Canguaretama</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Manual de boas práticas para inserção, validação e manutenção contínua das estatísticas dos cursos e alunos.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-900 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium">IFRN Canguaretama</span>
+                        <a href="#contato" class="text-amber-400 hover:underline flex items-center gap-1 font-semibold">
+                            <span>Baixar</span>
+                            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Institutional Details Section -->
+    <section id="contato" class="py-20 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-slate-950 rounded-3xl border border-slate-800 p-8 sm:p-12">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-4">
+                        <span class="px-3 py-1 rounded-full bg-ifrn-green/20 text-ifrn-lightgreen text-xs font-bold border border-ifrn-green/30">
+                            PROJETO DE EXTENSÃO REGISTRADO
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white">Contato & Informações Institucionais</h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Para dúvidas sobre as metodologias de auditoria, cooperação técnica entre unidades da Rede Federal ou acesso aos relatórios do PNP-CCV, entre em contato com a coordenação.
+                        </p>
+
+                        <div class="space-y-3 pt-2 text-xs sm:text-sm text-slate-300">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-ifrn-lightgreen">
+                                    <i data-lucide="user" class="w-4 h-4"></i>
+                                </div>
+                                <span><strong>Coordenador:</strong> Prof. Neilson Ferreira de Lima</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-ifrn-lightgreen">
+                                    <i data-lucide="building" class="w-4 h-4"></i>
+                                </div>
+                                <span><strong>Instituição:</strong> Instituto Federal do Rio Grande do Norte (IFRN) - Campus Canguaretama</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-ifrn-lightgreen">
+                                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                                </div>
+                                <span><strong>Vigência Atual:</strong> 27/04/2026 a 27/04/2027</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Message Form Simulation -->
+                    <div class="lg:col-span-5 bg-slate-950 p-6 rounded-2xl border border-slate-800">
+                        <h3 class="text-base font-bold text-white mb-4">Enviar Mensagem ao Projeto</h3>
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-3">
+                            <div>
+                                <label for="contact-name" class="block text-xs text-slate-400 mb-1">Seu Nome / Instituição</label>
+                                <input type="text" id="contact-name" required placeholder="Ex: Maria Silva - IFRN" class="w-full bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:ring-2 focus:ring-ifrn-lightgreen focus:outline-none">
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-xs text-slate-400 mb-1">E-mail Institucional</label>
+                                <input type="email" id="contact-email" required placeholder="nome@ifrn.edu.br" class="w-full bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:ring-2 focus:ring-ifrn-lightgreen focus:outline-none">
+                            </div>
+                            <div>
+                                <label for="contact-msg" class="block text-xs text-slate-400 mb-1">Assunto / Mensagem</label>
+                                <textarea id="contact-msg" rows="3" required placeholder="Como podemos cooperar?" class="w-full bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:ring-2 focus:ring-ifrn-lightgreen focus:outline-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-2.5 rounded-lg bg-ifrn-green hover:bg-ifrn-darkgreen text-white font-bold text-xs transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                                <span>Enviar Contato</span>
+                            </button>
+                        </form>
+                        <div id="form-toast" class="hidden mt-3 text-center p-2 rounded bg-ifrn-green/20 text-ifrn-lightgreen text-xs">
+                            Mensagem enviada com sucesso!
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-ifrn-green to-ifrn-lightgreen flex items-center justify-center text-slate-950 font-black text-sm">
+                        CCV
+                    </div>
+                    <div>
+                        <p class="text-white font-semibold">PNP: CCV – Ciclos de Coleta e Validação</p>
+                        <p class="text-slate-500">IFRN Campus Canguaretama • Neilson Ferreira de Lima</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-6 text-slate-400">
+                    <a href="#sobre" class="hover:text-ifrn-lightgreen transition-colors">Sobre</a>
+                    <a href="#objetivos" class="hover:text-ifrn-lightgreen transition-colors">Objetivos</a>
+                    <a href="#pilares" class="hover:text-ifrn-lightgreen transition-colors">Atuação</a>
+                    <a href="#simulador" class="hover:text-ifrn-lightgreen transition-colors">Simulador</a>
+                    <a href="#cronograma" class="hover:text-ifrn-lightgreen transition-colors">Vigência</a>
+                </div>
+
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between text-slate-500 gap-4">
+                <p>&copy; 2026 PNP-CCV | IFRN - Campus Canguaretama. Todos os direitos reservados.</p>
+                <p>Rede Federal de Educação Profissional, Científica e Tecnológica</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Initialize Lucide Icons
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+            initHeroCanvas();
+            initSimulatorData();
+            initPublicationsFilter();
+            initMobileMenu();
+        });
+
+        // Mobile Menu Toggle Logic
+        function initMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const links = document.querySelectorAll('.mobile-nav-link');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Animated Interactive Hero Canvas (Data Network Nodes)
+        function initHeroCanvas() {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            let width = canvas.width = canvas.offsetWidth;
+            let height = canvas.height = canvas.offsetHeight;
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+            });
+
+            const particles = [];
+            const particleCount = Math.min(Math.floor(width / 25), 45);
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    radius: Math.random() * 2.5 + 1
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Draw connections
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 120) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(4, 211, 97, ${0.15 * (1 - dist / 120)})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                // Draw & update nodes
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = '#04D361';
+                    ctx.fill();
+
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+
+        // Data Validation Simulator Logic
+        let rawDataset = [
+            { id: 'REG-1042', campus: 'Canguaretama', curso: 'Técnico em Informática', indicator: 'Duplicidade de CPF', status: 'Inconsistent' },
+            { id: 'REG-1043', campus: 'Canguaretama', curso: 'Licenciatura em Educação no Campo', indicator: 'Matrícula Ativa', status: 'Validated' },
+            { id: 'REG-1044', campus: 'Natal-Central', curso: 'Engenharia de Energia', indicator: 'Carga Horária Integralizada', status: 'Pending' },
+            { id: 'REG-1045', campus: 'Parnamirim', curso: 'Técnico em Redes', indicator: 'Vínculo do Estudante', status: 'Inconsistent' },
+            { id: 'REG-1046', campus: 'Canguaretama', curso: 'Tecnologia em Gestão de Turismo', indicator: 'Percentual de Frequência', status: 'Validated' },
+            { id: 'REG-1047', campus: 'Parnamirim', curso: 'Técnico em Meio Ambiente', indicator: 'Data de Ingresso Legada', status: 'Pending' },
+            { id: 'REG-1048', campus: 'Natal-Central', curso: 'Sistemas de Informação', indicator: 'Status de Conclusão', status: 'Validated' }
+        ];
+
+        function initSimulatorData() {
+            renderSimulatorTable();
+
+            document.getElementById('campus-filter').addEventListener('change', renderSimulatorTable);
+            document.getElementById('status-filter').addEventListener('change', renderSimulatorTable);
+            
+            document.getElementById('run-audit-btn').addEventListener('click', runAuditSimulation);
+            document.getElementById('reset-sim-btn').addEventListener('click', resetSimulation);
+            
+            document.getElementById('close-toast').addEventListener('click', () => {
+                document.getElementById('sim-toast').classList.add('hidden');
+            });
+        }
+
+        function renderSimulatorTable() {
+            const campusVal = document.getElementById('campus-filter').value;
+            const statusVal = document.getElementById('status-filter').value;
+            const tbody = document.getElementById('sim-table-body');
+
+            const filtered = rawDataset.filter(item => {
+                const matchesCampus = (campusVal === 'ALL' || item.campus === campusVal);
+                const matchesStatus = (statusVal === 'ALL' || item.status === statusVal);
+                return matchesCampus && matchesStatus;
+            });
+
+            // Update stats counter
+            document.getElementById('sim-total-count').innerText = filtered.length;
+            document.getElementById('sim-valid-count').innerText = filtered.filter(i => i.status === 'Validated').length;
+            document.getElementById('sim-pending-count').innerText = filtered.filter(i => i.status === 'Pending').length;
+            document.getElementById('sim-error-count').innerText = filtered.filter(i => i.status === 'Inconsistent').length;
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="p-6 text-center text-slate-500 italic">Nenhum registro encontrado para os filtros selecionados.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(item => {
+                let badgeClass = '';
+                let statusLabel = '';
+
+                if (item.status === 'Validated') {
+                    badgeClass = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
+                    statusLabel = 'Homologado';
+                } else if (item.status === 'Pending') {
+                    badgeClass = 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+                    statusLabel = 'Pendente';
+                } else {
+                    badgeClass = 'bg-red-500/10 text-red-400 border-red-500/20';
+                    statusLabel = 'Inconsistente';
+                }
+
+                return `
+                    <tr class="hover:bg-slate-900/60 transition-colors">
+                        <td class="p-3.5 text-slate-400">${item.id}</td>
+                        <td class="p-3.5 text-slate-200 font-semibold">${item.campus}</td>
+                        <td class="p-3.5 text-slate-300 font-sans text-xs">${item.curso}</td>
+                        <td class="p-3.5 text-slate-400 font-sans text-xs">${item.indicator}</td>
+                        <td class="p-3.5">
+                            <span class="px-2 py-0.5 rounded text-[11px] font-bold border ${badgeClass}">
+                                ${statusLabel}
+                            </span>
+                        </td>
+                        <td class="p-3.5 text-right font-sans">
+                            <button onclick="fixRowData('${item.id}')" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-ifrn-green/20 hover:text-ifrn-lightgreen text-slate-400 text-[11px] border border-slate-800 transition-colors">
+                                Auditoria Rápida
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+            
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function fixRowData(id) {
+            rawDataset = rawDataset.map(item => {
+                if (item.id === id) {
+                    return { ...item, status: 'Validated' };
+                }
+                return item;
+            });
+            renderSimulatorTable();
+        }
+
+        function runAuditSimulation() {
+            // Convert pending and inconsistent to validated
+            rawDataset = rawDataset.map(item => ({
+                ...item,
+                status: 'Validated'
+            }));
+            renderSimulatorTable();
+
+            const toast = document.getElementById('sim-toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 5000);
+        }
+
+        function resetSimulation() {
+            rawDataset = [
+                { id: 'REG-1042', campus: 'Canguaretama', curso: 'Técnico em Informática', indicator: 'Duplicidade de CPF', status: 'Inconsistent' },
+                { id: 'REG-1043', campus: 'Canguaretama', curso: 'Licenciatura em Educação no Campo', indicator: 'Matrícula Ativa', status: 'Validated' },
+                { id: 'REG-1044', campus: 'Natal-Central', curso: 'Engenharia de Energia', indicator: 'Carga Horária Integralizada', status: 'Pending' },
+                { id: 'REG-1045', campus: 'Parnamirim', curso: 'Técnico em Redes', indicator: 'Vínculo do Estudante', status: 'Inconsistent' },
+                { id: 'REG-1046', campus: 'Canguaretama', curso: 'Tecnologia em Gestão de Turismo', indicator: 'Percentual de Frequência', status: 'Validated' },
+                { id: 'REG-1047', campus: 'Parnamirim', curso: 'Técnico em Meio Ambiente', indicator: 'Data de Ingresso Legada', status: 'Pending' },
+                { id: 'REG-1048', campus: 'Natal-Central', curso: 'Sistemas de Informação', indicator: 'Status de Conclusão', status: 'Validated' }
+            ];
+            document.getElementById('campus-filter').value = 'ALL';
+            document.getElementById('status-filter').value = 'ALL';
+            renderSimulatorTable();
+        }
+
+        // Publications Filter Logic
+        function initPublicationsFilter() {
+            const searchInput = document.getElementById('pub-search-input');
+            const cards = document.querySelectorAll('.pub-card');
+
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+
+                cards.forEach(card => {
+                    const title = card.getAttribute('data-title').toLowerCase();
+                    const category = card.getAttribute('data-category').toLowerCase();
+                    const textContent = card.innerText.toLowerCase();
+
+                    if (title.includes(query) || category.includes(query) || textContent.includes(query)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // Contact Form Handler Simulation
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('form-toast');
+            toast.classList.remove('hidden');
+            document.getElementById('contact-form').reset();
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
