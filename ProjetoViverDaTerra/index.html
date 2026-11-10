@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viver da Terra: Cultivando Saberes, Fortalecendo Territórios | IFRN</title>
+    
+    <!-- Fonte Google: Poppins para títulos marcantes e Open Sans para boa legibilidade do texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para ícones expressivos e intuitivos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ESTILOS CUSTOMIZADOS DO PROJETO (CSS) -->
+    <style>
+        /* 
+          ==================================================================
+          1. PALETA DE CORES E VARIÁVEIS GLOBAIS (Identidade Visual)
+          ==================================================================
+          Inspirado na Agroecologia, Educação Popular e no projeto predecessor (2025).
+          Verdes = Folhagem e Natureza | Terrosos = Solo, Argila e Autonomia
+          Cremes/Beges = Acolhimento, Papel Natural e Papelão Reciclado
+        */
+        :root {
+            --cor-primaria-verde: #2d5a27;       /* Verde Floresta Agroecológico */
+            --cor-secundaria-terra: #8c4327;     /* Marrom Argila/Terra Úmida */
+            --cor-amarelo-sol: #d99b26;          /* Amarelo Canário / Palha / Sol */
+            --cor-fundo-creme: #f9f6f0;           /* Bege Natural de Papel Reciclado */
+            --cor-fundo-card: #ffffff;            /* Branco puro para contraste de leitura */
+            --cor-texto-escuro: #2b2b2b;          /* Grafite suave para leitura confortável */
+            --cor-texto-suave: #555555;           /* Cinza médio para descrições */
+            --sombra-suave: 0 8px 24px rgba(45, 90, 39, 0.08); /* Sombra orgânica leve */
+            --borda-raio: 16px;                   /* Bordas arredondadas e amigáveis */
+            --transicao: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* RESET BÁSICO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--cor-fundo-creme);
+            color: var(--cor-texto-escuro);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--cor-primaria-verde);
+        }
+
+        /* CONTAINER CENTRALIZADO RESPONSIVO */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 
+          ==================================================================
+          2. CABEÇALHO E HERO SECTION
+          ==================================================================
+          Apresentação impactante do projeto, IFRN e coordenação pedagógica.
+        */
+        .header-nav {
+            background-color: var(--cor-fundo-card);
+            border-bottom: 3px solid var(--cor-amarelo-sol);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--cor-primaria-verde);
+        }
+
+        .brand-logo i {
+            color: var(--cor-secundaria-terra);
+            font-size: 1.5rem;
+        }
+
+        .tag-ifrn {
+            background-color: var(--cor-primaria-verde);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(45, 90, 39, 0.92), rgba(140, 67, 39, 0.85)), 
+                        url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+            color: white;
+            padding: 4.5rem 0 3.5rem;
+            text-align: center;
+            border-radius: 0 0 var(--borda-raio) var(--borda-raio);
+        }
+
+        .hero-badge {
+            background-color: var(--cor-amarelo-sol);
+            color: #333;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitulo {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .coordenacao-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 10px;
+        }
+
+        .epistemologia-pill {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* 
+          ==================================================================
+          3. SEÇÃO LINHA DO TEMPO / LEGADO DO PROJETO PREDECESSOR
+          ==================================================================
+          Conexão histórica entre o projeto finalizado em 2025 e o atual.
+        */
+        .secao {
+            padding: 4rem 0;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .subtitulo-secao {
+            text-align: center;
+            color: var(--cor-texto-suave);
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            position: relative;
+        }
+
+        .timeline-card {
+            background: var(--cor-fundo-card);
+            border-radius: var(--borda-raio);
+            padding: 2rem;
+            box-shadow: var(--sombra-suave);
+            border-top: 5px solid var(--cor-secundaria-terra);
+            transition: var(--transicao);
+        }
+
+        .timeline-card.atual {
+            border-top-color: var(--cor-primaria-verde);
+            background: #f4f8f3;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .ano-tag {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--cor-secundaria-terra);
+            text-transform: uppercase;
+        }
+
+        .timeline-card.atual .ano-tag {
+            color: var(--cor-primaria-verde);
+        }
+
+        .timeline-card h3 {
+            margin: 0.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* 
+          ==================================================================
+          4. SEÇÃO DE PILARES INTERATIVOS (OBJETIVOS & AÇÕES)
+          ==================================================================
+        */
+        .pilares-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--cor-fundo-card);
+            border: 2px solid var(--cor-primaria-verde);
+            color: var(--cor-primaria-verde);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transicao);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--cor-primaria-verde);
+            color: white;
+            box-shadow: 0 4px 12px rgba(45, 90, 39, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            background: var(--cor-fundo-card);
+            padding: 2.5rem;
+            border-radius: var(--borda-raio);
+            box-shadow: var(--sombra-suave);
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Interatividade da Trilha Pedagógica (Caminhos dos Quintais) */
+        .trilha-interactive {
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .trilha-passo {
+            background-color: var(--cor-fundo-creme);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--cor-amarelo-sol);
+            cursor: pointer;
+            transition: var(--transicao);
+        }
+
+        .trilha-passo:hover {
+            background-color: #f0e8d8;
+            transform: scale(1.02);
+        }
+
+        .trilha-passo.ativo {
+            border-left-color: var(--cor-primaria-verde);
+            background-color: #e8f2e6;
+        }
+
+        .trilha-passo h4 {
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .trilha-detalhe-painel {
+            margin-top: 1.5rem;
+            background: #fdfbf7;
+            border: 2px dashed var(--cor-secundaria-terra);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        /* Laboratório Vivo e Parceria com Mulheres */
+        .grid-duplo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .grid-duplo { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+
+        .destaque-box {
+            background-color: #f7ede8;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--cor-secundaria-terra);
+        }
+
+        .badge-lideranca {
+            background-color: var(--cor-secundaria-terra);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* 
+          ==================================================================
+          5. MAPA CONCEITUAL / ECOSISTEMA DO TERRITÓRIO
+          ==================================================================
+        */
+        .accordion-item {
+            background: var(--cor-fundo-card);
+            margin-bottom: 12px;
+            border-radius: 10px;
+            box-shadow: var(--sombra-suave);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 1.2rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--cor-primaria-verde);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transicao);
+        }
+
+        .accordion-header:hover {
+            background-color: rgba(45, 90, 39, 0.05);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.2rem;
+            background-color: #fafafa;
+        }
+
+        .accordion-content-inner {
+            padding: 1rem 0;
+            color: var(--cor-texto-suave);
+        }
+
+        /* 
+          ==================================================================
+          6. RODAPÉ INSTITUCIONAL
+          ==================================================================
+        */
+        footer {
+            background-color: var(--cor-primaria-verde);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+            border-top: 5px solid var(--cor-amarelo-sol);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--cor-amarelo-sol);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col p, .footer-col li {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            list-style: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+      ==================================================================
+      CABEÇALHO DA PÁGINA (NAVBAR)
+      ==================================================================
+    -->
+    <header class="header-nav">
+        <div class="container nav-content">
+            <div class="brand-logo">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Viver da Terra</span>
+            </div>
+            <span class="tag-ifrn">Extensão IFRN</span>
+        </div>
+    </header>
+
+    <!-- 
+      ==================================================================
+      HERO SECTION (Apresentação Principal)
+      ==================================================================
+    -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-badge"><i class="fa-solid fa-sun"></i> Projeto de Extensão</span>
+            <h1>Viver da Terra:<br>Cultivando saberes, fortalecendo territórios</h1>
+            <p class="subtitulo">Saber popular, agroecologia e autonomia comunitária em rede</p>
+            
+            <div class="coordenacao-box">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Coordenação: <strong>Profª. Monik de Oliveira Lopes Neves</strong> (IFRN)</span>
+            </div>
+
+            <div class="epistemologia-pill">
+                <span class="pill"><i class="fa-solid fa-book-open-reader"></i> Educação Popular</span>
+                <span class="pill"><i class="fa-solid fa-earth-americas"></i> Epistemologias Contracoloniais</span>
+                <span class="pill"><i class="fa-solid fa-people-roof"></i> Valorização Territorial</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+      ==================================================================
+      SEÇÃO: HISTÓRIA E LEGADO DO PROJETO (CONTINUIDADE 2025 -> ATUAL)
+      ==================================================================
+    -->
+    <section class="secao container">
+        <h2 class="titulo-secao">Trajetória e Continuidade</h2>
+        <p class="subtitulo-secao">A evolução de uma práxis pautada na autonomia dos povos do campo</p>
+
+        <div class="timeline-grid">
+            <!-- Projeto Anterior -->
+            <div class="timeline-card">
+                <span class="ano-tag">Concluído em 2025</span>
+                <h3>Viver da Terra: Empoderamento e Autonomia Econômica na Agricultura Familiar</h3>
+                <p>Foco na geração de renda, emancipação feminina, organização produtiva e estruturação inicial da autonomia econômica de famílias agricultoras locais.</p>
+            </div>
+
+            <!-- Projeto Atual -->
+            <div class="timeline-card atual">
+                <span class="ano-tag">Fase Atual em Execução</span>
+                <h3>Viver da Terra: Cultivando saberes, fortalecendo territórios</h3>
+                <p>Aprofundamento epistemológico e territorial. Foco na criação conjunta de trilhas pedagógicas, consolidação do laboratório vivo e protagonismo coletivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+      ==================================================================
+      SEÇÃO INTERATIVA: PILARES DE AÇÃO DO PROJETO
+      ==================================================================
+      Abas para alterar interativamente entre as 3 principais frentes do projeto.
+    -->
+    <section class="secao container">
+        <h2 class="titulo-secao">Ações e Metodologias Interativas</h2>
+        <p class="subtitulo-secao">Clique nos botões para explorar os pilares práticos do projeto</p>
+
+        <!-- Botões das Abas -->
+        <div class="pilares-tabs">
+            <button class="tab-btn active" onclick="mudarAba('trilha')">
+                <i class="fa-solid fa-route"></i> Trilha Pedagógica
+            </button>
+            <button class="tab-btn" onclick="mudarAba('laboratorio')">
+                <i class="fa-solid fa-campground"></i> Laboratório Vivo
+            </button>
+            <button class="tab-btn" onclick="mudarAba('parceria')">
+                <i class="fa-solid fa-hands-holding-circle"></i> Parceria Local & Liderança
+            </button>
+        </div>
+
+        <!-- ABA 1: TRILHA PEDAGÓGICA -->
+        <div id="aba-trilha" class="tab-content active">
+            <h3>Trilha Pedagógica "Caminhos dos Quintais"</h3>
+            <p>Construída de forma participativa, a trilha transforma os quintais produtivos da comunidade em estações vivas de conhecimento agroecológico e cultural. Clique nos pontos para explorar:</p>
+            
+            <div class="trilha-interactive">
+                <div class="trilha-passo ativo" onclick="mostrarDetalheTrilha(1, this)">
+                    <h4><i class="fa-solid fa-leaf"></i> 1. Quintais Produtivos</h4>
+                    <p>Espaços de conservação de sementes crioulas e diversidade agrobio.</p>
+                </div>
+                <div class="trilha-passo" onclick="mostrarDetalheTrilha(2, this)">
+                    <h4><i class="fa-solid fa-mortar-pestle"></i> 2. Saberes Medicinais</h4>
+                    <p>Resgate da medicina tradicional popular e ervas da região.</p>
+                </div>
+                <div class="trilha-passo" onclick="mostrarDetalheTrilha(3, this)">
+                    <h4><i class="fa-solid fa-arrows-spin"></i> 3. Práticas Agroecológicas</h4>
+                    <p>Manejo sustentável do solo, compostagem e convivência com o semiárido.</p>
+                </div>
+            </div>
+
+            <div class="trilha-detalhe-painel" id="painel-detalhe-trilha">
+                <h4 id="detalhe-titulo"><i class="fa-solid fa-circle-info"></i> Estação 1: Quintais Produtivos</h4>
+                <p id="detalhe-texto">Os quintais são espaços gerenciados historicamente por mulheres. Neles se cultivam alimentos sem veneno, promovendo segurança alimentar e troca direta de saberes entre gerações.</p>
+            </div>
+        </div>
+
+        <!-- ABA 2: LABORATÓRIO VIVO -->
+        <div id="aba-laboratorio" class="tab-content">
+            <div class="grid-duplo">
+                <div>
+                    <h3>Assentamento de Resistência Popular José Martí</h3>
+                    <p>O assentamento atua como um <strong>Laboratório Vivo</strong>, convertendo a luta pela terra em espaço contínuo de aprendizado, formação e emancipação social.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.2rem;">
+                        <li><strong>Formação Prática:</strong> Oficinas sobre agroecologia e conservação ambiental.</li>
+                        <li><strong>Turismo Pedagógico:</strong> Vivências com estudantes e visitantes para valorizar a cultura camponesa.</li>
+                        <li><strong>Espaço Contracolonial:</strong> Reconhecimento do território como gerador autônomo de ciência e cultura.</li>
+                    </ul>
+                </div>
+                <div class="destaque-box">
+                    <h4><i class="fa-solid fa-graduation-cap"></i> Turismo Pedagógico em Ação</h4>
+                    <p>Visitantes vivenciam a rotina camponesa, compreendendo na prática como o conhecimento popular dialoga diretamente com a extensão científica promovida pelo IFRN.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABA 3: PARCERIA LOCAL -->
+        <div id="aba-parceria" class="tab-content">
+            <div class="grid-duplo">
+                <div class="destaque-box" style="background-color: #fdf6eb; border-left-color: var(--cor-amarelo-sol);">
+                    <span class="badge-lideranca"><i class="fa-solid fa-venus"></i> Protagonismo Feminino</span>
+                    <h3 style="margin-top: 0.5rem;">Associação Viver da Terra</h3>
+                    <p>A associação é liderada por mulheres agricultoras que articulam a produção, a preservação da memória comunitária e a sustentabilidade econômica do território.</p>
+                </div>
+                <div>
+                    <h3>Fortalecimento Comunitário</h3>
+                    <p>A atuação conjunta entre o IFRN e a Associação Viver da Terra garante que as ações não sejam impostas, mas sim co-criadas para responder às demandas reais da comunidade.</p>
+                    <p style="margin-top: 0.5rem;">Esta rede garante a sustentabilidade pedagógica e econômica do projeto a longo prazo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+      ==================================================================
+      SEÇÃO ACCORDION: FUNDAMENTOS EPISTEMOLÓGICOS (MAPA DE SABERES)
+      ==================================================================
+    -->
+    <section class="secao container">
+        <h2 class="titulo-secao">Fundamentos e Princípios</h2>
+        <p class="subtitulo-secao">Entenda as bases conceituais do projeto (Clique para expandir)</p>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <!-- Accordion Item 1 -->
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><i class="fa-solid fa-book-open"></i> Educação Popular (Paulo Freire)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        A extensão é fundamentada no diálogo horizontal entre a comunidade e a instituição de ensino, reconhecendo que ninguém educa ninguém, mas os sujeitos se educam em comunhão mediados pelo mundo e pelo território.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><i class="fa-solid fa-earth-americas"></i> Epistemologias Contracoloniais</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        Valorização do saber tradicional dos agricultores e agricultoras como conhecimento científico válido, questionando a hegemonia eurocêntrica e fortalecendo a memória ancestral do campo.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><i class="fa-solid fa-seedling"></i> Agroecologia e Sustentabilidade</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        Respeito aos ciclos da natureza, eliminação de defensivos químicos, valorização das sementes nativas/crioulas e promoção de tecnologias sociais de convivência sustentável.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+      ==================================================================
+      RODAPÉ INSTITUCIONAL
+      ==================================================================
+    -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Viver da Terra</h4>
+                <p>Cultivando saberes, fortalecendo territórios.</p>
+                <p>Projeto de Extensão voltado à autonomia, agroecologia e valorização camponesa.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Realização e Parceria</h4>
+                <ul>
+                    <li><i class="fa-solid fa-building-columns"></i> Instituto Federal do Rio Grande do Norte (IFRN)</li>
+                    <li><i class="fa-solid fa-users-line"></i> Associação Viver da Terra (Liderança Feminina)</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Assentamento José Martí</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Coordenação Geral</h4>
+                <p><strong>Profª. Monik de Oliveira Lopes Neves</strong></p>
+                <p>Docente/Pesquisadora IFRN</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; Projeto de Extensão IFRN - Viver da Terra. Desenvolvido com foco em Educação Popular e Acessibilidade.</p>
+        </div>
+    </footer>
+
+    <!-- 
+      ==================================================================
+      LÓGICA JAVASCRIPT (INTERATIVIDADE VANILLA ES6)
+      ==================================================================
+    -->
+    <script>
+        /**
+         * FUNÇÃO: Alternar Abas (Tab Navigation)
+         * Altera a visibilidade dos pilares (Trilha, Laboratório, Parceria)
+         */
+        function mudarAba(nomeAba) {
+            // Esconde todos os conteúdos de abas
+            const conteudos = document.querySelectorAll('.tab-content');
+            conteudos.forEach(conteudo => conteudo.classList.remove('active'));
+
+            // Desativa todos os botões
+            const botoes = document.querySelectorAll('.tab-btn');
+            botoes.forEach(btn => btn.classList.remove('active'));
+
+            // Ativa o conteúdo da aba selecionada
+            const abaAlvo = document.getElementById(`aba-${nomeAba}`);
+            if (abaAlvo) {
+                abaAlvo.classList.add('active');
+            }
+
+            // Destaca o botão clicado
+            event.currentTarget.classList.add('active');
+        }
+
+        /**
+         * FUNÇÃO: Interatividade da Trilha Pedagógica (Caminhos dos Quintais)
+         * Atualiza o painel explicativo dinamicamente ao clicar nos passos da trilha
+         */
+        const dadosTrilha = {
+            1: {
+                titulo: '<i class="fa-solid fa-leaf"></i> Estação 1: Quintais Produtivos',
+                texto: 'Os quintais são espaços gerenciados historicamente por mulheres. Neles se cultivam alimentos sem veneno, promovendo segurança alimentar, conservação de sementes crioulas e troca direta de saberes entre gerações.'
+            },
+            2: {
+                titulo: '<i class="fa-solid fa-mortar-pestle"></i> Estação 2: Saberes Medicinais',
+                texto: 'Mapeamento e resgate das ervas e plantas medicinais tradicionais da região. Integra o conhecimento ancestral de curandeiras e erveiras com o estudo das propriedades botânicas das espécies localmente preservadas.'
+            },
+            3: {
+                titulo: '<i class="fa-solid fa-arrows-spin"></i> Estação 3: Práticas Agroecológicas',
+                texto: 'Demonstração prática de técnicas sustentáveis adaptadas ao território, tais como compostagem, biofertilizantes, sistemas agroflorestais simplificados e estratégias de captação e reuso de água.'
+            }
+        };
+
+        function mostrarDetalheTrilha(passoId, elemento) {
+            // Remove a classe ativo de todos os passos
+            const passos = document.querySelectorAll('.trilha-passo');
+            passos.forEach(p => p.classList.remove('ativo'));
+
+            // Adiciona classe ativo ao elemento clicado
+            elemento.classList.add('ativo');
+
+            // Atualiza título e texto no painel detalhado
+            const painelTitulo = document.getElementById('detalhe-titulo');
+            const painelTexto = document.getElementById('detalhe-texto');
+
+            if (dadosTrilha[passoId]) {
+                painelTitulo.innerHTML = dadosTrilha[passoId].titulo;
+                painelTexto.innerText = dadosTrilha[passoId].texto;
+            }
+        }
+
+        /**
+         * FUNÇÃO: Accordion (Sanfona de Fundamentos Conceituais)
+         * Expande e recolhe as seções teóricas ao clicar
+         */
+        function toggleAccordion(headerElement) {
+            const content = headerElement.nextElementSibling;
+            const icon = headerElement.querySelector('i.fa-chevron-down, i.fa-chevron-up');
+
+            // Fecha outros accordions abertos para manter a página limpa
+            const allContents = document.querySelectorAll('.accordion-content');
+            allContents.forEach(item => {
+                if (item !== content) {
+                    item.style.maxHeight = null;
+                    const itemHeader = item.previousElementSibling;
+                    const itemIcon = itemHeader.querySelector('.fa-solid');
+                    if (itemIcon && itemIcon.classList.contains('fa-chevron-up')) {
+                        itemIcon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                    }
+                }
+            });
+
+            // Alterna o estado do item clicado
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                if (icon) icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                if (icon) icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+            }
+        }
+    </script>
+</body>
+</html>
