@@ -54,17 +54,18 @@
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
+        ::-webkit-scrollbar, .custom-scrollbar::-webkit-scrollbar {
             width: 8px;
         }
-        ::-webkit-scrollbar-track {
+        ::-webkit-scrollbar-track, .custom-scrollbar::-webkit-scrollbar-track {
             background: #0B0F19;
+            border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb {
+        ::-webkit-scrollbar-thumb, .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #1F2937;
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover {
+        ::-webkit-scrollbar-thumb:hover, .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #374151;
         }
 
@@ -101,8 +102,6 @@
 </head>
 <body class="bg-mesh min-h-screen flex flex-col justify-between selection:bg-brand-accent selection:text-white">
 
-   
-
     <!-- SECTION 1: Outdoor Digital / Hero Section -->
     <section id="outdoor" class="relative pt-12 pb-16 md:pt-20 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div class="text-center max-w-4xl mx-auto">
@@ -131,7 +130,7 @@
                 <a href="#hub" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-accent to-brand-purple text-white font-semibold text-sm sm:text-base hover:opacity-90 transition-all shadow-lg shadow-indigo-500/25 flex items-center gap-2">
                     <i class="fa-solid fa-compass"></i> Explorar Portais Integrados
                 </a>
-                <button onclick="openModal('sobre-projeto')" class="px-6 py-3.5 rounded-xl glass-card text-gray-200 font-semibold text-sm sm:text-base hover:text-white transition-all flex items-center gap-2">
+                <button onclick="openModal('sobre-projeto')" class="px-4 py-3.5 rounded-xl glass-card text-gray-200 font-semibold text-sm sm:text-base hover:text-white transition-all flex items-center gap-2">
                     <i class="fa-solid fa-circle-info"></i> Sobre o Projeto
                 </button>
             </div>
@@ -339,16 +338,16 @@
         </div>
     </footer>
 
-    <!-- MODAL DE DETALHES -->
-    <div id="detailModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 modal-blur opacity-0 pointer-events-none transition-all duration-300">
-        <div class="glass-card bg-brand-card/95 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative border border-gray-700 shadow-2xl transform scale-95 transition-all duration-300" id="modalContainer">
+    <!-- MODAL DE DETALHES (AJUSTADO PARA APROVEITAR LARGURA DA TELA E ROLAGEM PRÓPRIA) -->
+    <div id="detailModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 modal-blur opacity-0 pointer-events-none transition-all duration-300">
+        <div class="glass-card bg-brand-card/95 rounded-2xl w-[92vw] max-w-4xl max-h-[85vh] p-6 sm:p-8 relative border border-gray-700 shadow-2xl transform scale-95 transition-all duration-300 flex flex-col" id="modalContainer">
             <!-- Botão Fechar -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white w-8 h-8 rounded-full bg-gray-800/50 flex items-center justify-center">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white w-8 h-8 rounded-full bg-gray-800/50 flex items-center justify-center z-10">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Conteúdo Dinâmico do Modal -->
-            <div id="modalContent">
+            <!-- Conteúdo Dinâmico do Modal (Com rolagem interna) -->
+            <div id="modalContent" class="overflow-y-auto pr-2 custom-scrollbar">
                 <!-- Inserido via JavaScript -->
             </div>
         </div>
@@ -427,8 +426,8 @@
             modalContent.innerHTML = `
                 <span class="text-xs uppercase font-bold tracking-wider ${data.color}">${data.badge}</span>
                 <h3 class="font-display text-2xl font-bold text-white mt-1 mb-4">${data.title}</h3>
-                <p class="text-gray-300 text-sm leading-relaxed mb-6">${data.description}</p>
-                <div class="space-y-2">
+                <p class="text-gray-300 text-base leading-relaxed mb-6 text-justify hyphens-auto">${data.description}</p>
+                <div class="space-y-2 mb-2">
                     <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Links Diretos</h4>
                     ${linksHtml}
                 </div>
